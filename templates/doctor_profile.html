@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airmed Doc Application</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2>Profile</h2>
+
     {% for doctor in doctors %}
         {{ doctor.title }}
         {{ doctor.doctor_first_name }}
@@ -16,5 +12,5 @@
         {{ doctor.experience }}<br>
         {{ doctor.working_days }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
