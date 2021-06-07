@@ -9,6 +9,8 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
     {% block styles %}
     {% endblock %}
     <title>Airmed Doc Application</title>
@@ -16,10 +18,10 @@
 <body>
     <header>
         <!--navbar - code source: Materialize CSS-->
-        <nav class="nav-extended">
+        <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">
-                <i class="company-logo">tba</i>
+                <i class="clinic-logo"></i>
                     AIRMED
                 </a>
 
@@ -37,7 +39,7 @@
         <ul class="sidenav" id="mobile-demo">
             <li>
                 <a href="#" class="brand-logo">
-                    <i class="company-logo">tba</i>
+                    <i class="clinic-logo"></i>
                     <h4 class="center-align">AIRMED</h4>
                 </a>
             </li>
