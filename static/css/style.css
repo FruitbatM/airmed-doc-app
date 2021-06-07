@@ -13,3 +13,23 @@ nav {
 .slider .indicators .indicator-item.active {
     background-color: #247BA0;
   }
+
+.page-footer {
+    background-color: #247BA0;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+  }
+
+/* Forces body to full height so footer can be positioned to bottom */
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
