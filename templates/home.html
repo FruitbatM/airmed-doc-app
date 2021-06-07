@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<section class="black">
-  <div class="carousel carousel-slider" data-indicators="true">
-    <div class="carousel-item red lighten-2 white-text" href="#one!">
-      <div class="container">
-        <h1>Find your Doctor and schedule an appointment</h2>
-        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
-      </div>  
-    </div>
-    <div class="carousel-item amber darken-2 white-text" href="#two!">
-      <div class="container">
-        <h1>Direct access to top specialists</h1>
-        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
-      </div>  
-    </div>
-    <div class="carousel-item green white-text" href="#three!">
-      <div class="container">
-        <h1>Select Day and Time</h1>
-        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
-      </div>  
-    </div>
+<!--slider-->
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="static/images/carousel-1.jpg">
+        <div class="caption right-align">
+          <h2>Find your Doctor and schedule an appointment</h2>
+          <h5 class="light grey-text text-lighten-3">Airmed Health Clinic</h5>
+        </div>
+      </li>
+      <li>
+        <img src="static/images/carousel-2.jpg">
+        <div class="caption left-align">
+          <h2>Left Aligned Caption</h2>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="static/images/carousel-3.jpg">
+        <div class="caption right-align">
+          <h2>Right Aligned Caption</h2>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
   </div>
-</section>
 
 {% endblock%}

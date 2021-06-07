@@ -3,3 +3,13 @@
 nav {
     background-color: #F68C48;
 }
+
+.slides h2 {
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0.2rem 0.2rem #282828;
+}
+
+/* overwrite slider indicator color */
+.slider .indicators .indicator-item.active {
+    background-color: #F68C48;
+  }
