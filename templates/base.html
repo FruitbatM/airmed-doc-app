@@ -20,7 +20,7 @@
         <!--navbar - code source: Materialize CSS-->
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">
+                <a href="{{ url_for('home') }}" class="brand-logo">
                 <i class="clinic-logo"></i>
                     AIRMED
                 </a>
@@ -38,7 +38,7 @@
         <!--mobile navbar-->
         <ul class="sidenav" id="mobile-demo">
             <li>
-                <a href="#" class="brand-logo">
+                <a href="{{ url_for('home') }}" class="brand-logo">
                     <i class="clinic-logo"></i>
                     <h4 class="center-align">AIRMED</h4>
                 </a>
@@ -50,11 +50,8 @@
             <li><a href="#">PROFILE</a></li>
         </ul>
 
-
-
     </header>
 
-    <h1>Find your Doctor and schedule an appointment</h1>
     {% block content %}
     {% endblock %}
 
