@@ -14,6 +14,44 @@
     <title>Airmed Doc Application</title>
 </head>
 <body>
+    <header>
+        <!--navbar - code source: Materialize CSS-->
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">
+                <i class="company-logo">tba</i>
+                    AIRMED
+                </a>
+
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">SIGN IN</a></li>
+                    <li><a href="#">SIGN UP</a></li>
+                    <li><a href="#">SIGN OUT</a></li>
+                    <li><a href="#">PROFILE</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--mobile navbar-->
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <a href="#" class="brand-logo">
+                    <i class="company-logo">tba</i>
+                    <h4 class="center-align">AIRMED</h4>
+                </a>
+            </li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">SIGN IN</a></li>
+            <li><a href="#">SIGN UP</a></li>
+            <li><a href="#">SIGN OUT</a></li>
+            <li><a href="#">PROFILE</a></li>
+        </ul>
+
+
+
+    </header>
+
     <h1>Find your Doctor and schedule an appointment</h1>
     {% block content %}
     {% endblock %}
