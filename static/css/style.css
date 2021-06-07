@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
 
 nav {
-    background-color: #F68C48;
+    background-color: #247BA0;
 }
 
 .slides h2 {
@@ -11,5 +11,5 @@ nav {
 
 /* overwrite slider indicator color */
 .slider .indicators .indicator-item.active {
-    background-color: #F68C48;
+    background-color: #247BA0;
   }
