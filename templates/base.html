@@ -46,7 +46,7 @@
                     <h4 class="center-align">AIRMED</h4>
                 </a>
             </li>
-            <li><a href="#about-us">ABOUT US</a></li>
+            <li class="sidenav-close"><a href="#about-us">ABOUT US</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>

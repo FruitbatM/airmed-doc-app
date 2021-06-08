@@ -1,7 +1,12 @@
 // jQuery for MaterializeCSS initialization
 
 $(document).ready(function(){
-  $('.sidenav').sidenav({edge: "right"});
+  $('.sidenav').sidenav(
+    {
+      edge: "right",
+      draggable: true,
+    });
+
   $('.slider').slider(
     {
       indicators: true,

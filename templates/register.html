@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h4 class="center-align">Become our Patient</h4>
+    <h4 class="center-align" id="register-heading">Become our Patient</h4>
     <!--Register-->
-    <div class="row">
+    <div class="row" id="register-form">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel">
                 <div class="row">
