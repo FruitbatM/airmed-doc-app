@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
 
+/* Add a smooth scrolling effect to the document */
+html {
+    scroll-behavior: smooth;
+}
+
 nav {
     background-color: #247BA0;
 }
@@ -9,7 +14,7 @@ nav {
     text-shadow: 0.2rem 0.2rem #282828;
 }
 
-.about-us {
+#about-us {
     margin-top: 2.5;
     margin-bottom: 4rem;
 }

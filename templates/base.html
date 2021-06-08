@@ -27,7 +27,7 @@
 
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#about-us">ABOUT US</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                         <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
@@ -46,7 +46,7 @@
                     <h4 class="center-align">AIRMED</h4>
                 </a>
             </li>
-            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#about-us">ABOUT US</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
