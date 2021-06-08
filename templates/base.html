@@ -49,10 +49,23 @@
             <li><a href="#">SIGN OUT</a></li>
             <li><a href="#">PROFILE</a></li>
         </ul>
-
     </header>
 
-    <main>
+    <section>
+        <!--flash messages-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flash-messages">
+                        <h4 class="center-align"><strong>{{ message }}</strong></h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+
+    <main class="container">
         {% block content %}
         {% endblock %}
     </main>

@@ -9,6 +9,28 @@ nav {
     text-shadow: 0.2rem 0.2rem #282828;
 }
 
+.flash-messages{
+    color: #F68C48;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sign-btn {
+    background-color: #F68C48;
+    color: #ffffff;
+    border: none;
+    line-height: 1rem;
+}
+
+.sign-btn:hover,
+.sign-btn:focus,
+.sign-btn:active {
+  background-color: #91CEB9 !important;
+  border-color: #91CEB9 !important;
+  box-shadow: 0.2rem 0.2rem #91c5ce !important;
+  -webkit-box-shadow: 0.2rem 0.2rem #91CEB9 !important;
+  border: 0.1rem solid;
+}
+
 /* overwrite slider indicator color */
 .slider .indicators .indicator-item.active {
     background-color: #247BA0;

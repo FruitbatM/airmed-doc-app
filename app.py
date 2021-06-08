@@ -22,9 +22,26 @@ mongo = PyMongo(app)
 def home():
     return render_template("home.html")
 
-
+# Register function was adapted from Code Institute walkthrough project
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if username already exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        if existing_user:
+            flash("Username with this name already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("You have been Successfully Registered")
     return render_template("register.html")
 
 

@@ -24,22 +24,24 @@
                     </div>
                     <!--contact number-->
                     <div class="input-field col s6">
-                        <input id="tel" name="tel" type="tel" placeholder="Phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="validate" required>
+                        <input id="tel" name="tel" type="tel" placeholder="Phone 123-23-213" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="validate" required>
                         <label for="phone"></label>
                     </div>
                     <!--username-->
                     <div class="input-field col s12">
-                        <input  id="username" name="username" type="text" class="validate" required>
+                        <input  id="username" name="username" type="text" minlength="5" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
                     </div>
                     <!--password-->
                     <div class="input-field col s12">
-                        <input id="password" name="password" type="password" class="validate" required>
+                        <input id="password" name="password" type="password" minlength="5" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="col s12 m8 offset-m2 btn-large center-align">
+                    <button type="submit" class="col s12 m8 offset-m2 btn-large sign-btn center-align">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
