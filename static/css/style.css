@@ -9,6 +9,11 @@ nav {
     text-shadow: 0.2rem 0.2rem #282828;
 }
 
+.about-us {
+    margin-top: 2.5;
+    margin-bottom: 4rem;
+}
+
 .flash-messages{
     color: #F68C48;
     font-family: 'Montserrat', sans-serif;
