@@ -7,6 +7,7 @@ $(document).ready(function(){
       indicators: true,
       interval: 6000,
       duration: 800,
+      height: 450
     }
   );
 });
