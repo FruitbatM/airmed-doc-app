@@ -22,6 +22,7 @@ mongo = PyMongo(app)
 def home():
     return render_template("home.html")
 
+
 # Register function was adapted from Code Institute walkthrough project
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -44,6 +45,30 @@ def register():
         flash("You have been Successfully Registered")
     return render_template("register.html")
 
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # check if username exists in the database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+    return render_template("login.html")
 
 
 @app.route("/get_doctors")
