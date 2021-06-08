@@ -23,9 +23,9 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/sign_up", methods=["GET", "POST"])
-def sign_up():
-    return render_template("sign_up.html")
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 
 
