@@ -70,8 +70,23 @@ The project was created as a **Milestone Project 3** as a part of **Diploma in F
 
 ### Color Scheme
 
-Delicate and soothing color palette was chosen for medical app.
+Delicate and soothing color palette was chosen for medical app. Users should feel calm and comforted when opening AIRMED app, knowing that they have come to the right place to address their healthcare needs, questions, and any concerns.
 
+- Celadon Blue (#247ba0)
+- White (#FFFFFF)
+- Green Sheen (#70C1B3)
+- Turqouise Green (#b2dbbf)
+- Mango Tango (#f68c48)
+
+Mainly cold colors were selected throughout the app in order to establish an overall sense of tranquility that is necessary to help users concentrate on the more important app features.
+
+White will be primarily used as the background because it represents reverence, purity, and innocence. This association calms people and influences their brain activity in a very positive way.
+
+
+Blue color symbolizes a sense of calm, peace harmony, trust and knowledge. Celadon Blue will be used to promote a tranquil environment for the users.
+
+Green is  associated with health, good luck, youth, vigor, generosity, and fertility.
+A variaty of orange color (Mango Tango) will be used sparingly as button highlighters.
 ### Fonts
 
 ### Imagery
