@@ -70,7 +70,7 @@ The project was created as a **Milestone Project 3** as a part of **Diploma in F
 
 ### Color Scheme
 
-Delicate and soothing color palette was chosen for medical app. Users should feel calm and comforted when opening AIRMED app, knowing that they have come to the right place to address their healthcare needs, questions, and any concerns.
+Delicate and soothing color palette will be chosen for medical app. Users should feel calm and comforted when opening AIRMED app, knowing that they have come to the right place to address their healthcare needs, questions, and any concerns.
 
 - Celadon Blue (#247ba0)
 - White (#FFFFFF)
@@ -78,16 +78,18 @@ Delicate and soothing color palette was chosen for medical app. Users should fee
 - Turqouise Green (#b2dbbf)
 - Mango Tango (#f68c48)
 
-Mainly cold colors were selected throughout the app in order to establish an overall sense of tranquility that is necessary to help users concentrate on the more important app features.
+Mainly cold colors will be selected throughout the app in order to establish an overall sense of tranquility that is necessary to help users concentrate on the more important app features.
 
-White will be primarily used as the background because it represents reverence, purity, and innocence. This association calms people and influences their brain activity in a very positive way.
+White will be primarily used as the background because it represents reverence, purity, and innocence. This association calms people and influences their brain activity in a very positive way. Blue color symbolizes a sense of calm, peace harmony, trust and knowledge. Celadon Blue will be used to promote a tranquil environment for the users. Green is  associated with health, good luck, youth, vigor, generosity, and fertility. A variaty of orange color (Mango Tango) will be used sparingly as button highlighters.
 
-
-Blue color symbolizes a sense of calm, peace harmony, trust and knowledge. Celadon Blue will be used to promote a tranquil environment for the users.
-
-Green is  associated with health, good luck, youth, vigor, generosity, and fertility.
-A variaty of orange color (Mango Tango) will be used sparingly as button highlighters.
 ### Fonts
+
+- Two fonts will be used throughout the project, **Roboto** and **Montserrat**. Both will be used with ``sans-serif`` font as a fallback.
+**Montserrat** will be used for the main headings and **Roboto** will be used for the hero text, paragraph sections and the footer.
+
+- These fonts pair very well together and make the website appear both prestigious and contemporary. They make a good combination of tradition and modernity.
+
+- Fonts were imported from [Google Fonts](https://fonts.google.com/).
 
 ### Imagery
 
