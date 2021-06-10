@@ -95,7 +95,11 @@ White will be primarily used as the background because it represents reverence, 
 
 ### Logo
 
+- I used [Canva](https://www.canva.com/) to design the custom logo. 
+
 ### Icons
+
+Icons should be obvious and very intuitive so that users can easily understand what a particular icon represents. Also, a detailed heading will be used for each icon to describe top specialities the Airmed clinic offers. 
 
 # Features
 
