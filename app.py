@@ -26,6 +26,9 @@ def home():
     specialities = mongo.db.specialities.find()
     return render_template("home.html", specialities=specialities)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 # Register function was adapted from Code Institute walkthrough project
 @app.route("/register", methods=["GET", "POST"])
