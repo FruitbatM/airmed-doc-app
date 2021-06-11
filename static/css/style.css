@@ -9,6 +9,22 @@ nav {
     background-color: #247BA0;
 }
 
+.sidenav {
+    background-color: #247BA0;
+}
+
+.sidenav li > a {
+    color: #fafafa;
+}
+
+.clinic-logo {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+    margin-top: 7rem;
+}
+
 .slides h2 {
     font-family: 'Roboto', sans-serif;
     text-shadow: 0.2rem 0.2rem #282828;
