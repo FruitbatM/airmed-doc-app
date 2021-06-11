@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <h3 class="center-align">
+                {{ username }}'s Profile
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        {% for user in users %}
+            <div class="col s12">
+                <div class="card-panel">
+                    <div class="profile-item">
+                        <strong>First name: </strong>{{ user.first_name }}
+                        <strong>Last name: </strong>{{ user.last_name }}<br>
+                        <strong>Email address: </strong>{{ user.email }}<br>
+                        <strong>Tel: </strong>{{ user.tel }}<br>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

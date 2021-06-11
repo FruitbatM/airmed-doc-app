@@ -90,14 +90,14 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/patient_profile/<username>", methods=["GET", "POST"])
-def patient_profile(username):
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
     # grab the session username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("patient_profile.html", username=username)
+        return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
 
