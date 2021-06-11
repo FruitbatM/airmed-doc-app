@@ -9,6 +9,7 @@ if os.path.exists("env.py"):
     import env
 
 
+# create instance of flask and assign it to "app"
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -18,9 +19,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home page
 @app.route("/")
+@app.route("/home")
 def home():
-    return render_template("home.html")
+    specialities = mongo.db.specialities.find()
+    return render_template("home.html", specialities=specialities)
 
 
 # Register function was adapted from Code Institute walkthrough project

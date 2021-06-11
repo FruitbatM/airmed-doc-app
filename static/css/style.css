@@ -46,6 +46,16 @@ nav {
     background-color: #247BA0;
   }
 
+  /*
+.card {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+*/
+
+/* footer styling*/
 .page-footer {
     background-color: #247BA0;
     color: #ffffff;
@@ -54,7 +64,7 @@ nav {
     font-weight: 400;
   }
 
-/* Forces body to full height so footer can be positioned to bottom */
+/* forces body to full height so footer can be positioned to bottom */
 body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -62,6 +72,6 @@ body {
     min-height: 100vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
