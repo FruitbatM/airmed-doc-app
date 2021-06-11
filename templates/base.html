@@ -29,7 +29,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                        <li><a href="{{ url_for('patient_profile', username=session['user']) }}">PROFILE</a></li>
                         <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">LOG IN</a></li>
@@ -48,7 +48,7 @@
             </li>
             <li class="sidenav-close"><a href="{{ url_for('about') }}">ABOUT US</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                <li><a href="{{ url_for('patient_profile', username=session['user']) }}">PROFILE</a></li>
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">LOG IN</a></li>

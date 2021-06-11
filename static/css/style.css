@@ -46,14 +46,14 @@ nav {
     background-color: #247BA0;
   }
 
-  /*
-.card {
-    height: 200px;
-    width: 200px;
-    position: relative;
-    overflow: hidden;
+/* overwrite Materialize card-action attribute */
+.card-action a {
+    text-align: center !important;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-shadow: 0.05rem 0.05rem #000;;
 }
-*/
+
 
 /* footer styling*/
 .page-footer {

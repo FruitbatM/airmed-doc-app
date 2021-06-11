@@ -26,9 +26,11 @@ def home():
     specialities = mongo.db.specialities.find()
     return render_template("home.html", specialities=specialities)
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 # Register function was adapted from Code Institute walkthrough project
 @app.route("/register", methods=["GET", "POST"])
@@ -88,14 +90,14 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/patient_profile/<username>", methods=["GET", "POST"])
+def patient_profile(username):
     # grab the session username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("patient_profile.html", username=username)
 
     return redirect(url_for("login"))
 
