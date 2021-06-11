@@ -36,21 +36,20 @@
 			</div>
 		</div>
 
-
 		<div class="container">
 			<div class="row">
 				{% for speciality in specialities %}
-				<div class="col s6 m4 l2">
-					<div class="card">
-						<div class="card-image">
-							<img src="{{ speciality.icon_url }}">
-							<a href="#"></a>
-						</div>
-						<div class="card-action">
-							<a href="#">{{ speciality.speciality_name }}</a>
+					<div class="col s6 m4 l2">
+						<div class="card">
+							<div class="card-image">
+								<img src="{{ speciality.icon_url }}">
+								<a href="#"></a>
+							</div>
+							<div class="card-action">
+								<a href="#">{{ speciality.speciality_name }}</a>
+							</div>
 						</div>
 					</div>
-				</div>
 				{% endfor %}
 			</div>
 		</div>
