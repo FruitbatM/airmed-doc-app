@@ -26,14 +26,14 @@
 
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}">HOME</a></li>
-                    <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
+                    <li class="{{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
+                    <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                        <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                         <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
                     {% else %}
-                        <li><a href="{{ url_for('login') }}">LOG IN</a></li>
-                        <li><a href="{{ url_for('register') }}">REGISTER</a></li>
+                        <li class="{{ 'active' if active_page == 'login' else '' }}"><a href="{{ url_for('login') }}">LOG IN</a></li>
+                        <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -46,15 +46,15 @@
                 </a>
             </li>
             
-            <li class="sidenav-close"><a href="{{ url_for('home') }}">HOME</a></li>
-            <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            <li class="sidenav-close {{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
+            <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">LOG IN</a></li>
-                <li><a href="{{ url_for('register') }}">REGISTER</a></li>
-                <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
+                <li class="{{ 'active' if active_page == 'login' else '' }}"><a href="{{ url_for('login') }}">LOG IN</a></li>
+                <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
+                    <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
        
             {% endif %}
         </ul>
