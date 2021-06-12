@@ -147,6 +147,16 @@ def get_doctors():
 
 @app.route("/add_doctor", methods=["GET", "POST"])
 def add_doctor():
+    if request.method == "POST":
+        # process the form data
+        print("Form data:")
+        print("First name: {}, Last name: {}".format(
+            request.form.get("first_name"), request.form.get(
+                "last_name")
+        ))
+        # redirect to home page
+        return redirect(url_for("home"))
+
     return render_template("add_doctor.html")
 
 

@@ -2,25 +2,52 @@
 {% set active_page = 'add_doctor' %}
 
 {% block content %}
-
-    <div class="row">
-        <div class="col s12 m8 offset-m2 center-align">
-            <h3>Add new doctor</h3><hr>
-            <form method="POST" action="{{ url_for('add_doctor') }}">
-                <div class="input-field col s12">
-                    <input type="text" name="first_name" id="first_name">
-                    <label for="first_name">First name</label>
-                </div>
-                <div class="input-field col s12">
-                    <textarea name="description" id="" rows="3"></textarea>
-                    <label for="description">About</label>
-                </div>
+    <div class="row center-align">
+        <h3>Add new doctor</h3>
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_doctor') }}">
+            <div class="card-panel">
                 <div class="row">
-                    <button type="submit" class="col s12 m8 offset-m2 btn-large sign-btn center-align">
-                        SUBMIT <i class="fas fa-sign-in-alt"></i>
-                    </button>
+                    <!-- first name -->
+                    <div class="input-field col s6">
+                        <input type="text" id="first_name" name="first_name" class="validate" required>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <!-- last name -->
+                    <div class="input-field col s6">
+                        <input  id="last_name" name="last_name" type="text" class="validate" required>
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    <!-- email -->
+                    <div class="input-field col s6">
+                        <input id="email" name="email" type="email" class="validate" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <!-- contact number -->
+                    <div class="input-field col s6">
+                        <input id="tel" name="tel" type="tel" placeholder="Phone 123-23-213" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="validate" required>
+                        <label for="tel"></label>
+                    </div>
+                    <!-- speciality name -->
+                    <div class="input-field col s6">
+                        <input  id="speciality_name" name="speciality_name" type="text" class="validate" required>
+                        <label for="speciality_name">Speciality name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input  id="experience" name="experience" type="text" class="validate" required>
+                        <label for="experience">Experience</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">About</label>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="col s12 m8 offset-m2 btn-large sign-btn center-align">
+                            SUBMIT <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </div>
                 </div>
-            </form>
+            </div>
+        </form>
 
 
         </div>
