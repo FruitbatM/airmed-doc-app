@@ -17,7 +17,13 @@
 </head>
 <body>
     <header>
-        <!--navbar - code source: Materialize CSS-->
+        <!-- navbar - code source: Materialize CSS -->
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Patient</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Doctor</a></li>
+        </ul>
         <nav>
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo">
@@ -32,20 +38,23 @@
                         <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                         <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
                     {% else %}
-                        <li class="{{ 'active' if active_page == 'login' else '' }}"><a href="{{ url_for('login') }}">LOG IN</a></li>
+                        <!-- Dropdown Trigger -->
+                        <li class="{{ 'active' if active_page == 'login' else '' }}"><a class="dropdown-trigger" 
+                            href="{{ url_for('login') }}" data-target="dropdown1">
+                            LOG IN
+                            <i class="fas fa-caret-down right"></i></a></li>
                         <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
-        <!--mobile navbar-->
+        <!-- Mobile navbar -->
         <ul class="sidenav" id="mobile-demo">
             <li>
                 <a href="{{ url_for('home') }}" class="brand-logo">
                     <h4 class="center-align">AIRMED</h4>
                 </a>
             </li>
-            
             <li class="sidenav-close {{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
             <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
             {% if session.user %}
@@ -55,11 +64,9 @@
                 <li class="{{ 'active' if active_page == 'login' else '' }}"><a href="{{ url_for('login') }}">LOG IN</a></li>
                 <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
                     <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
-       
             {% endif %}
         </ul>
     </header>
-
     <section>
         <!--flash messages-->
         {% with messages = get_flashed_messages() %}
