@@ -90,4 +90,14 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-  }
+}
+
+
+/* Media Queries */
+/* Display on large devices */
+@media screen 
+and (min-width: 1024px) {
+    .brand-logo {
+        padding-left: 1rem !important;
+    }
+}
