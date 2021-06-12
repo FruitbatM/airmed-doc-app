@@ -4,7 +4,7 @@
 	<div class="slider">
 		<ul class="slides">
 			<li>
-				<img src="static/images/carousel-1.jpg">
+				<img src="{{ url_for('static', filename='images/carousel-1.jpg') }}">
 				<div class="caption right-align">
 					<h2>Find your Doctor and schedule an appointment</h2>
 					<h5 class="light grey-text text-lighten-3">Airmed Health Clinic</h5>
@@ -12,7 +12,7 @@
 				</div>
 			</li>
 			<li>
-        		<img src="static/images/carousel-2.jpg">
+        		<img src="{{ url_for('static', filename='images/carousel-2.jpg') }}">
         		<div class="caption left-align">
           			<h2>Left Aligned Caption</h2>
           			<h5 class="light grey-text text-lighten-3">Here's our small slogan</h5>
@@ -20,7 +20,7 @@
         		</div>
       		</li>
       		<li>
-		  		<img src="static/images/carousel-3.jpg">
+		  		<img src="{{ url_for('static', filename='images/carousel-3.jpg') }}">
         		<div class="caption right-align">
 					<h2>Right Aligned Caption</h2>
         			<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>

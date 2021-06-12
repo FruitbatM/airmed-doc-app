@@ -54,7 +54,8 @@
             {% else %}
                 <li><a href="{{ url_for('login') }}">LOG IN</a></li>
                 <li><a href="{{ url_for('register') }}">REGISTER</a></li>
-                <img src="static/images/logo-transparent.png" class="clinic-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
+       
             {% endif %}
         </ul>
     </header>
