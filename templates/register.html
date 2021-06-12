@@ -4,38 +4,38 @@
 {% block content %}
 
     <h4 class="center-align" id="register-heading">Become our Patient</h4>
-    <!--Register-->
+    <!-- Register -->
     <div class="row" id="register-form">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel">
                 <div class="row">
-                    <!--first name-->
+                    <!-- first name -->
                     <div class="input-field col s6">
                         <input type="text" id="first_name" name="first_name" class="validate" required>
                         <label for="first_name">First Name</label>
                     </div>
-                    <!--last name-->
+                    <!-- last name -->
                     <div class="input-field col s6">
                         <input  id="last_name" name="last_name" type="text" class="validate" required>
                         <label for="last_name">Last Name</label>
                     </div>
-                    <!--email-->
+                    <!-- email -->
                     <div class="input-field col s6">
                         <input id="email" name="email" type="email" class="validate" required>
                         <label for="email">Email</label>
                     </div>
-                    <!--contact number-->
+                    <!-- contact number -->
                     <div class="input-field col s6">
                         <input id="tel" name="tel" type="tel" placeholder="Phone 123-23-213" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="validate" required>
                         <label for="tel"></label>
                     </div>
-                    <!--username-->
+                    <!-- username -->
                     <div class="input-field col s12">
                         <input  id="username" name="username" type="text" minlength="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
                     </div>
-                    <!--password-->
+                    <!-- password -->
                     <div class="input-field col s12">
                         <input id="password" name="password" type="password" minlength="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
