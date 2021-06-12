@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% set active_page = 'add_doctor' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2 center-align">
+            <h3>Add new doctor</h3><hr>
+            <form method="POST" action="{{ url_for('add_doctor') }}">
+                <div class="input-field col s12">
+                    <input type="text" name="first_name" id="first_name">
+                    <label for="first_name">First name</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea name="description" id="" rows="3"></textarea>
+                    <label for="description">About</label>
+                </div>
+                <div class="row">
+                    <button type="submit" class="col s12 m8 offset-m2 btn-large sign-btn center-align">
+                        SUBMIT <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+{% endblock %}
