@@ -20,9 +20,9 @@
         <!-- navbar - code source: Materialize CSS -->
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Patient</a></li>
+            <li><a href="{{ url_for('login') }}">Patient</a></li>
             <li class="divider"></li>
-            <li><a href="#!">Doctor</a></li>
+            <li><a href="{{ url_for('doctor_login') }}">Doctor</a></li>
         </ul>
         <nav>
             <div class="nav-wrapper">
