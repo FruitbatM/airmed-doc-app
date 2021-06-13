@@ -9,11 +9,12 @@
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('doctor_login') }}">
             <div class="card-panel">
                 <div class="row">
-                    <!-- email -->
+                    <!-- username -->
                     <div class="input-field col s12">
                         <i class="fas fa-user-cog prefix"></i>
-                        <input  id="email" name="email" type="email" class="validate" required>
-                        <label for="email">Email</label>
+                        <input  id="username" name="username" type="text" minlength="5" 
+                            maxlength="15" class="validate" required>
+                        <label for="username">Username</label>
                     </div>
                     <!-- password -->
                     <div class="input-field col s12">

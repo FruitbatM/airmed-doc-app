@@ -33,6 +33,7 @@ def about():
 
 
 # Register function was adapted from Code Institute walkthrough project
+# Patient registration
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -115,7 +116,7 @@ def doctor_login():
     if request.method == "POST":
         # check if email exists in the database
         existing_doctor = mongo.db.doctors.find_one(
-            {"email": request.form.get("email").lower()})
+            {"username": request.form.get("username").lower()})
 
         if existing_doctor:
             # ensure hashed password matches user input
@@ -123,9 +124,9 @@ def doctor_login():
                 existing_doctor["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
-                        request.form.get("email")))
+                        request.form.get("username")))
                     return redirect(url_for(
-                        "doctor_profile", email=session["user"]))
+                        "doctor_profile", username=session["user"]))
 
             else:
                 # invalid password match
@@ -146,6 +147,8 @@ def add_doctor():
             "title": request.form.get("title"),
             "doctor_first_name": request.form.get("doctor_first_name"),
             "doctor_last_name": request.form.get("doctor_last_name"),
+            "username": request.form.get("username"),
+            "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
             "phone": request.form.get("phone"),
             "speciality_name": request.form.get("speciality_name"),

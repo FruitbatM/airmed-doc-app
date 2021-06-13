@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <!-- navbar - code source: Materialize CSS -->
+        <!-- Navbar - code source: Materialize CSS -->
         <nav>
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo">
@@ -33,22 +33,19 @@
                         <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
                     {% else %}
                         <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-trigger" class="{{ 'active' if active_page == 'login' else '' }}" href="#!" 
+                        <li><a class="dropdown-trigger {{ 'active' if active_page == 'login' else '' }}" href="#!" 
                             data-target="dropdown1">LOG IN<i class="fas fa-caret-down right"></i></a></li>
                         <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
-
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
                 <li><a href="{{ url_for('login') }}">PATIENT</a></li>
                 <li class="divider"></li>
                 <li><a href="{{ url_for('doctor_login') }}">DOCTOR</a></li>
         </ul>
-
-
         <!-- Mobile navbar -->
         <ul class="sidenav" id="mobile-demo">
             <li>
@@ -69,7 +66,7 @@
         </ul>
     </header>
     <section>
-        <!--flash messages-->
+        <!-- Flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -81,13 +78,12 @@
         {% endwith %}
     </section>
 
-
     <main>
         {% block content %}
         {% endblock %}
     </main>
     
-    <!--footer-->
+    <!-- Footer -->
     <footer class="page-footer">
         <div class="container">
             <div class="row center-align">
@@ -97,9 +93,9 @@
             </div>
         </div>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- internal script file -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
