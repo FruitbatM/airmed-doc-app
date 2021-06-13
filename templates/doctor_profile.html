@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h2> Doctor's Profile</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2> Doctor's Profile</h2>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="dashboard">
+            {% for doctor in doctors %}
+                <div class="profile-details">
+                    <p><strong>First name: </strong>{{ doctor.doctor_first_name }}</p>
+                    <p><strong>Last name: </strong>{{ doctor.doctor_last_name }}</p>
+                    <p><strong>Email: </strong>{{ doctor.doctor.email }}</p>
+                    <p><strong>Phone: </strong>{{ doctor.phone }}</p>
+                    <p><strong>Speciality name: </strong>{{ doctor.speciality_name }}</p>
+                    <p><strong>Experience: </strong>{{ doctor.experience }}</p>
+                    <p><strong>About: </strong>{{ doctor.about }}</p>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
 
-    {% for doctor in doctors %}
-        {{ doctor.title }}
-        {{ doctor.doctor_first_name }}
-        {{ doctor.doctor_last_name }}<br>
-        {{ doctor.speciality_name }}<br>
-        {{ doctor.about }}<br>
-        {{ doctor.experience }}<br>
-        {{ doctor.working_days }}<br>
-    {% endfor %}
 
 {% endblock %}
