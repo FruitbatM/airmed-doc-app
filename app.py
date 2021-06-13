@@ -113,7 +113,7 @@ def logout():
 @app.route("/doctor_login", methods=["GET", "POST"])
 def doctor_login():
     if request.method == "POST":
-        # check if username exists in the database
+        # check if email exists in the database
         existing_doctor = mongo.db.doctors.find_one(
             {"email": request.form.get("email").lower()})
 
@@ -130,19 +130,13 @@ def doctor_login():
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
+                return redirect(url_for("doctor_login"))
 
         else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-    return render_template("login.html")
-
-
-@app.route("/get_doctors")
-def get_doctors():
-    doctors = mongo.db.doctors.find()
-    return render_template("doctor_profile.html", doctors=doctors)
+    return render_template("doctor_login.html")
 
 
 @app.route("/add_doctor", methods=["GET", "POST"])
@@ -164,6 +158,19 @@ def add_doctor():
 
     specialities = mongo.db.specialities.find().sort("speciality_name", 1)
     return render_template("add_doctor.html", specialities=specialities)
+
+
+@app.route("/doctor_profile/<email>", methods=["GET", "POST"])
+def doctor_profile(email):
+    # grab the session user's email from the database
+    user = mongo.db.doctors.find_one({"email": session["user"]})
+    email = user["email"]
+    doctors = mongo.db.doctors.find({"email": user["email"]})
+    if session["user"]:
+        return render_template(
+            "doctor_profile.html", email=email, doctors=doctors)
+
+    return redirect(url_for("doctor_login"))
 
 
 if __name__ == "__main__":
