@@ -29,16 +29,29 @@
                     </div>
                     <!-- speciality name -->
                     <div class="input-field col s6">
-                        <input  id="speciality_name" name="speciality_name" type="text" class="validate" required>
-                        <label for="speciality_name">Speciality name</label>
+                        <select class="options" id="speciality_name" name="speciality_name" 
+                            required class="validate" onchange="changeOption()">
+                            <option value="" required disabled selected>Select speciality</option>
+                            <option value="1">Cardiology</option>
+                            <option value="2">Dentist</option>
+                            <option value="3">Dermatology</option>
+                            <option value="4">Gynecology</option>
+                            <option value="5">Oncology</option>
+                            <option value="6">Orthopedics</option>
+                            <option value="7">Neurology</option>
+                            <option value="8">Pediatrics</option>
+                            <option value="9">Psychiatry</option>
+                        </select>
                     </div>
+                    <!-- experience -->
                     <div class="input-field col s6">
                         <input  id="experience" name="experience" type="text" class="validate" required>
                         <label for="experience">Experience</label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label for="textarea1">About</label>
+                        <textarea id="about" name="about" minlength="10" maxlength="100" 
+                            class="materialize-textarea validate"></textarea>
+                        <label for="about">About</label>
                     </div>
                     <div class="row">
                         <button type="submit" class="col s12 m8 offset-m2 btn-large sign-btn center-align">
