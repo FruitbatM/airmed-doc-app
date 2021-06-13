@@ -1,9 +1,10 @@
 // jQuery for MaterializeCSS initialization
 
 $(document).ready(function(){
-  $(".dropdown-trigger").dropdown();
-
   $('select').formSelect();
+  $('.dropdown-trigger').dropdown({
+      coverTrigger: false
+  });
   
   $('.sidenav').sidenav(
     {
