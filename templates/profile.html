@@ -10,19 +10,23 @@
             </h3>
         </div>
     </div>
+
     <div class="row">
-        {% for user in users %}
-            <div class="col s12">
-                <div class="card-panel">
-                    <div class="profile-item">
-                        <strong>First name: </strong>{{ user.first_name }}
-                        <strong>Last name: </strong>{{ user.last_name }}<br>
-                        <strong>Email address: </strong>{{ user.email }}<br>
-                        <strong>Tel: </strong>{{ user.tel }}<br>
+        <div class="col s12 dashboard-profile">
+            <h4 class="center-align">My Dashboard</h4>
+            <div class="dashboard">
+
+                {% for user in users %}
+                    <div class="profile-details">
+                        <p><strong>First name: </strong>{{ user.first_name }}</p>
+                        <p><strong>Last name: </strong>{{ user.last_name }}<br></p>
+                        <p><strong>Email address: </strong>{{ user.email }}<br></p>
+                        <p><strong>Tel: </strong>{{ user.tel }}<br></p>
                     </div>
-                </div>
+                {% endfor %}
+ 
             </div>
-        {% endfor %}
+        </div>
     </div>
 
 {% endblock %}
