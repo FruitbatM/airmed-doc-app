@@ -148,16 +148,22 @@ def get_doctors():
 @app.route("/add_doctor", methods=["GET", "POST"])
 def add_doctor():
     if request.method == "POST":
-        # process the form data
-        print("Form data:")
-        print("First name: {}, Last name: {}".format(
-            request.form.get("first_name"), request.form.get(
-                "last_name")
-        ))
-        # redirect to home page
-        return redirect(url_for("home"))
+        doctor = {
+            "title": request.form.get("title"),
+            "doctor_first_name": request.form.get("doctor_first_name"),
+            "doctor_last_name": request.form.get("doctor_last_name"),
+            "email": request.form.get("email"),
+            "phone": request.form.get("phone"),
+            "speciality_name": request.form.get("speciality_name"),
+            "about": request.form.get("about"),
+            "experience": request.form.get("experience")
+        }
+        mongo.db.doctors.insert_one(doctor)
+        flash("Doctor successfully added")
+        return redirect(url_for("add_doctor"))
 
-    return render_template("add_doctor.html")
+    specialities = mongo.db.specialities.find().sort("speciality_name", 1)
+    return render_template("add_doctor.html", specialities=specialities)
 
 
 if __name__ == "__main__":
