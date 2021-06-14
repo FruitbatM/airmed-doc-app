@@ -125,10 +125,68 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 
 
 # Testing
+
 Testing process was written in a separate file. 
 Please click [here](testing.md) for the testing process.
 
 # Deployment
+
+## Clone the GitHub Repository
+
+## Database Deployment
+
+## Version Control
+
+[Git](https://git-scm.com/) as a local repository and [GitHub](https://github.com/) as a remote repository were used for this project. Detailed elaboration please find below:
+
+1. Create a remote repository in GitHub by clicking **"New repository"** on the main page<br>
+
+2. Use **Code Institute Template**, put the repository name and click Create Repository making sure to select public<br>
+
+3. Open the repository with [Gitpod](https://www.gitpod.io/). By using Code Institue Template, initialisation including initial commit is done so no need to do `git init` command when open IDE, or to use `git push -u origin main` command for my first commit. `gitignore` file, which is very important for the project including some confidential information, is created with Code Institute template so not necessary to create it.<br>
+
+## Deploy to Heroku
+
+The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/), which is a cloud platform with a service supporting several programming languages, because GitHub can only host a static website
+
+Before deploying the website to Heroku, there are three important steps to follow to make the application work in Heroku correctly.
+
+1. Create `requirements.txt` file that contains the names of packages being used in Python. It is important to update the file if other packages or modules are installed during the project.
+2. Create `Procfile` that contains the name of the application file so that Heroku knows what to run.
+3. Push them into GitHub.
+
+Once above steps have been followed the website can be deployed. Please find the steps of the deployment in Heroku:
+
+1. Create an account in Heroku
+
+2. Click **New** & **Create new app** to create a new app
+
+3. Put an app name, which must be unique, choose a region and click create app
+
+4. Go to **Deploy** section and click **Connect to GithHub**
+
+5. Search for the repository by the repository name and connect it
+
+6. Before clicking Enable Automatic Deploys, hidden variables such as IP address, PORT, SECRET_KEY, MONGO_URI and MONGO_DATABASE need to be recorded in Heroku. Go to **Settings**, click **Reveal Config Vars** and fill out necessary keys and values.
+
+7. Once all the hidden variables are recorded, then click **Enable Automatic Deploys** and click **Deploy Branch** (Main should be selected unless you want other branches to be deployed).
+
+8. When the app is deployed by Heroku correctly, there is a confirmation message and you can access the app.
+
+**Note**<br>
+*It is important NOT to set `debug=True` when deploying the website. As this is a project for my study, I keep `debug=True` even after the deployment but only while the app is being built and make sure to change it to `debug=False` before the submission*.
+
+### Connecting to Mongodb
+From the CLI:
+
+
+
+`mongo "mongodb<url connection string>" --username root`
+
+## Deployment Platform
+
+#### Creating a Heroku app
+
 
 # Credits
 
