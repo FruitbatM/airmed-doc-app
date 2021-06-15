@@ -1,13 +1,18 @@
 //Add Google Map
-
-let map;
-
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: { 
-        lat: 53.3244431, 
-        lng: -6.3857893
-      },
-      zoom: 10
+    // Airmed clinic location
+    const airmed = {
+      lat: 53.3244431, 
+      lng: -6.3857893
+    };
+    // The map centered at Airmed
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: airmed,
+    });
+    // Add marker
+    const marker = new google.maps.Marker({
+      position: airmed,
+      map: map,
     });
   }
