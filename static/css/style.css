@@ -110,10 +110,14 @@ select[required]{
 }
 
 #map {
-    height: 650px;
-    width: 100%;
+    height: 300px;
+    width: 80%;
+    margin: auto;
   }
 
+#address {
+    margin-bottom: 1rem;
+}
 
 /* Media Queries */
 /* Display on large devices */
