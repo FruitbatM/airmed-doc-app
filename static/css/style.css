@@ -109,6 +109,11 @@ select[required]{
     top: 0;
 }
 
+#map {
+    height: 650px;
+    width: 100%;
+  }
+
 
 /* Media Queries */
 /* Display on large devices */
