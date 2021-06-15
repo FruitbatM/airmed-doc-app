@@ -52,6 +52,29 @@ The project was created as a **Milestone Project 3** as a part of **Diploma in F
 
 ### Visitor Stories
 
+1. As a site visitor, I would like to gain an understanding of the website's purpose from the landing page.
+2. As a site visitor, I would like to easily navigate through the site on all devices and find what I am looking for with an ease.
+3. As a site visitor, I would like to see clinic's location and address on the map.
+
+### Patient Stories
+
+1. As a patient, I would like to have an option to register on the site and to create my personal account.
+2. As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.
+3. As a patient, I want to be able to update my personal data.
+4. As a patient, I want to have an option to make an appointment with a medical professional.
+5. As a patient, I want to be able to view the appointment I made and have an option to cancel the same.
+
+### Doctor Stories
+
+1. As a doctor, I want to be able to see my personal data.
+2. As a doctor, I want to be able to view the appointments that were booked with me.
+3. As a doctor, I want to have an option to confirm / reject the made appointment.
+
+### Administrator Stories
+
+1. As an admin, I want to be able to edit and delete patient and doctor data to ensure it adheres to site conditions.
+2. As an admin, I would like to have an option to add new doctor and his/her personal data on the system.
+
 ## Strategy
 
 ### Project Goals
@@ -138,7 +161,8 @@ To create a local copy of the repository please follow the below steps:
 1. Login into GitHub with your account.
 2. Go to the [project repository](https://github.com/FruitbatM/airmed-doc-app).
 3. Click on the "Code" button (located next to the green "Gitpod" button).
-![GitHub Code button](readme/images/clone.jpg)
+
+<h2 align="center"><img src="readme/images/clone.jpg" alt="GitHub Clone info" target="_blank" width="60%" height="60%"></h2>
 
 4. From the dropdown menu copy the HTTPS URL.
 5. In your local IDE open the terminal.
@@ -191,17 +215,6 @@ Once above steps have been followed the website can be deployed. Please find the
 
 **Note**<br>
 *It is important NOT to set `debug=True` when deploying the website. As this is a project for my study, I keep `debug=True` even after the deployment but only while the app is being built and make sure to change it to `debug=False` before the submission*.
-
-### Connecting to Mongodb
-From the CLI:
-
-
-
-`mongo "mongodb<url connection string>" --username root`
-
-## Deployment Platform
-
-#### Creating a Heroku app
 
 
 # Credits
