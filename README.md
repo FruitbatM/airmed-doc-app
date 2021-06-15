@@ -133,6 +133,22 @@ Please click [here](testing.md) for the testing process.
 
 ## Clone the GitHub Repository
 
+To create a local copy of the repository please follow the below steps:
+
+1. Login into GitHub with your account.
+2. Go to the [project repository](https://github.com/FruitbatM/airmed-doc-app).
+3. Click on the "Code" button (located next to the green "Gitpod" button).
+![GitHub Code button](readme/images/clone.jpg)
+
+4. From the dropdown menu copy the HTTPS URL.
+5. In your local IDE open the terminal.
+6. Change your working directory to the location where you want the cloned project saved.
+7. Type "git clone" and paste copied URL from Step 4.
+
+    `git clone //github.com/USERNAME/REPOSITORY`
+
+8. Press enter to create your local clone.
+
 ## Database Deployment
 
 ## Version Control
