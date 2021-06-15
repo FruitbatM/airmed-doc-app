@@ -70,6 +70,17 @@ nav {
     text-shadow: 0.05rem 0.05rem #000;;
 }
 
+.card-panel {
+    border-radius: 1rem;
+}
+
+#register-form {
+    margin-top: 2rem;
+}
+
+#register-heading {
+    margin-top: 3rem;
+}
 
 /* footer styling*/
 .page-footer {
