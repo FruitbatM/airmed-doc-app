@@ -31,6 +31,32 @@
       		</li>
     	</ul>
   	</div>
+	  <!-- Search feature -->
+	<div class="container" id="search-container">
+		<div class="row card-panel grey lighten-5">
+			<form action="{{ url_for('search') }}" method="POST" class="col s12">
+				<div class="row valign-wrapper center-align">
+					<div class="input-field col s6">
+						<select class="options" id="speciality_name" name="speciality_name" required class="validate">
+							<option value="" required disabled selected>Please select speciality</option>
+							{% for speciality in specialities %}
+								<option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="col s12 m4">
+						<a href="#" class="btn">GO</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+
+
 	<section id="specialties">
 		<div class="row">
 			<div class="col s12">

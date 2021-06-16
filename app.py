@@ -32,6 +32,13 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    specialities = mongo.db.specialities.find({"$text": {"$search": query}})
+    return render_template("home.html", specialities=specialities)
+
+
 # Register function was adapted from Code Institute walkthrough project
 # Patient registration
 @app.route("/register", methods=["GET", "POST"])
