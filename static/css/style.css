@@ -74,6 +74,14 @@ nav {
     border-radius: 1rem;
 }
 
+.card-action a {
+    margin-right: 0 !important;
+}
+
+#speciality {
+    text-align: center;
+}
+
 #register-form {
     margin-top: 2rem;
 }
