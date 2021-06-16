@@ -2,36 +2,14 @@
 {% set active_page = 'about' %}
 
 {% block content %}
-<!--Slider-->
-	<div class="slider">
-		<ul class="slides">
-			<li>
-				<img src="{{ url_for('static', filename='images/carousel-1.jpg') }}">
-				<div class="caption right-align">
-					<h2>Find your Doctor and schedule an appointment</h2>
-					<h5 class="light grey-text text-lighten-3">Airmed Health Clinic</h5>
-					<a href="{{ url_for('register') }}" class="btn waves-effect">REGISTER</a>
-				</div>
-			</li>
-			<li>
-        		<img src="{{ url_for('static', filename='images/carousel-2.jpg') }}">
-        		<div class="caption left-align">
-          			<h2>Left Aligned Caption</h2>
-          			<h5 class="light grey-text text-lighten-3">Here's our small slogan</h5>
-					<a href="{{ url_for('register') }}" class="btn waves-effect">REGISTER</a>
-        		</div>
-      		</li>
-      		<li>
-		  		<img src="{{ url_for('static', filename='images/carousel-3.jpg') }}">
-        		<div class="caption right-align">
-					<h2>Right Aligned Caption</h2>
-        			<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-					<a href="{{ url_for('register') }}" class="btn waves-effect">REGISTER</a>
-        		</div>
-      		</li>
-    	</ul>
-  	</div>
-  
+<!-- Parallax -->
+	<div class="parallax-container">
+		<div class="parallax">
+			<img src="{{ url_for('static', filename='images/doctor_writing.jpg') }}">
+		</div>
+		<h3 class="parallax-heading center-align">Get the fastest access to the best doctors</h3>
+		<a href="{{ url_for('register') }}" class="btn btn-large btn-register waves-effect">REGISTER</a>
+	</div>
 	<section id="about-us">
 		<div class="container">
 			<div class="row">
@@ -51,10 +29,11 @@
 					</p>
 				</div>
 			</div>
-			<div class="row center-align">
-				<div class="col s12">
-					<img src="static/images/clinic.jpg" alt="clinic building" class="responsive-img">
-				</div>
+		</div>
+		<!-- Parallax -->
+		<div class="parallax-container">
+			<div class="parallax">
+				<img src="{{ url_for('static', filename='images/clinic_blur.jpg') }}">
 			</div>
 		</div>
 		<div class="container">
@@ -63,8 +42,11 @@
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 				</div>
 			</div>
-			<div class="col s12 center-align">
-				<img src="static/images/clinic-about.jpg" alt="doctor showing scan to the patient" class="responsive-img">
+		</div>
+		<!-- Parallax -->
+		<div class="parallax-container">
+			<div class="parallax">
+				<img src="{{ url_for('static', filename='images/clinic-about.jpg') }}" alt="doctor showing scan to the patient">
 			</div>
 		</div>
 	</section>

@@ -90,6 +90,26 @@ nav {
     margin-top: 3rem;
 }
 
+.btn-register {
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parallax-container {
+    height: 30rem ;
+  }
+
+.parallax-heading {
+    position: absolute;
+    top: 20%;
+    font-family: 'Roboto', sans-serif;
+    color: #F68C48;
+    text-shadow: 0.1rem 0.1rem #282828;
+    padding-left: 0.7rem;
+    font-weight: bold;
+}
+
 /* footer styling*/
 .page-footer {
     background-color: #247BA0;
@@ -139,10 +159,33 @@ select[required]{
 }
 
 /* Media Queries */
+
+/* Display on tablet devices */  
+@media only screen 
+  and (min-width : 768px) 
+  and (max-width : 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .parallax-heading {
+        position: absolute;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
 /* Display on large devices */
 @media screen 
-and (min-width: 1024px) {
+  and (min-width: 1024px) {
     .brand-logo {
         padding-left: 1rem !important;
+    }
+
+    .parallax-heading {
+        position: relative;
+        margin-top: 3rem;
+    }
+
+    .btn-register {
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
