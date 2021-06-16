@@ -30,6 +30,10 @@ nav {
     text-shadow: 0.2rem 0.2rem #282828;
 }
 
+#search-container {
+    margin-top: 5rem;
+}
+
 #about-us {
     margin-top: 2.5;
     margin-bottom: 4rem;
