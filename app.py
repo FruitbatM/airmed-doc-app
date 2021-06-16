@@ -72,12 +72,13 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
+                        existing_user["password"],
+                        request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
                         request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                return redirect(
+                        url_for("profile", username=session["user"]))
 
             else:
                 # invalid password match
@@ -128,11 +129,12 @@ def doctor_login():
         if existing_doctor:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_doctor["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
+                        existing_doctor["password"],
+                        request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
                         request.form.get("username")))
-                    return redirect(url_for(
+                return redirect(url_for(
                         "doctor_profile", username=session["user"]))
 
             else:
