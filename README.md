@@ -141,10 +141,45 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 
 ## Frameworks, Libraries and Programs
 
+- [Materialize](https://materializecss.com/getting-started.html) was used to aid in responsive, mobile-first website design.I used Materialize to create grid layouts, navbar, cards, forms, buttons and other features.
+- [MongoDB](https://www.mongodb.com/) was used for the backend database.
+- [Git](https://git-scm.com/) was used for version control.
+- [GitHub](https://github.com/) was used to store the project repository and deploy the site via GitHub pages.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) was used to generate HTML from site templates.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) the project uses the Flask micro-web framework to simplify web server tasks.
+- [Werkzeug](https://palletsprojects.com/p/werkzeug/) - the project uses the Werkzeug WSGI library to manage the Web Server Gateway Interface and related tasks.
+- [PyMongo](https://pypi.org/project/pymongo/) contains tools for interacting with MongoDB database from Python.
+- [dnspython](https://pypi.org/project/dnspython/) is a DNS toolkit for Python.
+- [jQuery](https://jquery.com/) was used to simplify DOM manipulation.
+- [Balsamiq](https://balsamiq.com/) was used to create the wireframes for the website.
+- [Font Awesome](https://fontawesome.com/) icons were used throughout the website for better user experience.
+- [Google Fonts](https://fonts.google.com/) was used to import the fonts to the website.
+- [Favicon](https://favicon.io/favicon-converter/) was used to create the favicon for the website.
+- [CSS Tricks](https://css-tricks.com/) was used as a general source.
+- [W3School](https://www.w3schools.com/) was used as a general source.
+- [Stackoverflow](https://stackoverflow.com/) was used as a general source.
+- [GitHub](https://github.com/) was used for repository hosting and for storing the source code.
+- [Gitpod](https://gitpod.io/) was used as the development environment for writing the code.
+- [Git](https://git-scm.com/) was used as version control system to add, commit and push code to GitHub.
+- [Adobe Photoshop Express](https://photoshop.adobe.com/) was used for resizing and cropping the images used on the website.
+- [TinyJPG](https://tinyjpg.com/) was used for compressing images while preserving transparency.
+- [Techsini](http://techsini.com/multi-mockup/index.php) was used to create the responsive mockup image.
+- [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab) was used to modifiy couple of images.
+- [Coolors](https://coolors.co/) was used for colour palette used on the website.
+- [CSS Autoprefixer](https://autoprefixer.github.io/) was used for adding CSS vendor prefixes.
+- [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to test and debug the code.
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) was used to display Google Map within the website.
+- [Cloudinary](https://cloudinary.com/) was used to store images and handle image uploading.
+- [Randomkeygen](https://randomkeygen.com/) was used to generate random passwords and keys.
+
+## Platforms
+- [Heroku](https://www.heroku.com/platform) - the project uses Heroku as it's deployment platform.
+
 ## Validation
 - [W3C Markup Validation Service](https://validator.w3.org/) was used for Markup validation.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used for CSS code validation.
 - [JSHint](https://jshint.com/) was used for JavaScript code validation.
+- []()
 
 
 # Testing
