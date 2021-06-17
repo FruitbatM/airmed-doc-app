@@ -15,16 +15,14 @@
         <div class="col s12 dashboard-profile">
             <h4 class="center-align">My Dashboard</h4>
             <div class="dashboard">
-
-                {% for user in users %}
+                {% for profile in profiles %}
                     <div class="profile-details">
-                        <p><strong>First name: </strong>{{ user.first_name }}</p>
-                        <p><strong>Last name: </strong>{{ user.last_name }}<br></p>
-                        <p><strong>Email address: </strong>{{ user.email }}<br></p>
-                        <p><strong>Tel: </strong>{{ user.tel }}<br></p>
+                        <p><strong>First name: </strong>{{ profile.first_name }}</p>
+                        <p><strong>Last name: </strong>{{ profile.last_name }}<br></p>
+                        <p><strong>Email: </strong>{{ profile.email }}<br></p>
+                        <p><strong>Phone: </strong>{{ profile.tel}}<br></p>
                     </div>
                 {% endfor %}
- 
             </div>
         </div>
     </div>

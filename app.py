@@ -47,18 +47,20 @@ def register():
         # check if username already exists in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
+
         if existing_user:
             flash("Username with this name already exists")
             return redirect(url_for("register"))
 
         register = {
-            "first_name": request.form.get("first_name").capitalize(),
-            "last_name": request.form.get("last_name").capitalize(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower(),
-            "tel": request.form.get("tel")
-
+            "first_name": "",
+            "last_name": "",
+            "gender": "",
+            "dob": "",
+            "email": "",
+            "tel": ""
         }
         mongo.db.users.insert_one(register)
 
@@ -66,6 +68,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("You have been Successfully Registered")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -79,11 +82,11 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                        existing_user["password"],
-                        request.form.get("password")):
+                    existing_user["password"],
+                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
-                        request.form.get("username")))
+                    request.form.get("username")))
                 return redirect(
                         url_for("profile", username=session["user"]))
 
@@ -96,6 +99,7 @@ def login():
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
+
     return render_template("login.html")
 
 
@@ -107,13 +111,12 @@ def profile(username):
     username = user["username"]
     first_name = user["first_name"]
     last_name = user["last_name"]
-    email = user["email"]
-    tel = user["tel"]
+    profiles = mongo.db.users.find({"username": user["username"]})
 
     if session["user"]:
         return render_template(
             "profile.html", username=username, first_name=first_name,
-            last_name=last_name, email=email, tel=tel)
+            last_name=last_name, profiles=profiles)
 
     return redirect(url_for("login"))
 
