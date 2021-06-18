@@ -46,6 +46,10 @@ nav {
     background-color: #70C1B3;
 }
 
+.carousel-item {
+    z-index: -1 !important;
+}
+
 .patient-heading {
     margin: 2.5rem;
     font-family: 'Montserrat', sans-serif;
@@ -116,6 +120,7 @@ a.edit-profile {
 
 .card-panel {
     border-radius: 1rem;
+    padding: 1rem;
 }
 
 .card-title {
@@ -240,4 +245,10 @@ select[required]{
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    .carousel {
+        height: 510px !important;
+    }
+    
+
 }
