@@ -9,33 +9,38 @@
             <hr>
         </div>
     </div>
+
     <div class="row">
-        <div class="col s12">
-            <div class="dashboard">
-                {% for profile in profiles %}
-                    <div class="profile-details">
-                        <p>
-                            <strong>Name:</strong><br>
-                            {{ profile.first_name }} {{ profile.last_name }}
-                        </p>
-                        <p>
-                            <strong>Email:</strong><br>
-                            {{ profile.email }}
-                        </p>
-                        <p>
-                            <strong>Phone: </strong><br>
-                            {{ profile.phone}}
-                        </p>
-                        <p>
-                            <strong>Gender: </strong><br>
-                            {{ profile.gender}}
-                        </p>
-                        <p>
-                            <strong>Date of Birth: </strong><br>
-                            {{ profile.dob}}
-                        </p>
-                    </div>
-                {% endfor %}
+        <div class="col s12 m5">
+            <div class="card patient-card">
+                <div class="card-content">
+                    <span class="card-title center-align">{{ first_name }}'s details</span>
+                    <hr width="50%">
+                    {% for profile in profiles %}
+                        <div class="profile-details">
+                            <p class="para-details">
+                                <strong>Name:</strong><br>
+                                {{ profile.first_name }} {{ profile.last_name }}
+                            </p>
+                            <p class="para-details">
+                                <strong>Email:</strong><br>
+                                {{ profile.email }}
+                            </p>
+                            <p class="para-details">
+                                <strong>Phone:</strong><br>
+                                {{ profile.phone}}
+                            </p>
+                            <p class="para-details">
+                                <strong>Gender:</strong><br>
+                                {{ profile.gender}}
+                            </p>
+                            <p class="para-details">
+                                <strong>Date of Birth:</strong><br>
+                                {{ profile.dob}}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

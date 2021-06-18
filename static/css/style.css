@@ -63,6 +63,15 @@ nav {
     letter-spacing: 0.12rem;
 }
 
+.para-details {
+    padding: 0.6rem;
+}
+
+.patient-card {
+    background-color: #B9DFD2;
+    border-radius: 1rem;
+}
+
 .sign-btn {
     background-color: #F68C48;
     color: #ffffff;
