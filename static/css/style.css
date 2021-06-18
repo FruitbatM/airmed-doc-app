@@ -65,11 +65,23 @@ nav {
 
 .para-details {
     padding: 0.6rem;
+    font-size: 1.5rem;
 }
 
 .patient-card {
     background-color: #B9DFD2;
     border-radius: 1rem;
+    padding-bottom: 2rem;
+}
+
+a.edit-profile {
+    color: #f18541;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.fa-user-edit {
+    font-size: 1.2rem;
 }
 
 .sign-btn {
@@ -104,6 +116,14 @@ nav {
 
 .card-panel {
     border-radius: 1rem;
+}
+
+.card-title {
+    color: #247BA0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500 !important;
+    font-size: 2rem !important;
+    letter-spacing: 0.1rem;
 }
 
 .card-action a {

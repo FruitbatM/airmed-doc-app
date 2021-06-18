@@ -23,4 +23,11 @@ $(document).ready(function(){
       height: 450
     }
   );
+
+  $('.datepicker').datepicker(
+    {
+      autoClose: true
+    }
+  );
+
 });

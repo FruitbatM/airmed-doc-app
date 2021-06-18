@@ -40,6 +40,13 @@
                             </p>
                         </div>
                     {% endfor %}
+                    <!-- Edit/ delete buttons -->
+                    <span>
+                        <a class="edit-profile left" href="{{ url_for('update_profile', username=session['user']) }}">
+                            <i class="fas fa-user-edit"></i>
+                            Edit Profile
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>

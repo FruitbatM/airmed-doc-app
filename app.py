@@ -121,6 +121,33 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/update_profile/<username>", methods=["GET", "POST"])
+def update_profile(username):
+    if request.method == "POST":
+        user = mongo.db.users
+        user.update(
+            {"username": session["user"]},
+            {"$set":
+                {
+                    "email": request.form.get("email"),
+                    "phone": request.form.get("phone"),
+                    "dob": request.form.get("dob")
+                }}
+        )
+        flash("Your profile was successfully updated")
+        return redirect(url_for("profile", username=session["user"]))
+
+    user = mongo.db.users.find_one({"username": session["user"]})
+    username = user["username"]
+    email = user["email"]
+    phone = user["phone"]
+    dob = user["dob"]
+
+    return render_template(
+        "update_profile.html",
+        username=username, email=email, phone=phone, dob=dob, user=user)
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies

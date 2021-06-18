@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% set active_page = 'profile' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <h4 class="center-align" id="profile-heading">Edit Profile</h4>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m5">
+            <div class="card patient-card">
+                <div class="card-content">
+                    <!-- Enter DOB -->
+                    <div class="row">
+                        <label for="dob" class="col s12 m5"><strong>Date of Birth</strong></label>
+                        <div class="col s12 md-8">
+                            <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                            <input type="text" class="datepicker" id="dob" name="dob" class="form-control" placeholder="DD/MM/YYYY" required value="{{ dob }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
