@@ -226,6 +226,10 @@ select[required]{
         position: absolute;
         font-family: 'Roboto', sans-serif;
     }
+
+    .carousel-item {
+         height: 100% !important; 
+    }
 }
 
 /* Display on large devices */
@@ -247,7 +251,7 @@ select[required]{
     }
 
     .carousel {
-        height: 510px !important;
+        height: 513px !important;
     }
     
 

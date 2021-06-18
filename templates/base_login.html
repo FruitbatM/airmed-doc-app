@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="doctor appointment application">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    {% block styles %}
+    {% endblock %}
+    <title>Airmed Doc Application</title>
+</head>
+<body>
+    <header>
+        <!-- Navbar - code source: Materialize CSS -->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{ url_for('home') }}" class="brand-logo">
+                    AIRMED
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="{{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
+                    <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
+                    {% if session.user %}
+                        <li class="{{ 'active' if active_page == 'profile' else '' }}">
+                            <a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                        <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
+                    {% else %}
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-trigger {{ 'active' if active_page == 'login' else '' }}" href="#!" 
+                            data-target="dropdown1">LOG IN<i class="fas fa-caret-down right"></i></a></li>
+                        <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+                <li><a href="{{ url_for('login') }}">PATIENT</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ url_for('doctor_login') }}">DOCTOR</a></li>
+        </ul>
+        <!-- Mobile navbar -->
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <a href="{{ url_for('home') }}" class="brand-logo">
+                    <h4 class="center-align">AIRMED</h4>
+                </a>
+            </li>
+            <li class="sidenav-close {{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
+            <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            {% if session.user %}
+                <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
+            {% else %}
+                <li class="{{ 'active' if active_page == 'login' else '' }}"><a href="{{ url_for('login') }}">LOG IN</a></li>
+                <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
+                    <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
+            {% endif %}
+        </ul>
+    </header>
+    <section>
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flash-messages">
+                        <h6><strong>{{ message }}</strong></h6>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- internal script file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPoIamA8ClFfv8tTm2sOFCpCtSrBUSxxw&callback=initMap&libraries=&v=weekly" defer></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>
