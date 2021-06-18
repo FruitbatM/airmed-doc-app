@@ -40,8 +40,27 @@ nav {
 }
 
 .flash-messages{
-    color: #F68C48;
+    color: #fafafa;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.05rem 0.05rem 0.05rem 1rem;
+    background-color: #70C1B3;
+}
+
+.patient-heading {
+    margin: 2.5rem;
     font-family: 'Montserrat', sans-serif;
+    color: #F18541;
+    font-weight: 500;
+    text-shadow: 0.1rem 0.1rem #343a40;
+    letter-spacing: 0.12rem;
+}
+
+#profile-heading {
+    color: #F18541;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-shadow: 0.1rem 0.1rem #343a40;
+    letter-spacing: 0.12rem;
 }
 
 .sign-btn {
