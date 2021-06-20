@@ -46,6 +46,14 @@
 
 The project was created as a **Milestone Project 3** as a part of **Diploma in Full Stack Software Development** with **Code Institute**. The project is developed using Python, JavaScript, HTML, CSS, and Materialize framework.
 
+AIRMED is an application that contains information about AIRMED, a fictional clinic, it doctors, and services. The application will provide the information required for the patientes to 
+
+In Irish mithyology, Airmed was the goddess of healing.
+
+App users will be able to make appointments quickly, while doctors are not involved in the appointment process, so their time will also be saved.
+
+
+
 # User Experience (UX)
 
 ## User Stories
