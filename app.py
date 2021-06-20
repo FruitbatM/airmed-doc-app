@@ -222,6 +222,24 @@ def doctor_profile(email):
     return redirect(url_for("doctor_login"))
 
 
+@app.route("/get_doctors/<speciality_name>", methods=["GET"])
+def get_doctors(speciality_name):
+    user = mongo.db.doctors.find_one({"speciality_name": session["user"]})
+    doctors = mongo.db.doctors.find(
+        {"speciality_name": user["speciality_name"]})
+    speciality_name = user["speciality_name"]
+    doctor_first_name = user["doctor_first_name"]
+    doctor_last_name = user["doctor_last_name"]
+    if session["user"]:
+        return render_template(
+            "get_doctors.html", doctors=doctors,
+            speciality_name=speciality_name,
+            doctor_first_name=doctor_first_name,
+            doctor_last_name=doctor_last_name)
+
+    return redirect(url_for("get_doctors"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
