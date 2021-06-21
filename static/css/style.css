@@ -39,7 +39,13 @@ nav {
 
 .slides h2 {
     font-family: 'Roboto', sans-serif;
-    text-shadow: 0.2rem 0.2rem #282828;
+    text-shadow: 0.08rem 0.08rem #fdf7f7;
+    color: #00234B;
+    font-weight: 700;
+}
+
+.slide-subh {
+    font-family: 'Montserrat', sans-serif;
 }
 
 #search-container {
