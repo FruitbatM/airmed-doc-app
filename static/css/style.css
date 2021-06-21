@@ -221,6 +221,7 @@ select[required]{
     margin-bottom: 1rem;
 }
 
+/* Display full screen height */
 .error-section {
     min-height: 85vh;
 }

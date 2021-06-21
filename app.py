@@ -27,6 +27,7 @@ def home():
     return render_template("home.html", specialities=specialities)
 
 
+# About page
 @app.route("/about")
 def about():
     return render_template("about.html")
@@ -34,9 +35,23 @@ def about():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query = request.form.get("query")
-    specialities = mongo.db.specialities.find({"$text": {"$search": query}})
-    return render_template("home.html", specialities=specialities)
+    specialities = mongo.db.specialities
+    result = specialities.find()
+
+    return result
+
+
+@app.route("/get_doctors", methods=["GET"])
+def get_doctors():
+
+    doctors = mongo.db.doctors.find_one()
+    doctor_first_name = doctors["doctor_first_name"]
+    doctor_last_name = doctors["doctor_last_name"]
+
+    return render_template(
+            "get_doctors.html", doctors=doctors,
+            doctor_first_name=doctor_first_name,
+            doctor_last_name=doctor_last_name)
 
 
 # Register function was adapted from Code Institute walkthrough project
@@ -222,22 +237,24 @@ def doctor_profile(email):
     return redirect(url_for("doctor_login"))
 
 
-@app.route("/get_doctors/<speciality_name>", methods=["GET"])
-def get_doctors(speciality_name):
-    user = mongo.db.doctors.find_one({"speciality_name": session["user"]})
-    doctors = mongo.db.doctors.find(
-        {"speciality_name": user["speciality_name"]})
-    speciality_name = user["speciality_name"]
-    doctor_first_name = user["doctor_first_name"]
-    doctor_last_name = user["doctor_last_name"]
-    if session["user"]:
-        return render_template(
-            "get_doctors.html", doctors=doctors,
-            speciality_name=speciality_name,
-            doctor_first_name=doctor_first_name,
-            doctor_last_name=doctor_last_name)
+# 404 error
+@app.errorhandler(404)
+def error_404(error):
+    '''
+    Handles 404 error (page not found)
+    '''
+    return render_template('error/404.html', error=True,
+                           title="Page not found"), 404
 
-    return redirect(url_for("get_doctors"))
+
+# 500 error
+@app.errorhandler(500)
+def error_500(error):
+    '''
+    Handles 500 error (Internal Server Error)
+    '''
+    return render_template('error/500.html', error=True,
+                           title="Internal Server Error"), 500
 
 
 if __name__ == "__main__":
