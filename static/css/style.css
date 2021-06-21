@@ -25,6 +25,18 @@ nav {
     margin-top: 7rem;
 }
 
+.dropdown-content {
+    background: #247BA0;
+}
+
+.dropdown-content li > a {
+    color: #fafafa;
+}
+
+.dropdown-content li > a:hover {
+    background: #16546e;
+}
+
 .slides h2 {
     font-family: 'Roboto', sans-serif;
     text-shadow: 0.2rem 0.2rem #282828;
