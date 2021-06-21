@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <section class="error-section">
+        <div class="row">
+            <div class="col s12" id="error-heading">
+                <h5 class="center-align">
+                    Looks like you took a wrong. <br>
+                    Click below to get back to the home page.
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+                <img class="responsive-img" src="{{ url_for('static', filename='images/404.jpg') }}" alt="404 error">
+        </div>
+        <div class="row">
+            <div class="col s12"></div>
+                <a class="btn btn-large waves-effect center-align" id="home-btn" href="{{ url_for('home') }}">Home</a>
+            </div>
+        </div>
+    </section>
+
+{% endblock%}

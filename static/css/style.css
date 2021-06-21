@@ -221,6 +221,23 @@ select[required]{
     margin-bottom: 1rem;
 }
 
+.error-section {
+    min-height: 85vh;
+}
+
+#error-heading > h5 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+#home-btn {
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5rem;
+}
+
 /* Media Queries */
 /* Display on tablet devices */  
 @media only screen 
