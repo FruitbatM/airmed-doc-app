@@ -241,7 +241,7 @@ def doctor_profile(email):
 @app.errorhandler(404)
 def error_404(error):
     '''
-    Handles 404 error (page not found)
+    Handles 404 error (Page not found)
     '''
     return render_template('error/404.html', error=True,
                            title="Page not found"), 404

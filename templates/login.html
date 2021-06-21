@@ -3,12 +3,12 @@
 
 {% block content %}
 
-    <div class="hero-image">
     <!-- Patient login -->
+    <div class="login-image">
         <div class="row">
             <form class="col s12" method="POST" action="{{ url_for('login') }}">
                 <div class="card-panel left">
-                    <h3 class="center-align patient-heading">Log in</h3>
+                    <h3 class="center-align login-heading">Log in</h3>
                         <!-- Username -->
                         <div class="input-field col s12">
                             <input  id="username" name="username" type="text" minlength="5" 
@@ -21,19 +21,19 @@
                                 maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                             <label for="password">Password</label>
                         </div>
-                    <div class="row">
-                        <button type="submit" class="col s12 m8 offset-m2 btn-large sign-btn center-align">
-                            Log In <i class="fas fa-sign-in-alt"></i>
-                        </button>
-                    </div>
-                    <div class="col s12">
-                        <p class="center-align">
-                            Don't have account? 
-                        <a href="{{ url_for('register') }}">Register account</a>
-                        </p>
-                    </div>
+                        <div class="row">
+                            <button type="submit" class="col s8 offset-s2 btn-large sign-btn center-align">
+                                Log In <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
+                        <div class="col s12">
+                            <p class="center-align">
+                                Don't have account? 
+                            <a href="{{ url_for('register') }}">Register account</a>
+                            </p>
+                        </div>
                 </div>
             </form>
+        </div>
     </div>
-
 {% endblock %}

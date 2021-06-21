@@ -48,20 +48,28 @@ nav {
 }
 
 /* The hero image */
-.hero-image {
+.doc-image {
+    background: url(../images/doctor_smartphone.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+.login-image {
     background: url(../images/woman_smarthphone.jpg) no-repeat center;
     background-size: cover;
     position: relative;
     min-height: 100vh;
 }
 
-.patient-heading {
-    margin: 2.5rem;
+.login-heading {
+    margin: 2rem;
     font-family: 'Montserrat', sans-serif;
     color: #F18541;
-    font-weight: 500;
+    font-weight: 600;
     text-shadow: 0.1rem 0.1rem #343a40;
     letter-spacing: 0.12rem;
+    font-size: 2.5rem;
 }
 
 #profile-heading {
