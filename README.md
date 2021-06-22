@@ -138,7 +138,24 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 
 ## Existing Features
 
+- Navigation menu
+    - responsive on all devices
+- Registration and Log in option for patients
+- Log in option for doctors
+- Personal profile
+- Appointment scheduling
+
+- Manage / Adding / Edit / Delete profiles
+
 ## Future Implementation
+
+- Real time chat
+- Video consultation
+- Payment integration
+- Smart scheduling
+- Appointment approval and rejection
+- Ratings & Reviews
+- Subscription packages
 
 ## Languages
 
