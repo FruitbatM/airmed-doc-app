@@ -22,15 +22,12 @@
                         </select>
                     </div>
                 </div>
-                    <div class="col">
-                        <!-- Enter DOB -->
-                        <div class="row">
-                            <label for="dob" class="col s12"><strong>Date of Birth</strong></label>
-                            <div class="col s12">
-                                <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                                <input type="text" class="datepicker" id="dob" name="dob" class="form-control" placeholder="DD/MM/YYYY" required value="{{ dob }}"><br>
-                            </div>
-                        </div>
+                <div class="col">
+                    <!-- Enter DOB -->
+                    <div class="row">
+                        <label for="dob" class="col s12"><strong>Date of Birth</strong></label>
+                            <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                            <input type="text" class="datepicker" id="dob" name="dob" class="form-control" placeholder="DD/MM/YYYY" required value="{{ dob }}"><br>
                     </div>
                 </div>
                 <!-- Email -->
@@ -41,19 +38,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <input id="phone" name="phone" type="tel" placeholder="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate" required>
                         <label for="Phone"></label>
                     </div>
                 </div>
-
-                <!-- Update profile button-->
+                <!-- Update profile and cancel buttons-->
                 <div class="row s12">
                     <div class="row s6">
                         <div class="btn-profile">
                             <button type="submit" class="btn btn-submit"><strong>Update Profile</strong></button>
                         </div>
-                    <!-- Cancel Button -->
                         <div class="btn-profile">
                             <a href="{{ url_for('profile', username=session['user']) }}" class="btn cancel-button">Cancel</a>
                         </div>
