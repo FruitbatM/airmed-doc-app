@@ -11,7 +11,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <form class="col s6 offset-s3" method="POST" action="#">
+            <form class="col s6 offset-s3" method="POST" action="{{ url_for('update_profile', username=session['user']) }}">
                 <div class="row">
                     <div class="input-field col s12">
                         <select class="options" id="gender" name="gender" required class="validate">

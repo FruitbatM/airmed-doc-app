@@ -29,9 +29,11 @@ def home():
 
 
 # About page
+# Show top specialities with icons
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    specialities = mongo.db.specialities.find()
+    return render_template("about.html", specialities=specialities)
 
 
 # Search for the list of doctors based on their speciality
@@ -139,9 +141,10 @@ def update_profile(username):
             {"username": session["user"]},
             {"$set":
                 {
+                    "gender": request.form.get("gender"),
+                    "dob": request.form.get("dob"),
                     "email": request.form.get("email"),
-                    "tel": request.form.get("tel"),
-                    "dob": request.form.get("dob")
+                    "tel": request.form.get("tel")
                 }}
         )
         flash("Your profile was successfully updated")
