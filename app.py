@@ -21,6 +21,7 @@ mongo = PyMongo(app)
 
 # Home page
 @app.route("/")
+# Show the list of specialities for user to select from the dropdown list
 @app.route("/home")
 def home():
     specialities = mongo.db.specialities.find()
@@ -33,25 +34,15 @@ def about():
     return render_template("about.html")
 
 
+# Search for the list of doctors based on their speciality
+# Currently not working
 @app.route("/search", methods=["GET", "POST"])
 def search():
     specialities = mongo.db.specialities
-    result = specialities.find()
-
-    return result
-
-
-@app.route("/get_doctors", methods=["GET"])
-def get_doctors():
-
-    doctors = mongo.db.doctors.find_one()
-    doctor_first_name = doctors["doctor_first_name"]
-    doctor_last_name = doctors["doctor_last_name"]
+    doctors = mongo.db.doctors.find()
 
     return render_template(
-            "get_doctors.html", doctors=doctors,
-            doctor_first_name=doctor_first_name,
-            doctor_last_name=doctor_last_name)
+            "search.html", specialities=specialities, doctors=doctors)
 
 
 # Register function was adapted from Code Institute walkthrough project
@@ -73,7 +64,7 @@ def register():
             "first_name": request.form.get("first_name"),
             "last_name": request.form.get("last_name"),
             "email": request.form.get("email"),
-            "phone": request.form.get("phone"),
+            "tel": request.form.get("tel"),
             "gender": "",
             "dob": ""
         }
@@ -87,6 +78,7 @@ def register():
     return render_template("register.html")
 
 
+# Patinet log in
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -118,6 +110,7 @@ def login():
     return render_template("login.html")
 
 
+# Profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session username from the database
@@ -136,6 +129,8 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Post profile form data to MongoDB
+# Link MongoDB gender data to form dropdown
 @app.route("/update_profile/<username>", methods=["GET", "POST"])
 def update_profile(username):
     if request.method == "POST":
@@ -145,7 +140,7 @@ def update_profile(username):
             {"$set":
                 {
                     "email": request.form.get("email"),
-                    "phone": request.form.get("phone"),
+                    "tel": request.form.get("tel"),
                     "dob": request.form.get("dob")
                 }}
         )
@@ -155,12 +150,13 @@ def update_profile(username):
     user = mongo.db.users.find_one({"username": session["user"]})
     username = user["username"]
     email = user["email"]
-    phone = user["phone"]
+    tel = user["tel"]
     dob = user["dob"]
+    gender = mongo.db.gender.find().sort("gender", 1)
 
     return render_template(
-        "update_profile.html",
-        username=username, email=email, phone=phone, dob=dob, user=user)
+        "update_profile.html", username=username, user=user,
+        email=email, tel=tel, dob=dob, gender=gender)
 
 
 @app.route("/logout")

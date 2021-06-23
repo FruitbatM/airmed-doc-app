@@ -9,6 +9,7 @@ $(document).ready(function(){
       coverTrigger: false
   });
   
+  
   $('.sidenav').sidenav(
     {
       edge: "right",

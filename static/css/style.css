@@ -187,6 +187,7 @@ a.edit-profile {
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #F68C48;
 }
 
 /* parallax - code was sourced from: https://materializecss.com/parallax.html */
@@ -198,10 +199,14 @@ a.edit-profile {
     position: absolute;
     top: 20%;
     font-family: 'Roboto', sans-serif;
-    color: #F68C48;
-    text-shadow: 0.1rem 0.1rem #282828;
+    text-shadow: 0.125rem 0.125rem 0.313rem #343a40;
+    color: #fff;
+    font-weight: 700;
     padding-left: 0.7rem;
-    font-weight: bold;
+}
+
+.btn-profile {
+    display: inline;
 }
 
 /* footer styling*/

@@ -28,7 +28,7 @@
                             </p>
                             <p class="para-details">
                                 <strong>Phone:</strong><br>
-                                {{ profile.phone}}
+                                {{ profile.tel}}
                             </p>
                             <p class="para-details">
                                 <strong>Gender:</strong><br>
@@ -40,7 +40,7 @@
                             </p>
                         </div>
                     {% endfor %}
-                    <!-- Edit/ delete buttons -->
+                    <!-- Edit button -->
                     <span>
                         <a class="edit-profile left" href="{{ url_for('update_profile', username=session['user']) }}">
                             <i class="fas fa-user-edit"></i>

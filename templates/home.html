@@ -45,38 +45,11 @@
 						</select>
 					</div>
 					<div class="col s12 m4">
-						<a href="#" class="btn btn-slider">GO</a>
+						<a href="{{ url_for('search') }}" class="btn btn-slider">GO</a>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-	
-	<section id="specialties">
-		<div class="row">
-			<div class="col s12">
-				<h3 class="center-align">Our Top Specialties</h3>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row" id="speciality">
-				{% for speciality in specialities %}
-					{% if loop.index is divisibleby 2 %}
-					<div class="col s6 m3 l2 offset-l1">
-						<div class="card">
-							<div class="card-image">
-								<img src="{{ speciality.icon_url }}">
-								<a href="#"></a>
-							</div>
-							<div class="card-action">
-								<a href="#">{{ speciality.speciality_name }}</a>
-							</div>
-						</div>
-					</div>
-					{% endif %}
-				{% endfor %}
-			</div>
-		</div>
-	</section>
 
 {% endblock%}
