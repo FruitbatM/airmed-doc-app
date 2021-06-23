@@ -25,12 +25,15 @@ nav {
     margin-top: 7rem;
 }
 
-
 .dropdown-content li > a {
     color: #fafafa;
 }
 
 .dropdown-content li > a:hover {
+    background: #16546e;
+}
+
+.nav-dropdown {
     background: #16546e;
 }
 
