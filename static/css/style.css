@@ -25,9 +25,6 @@ nav {
     margin-top: 7rem;
 }
 
-.dropdown-content {
-    background: #247BA0;
-}
 
 .dropdown-content li > a {
     color: #fafafa;
@@ -207,6 +204,7 @@ a.edit-profile {
 
 .btn-profile {
     display: inline;
+    text-align: center;
 }
 
 /* footer styling*/
