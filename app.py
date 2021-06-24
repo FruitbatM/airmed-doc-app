@@ -66,7 +66,7 @@ def register():
             "first_name": request.form.get("first_name"),
             "last_name": request.form.get("last_name"),
             "email": request.form.get("email"),
-            "tel": request.form.get("tel"),
+            "telephone": request.form.get("telephone"),
             "gender": "",
             "dob": ""
         }
@@ -80,7 +80,7 @@ def register():
     return render_template("register.html")
 
 
-# Patinet log in
+# Patient log in
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -112,8 +112,8 @@ def login():
     return render_template("login.html")
 
 
-# Profile
-@app.route("/profile/<username>", methods=["GET", "POST"])
+# Patient Profile
+@app.route("/profile/<username>", methods=["GET"])
 def profile(username):
     # grab the session username from the database
     user = mongo.db.users.find_one(
@@ -121,30 +121,37 @@ def profile(username):
     username = user["username"]
     first_name = user["first_name"]
     last_name = user["last_name"]
+    email = user["email"]
+    telephone = user["telephone"]
     profiles = mongo.db.users.find({"username": user["username"]})
 
     if session["user"]:
         return render_template(
             "profile.html", username=username, first_name=first_name,
-            last_name=last_name, profiles=profiles)
+            last_name=last_name, email=email, telephone=telephone, profiles=profiles)
 
     return redirect(url_for("login"))
 
 
-# Post profile form data to MongoDB
+# Post profile data to MongoDB
 # Link MongoDB gender data to form dropdown
 @app.route("/update_profile/<username>", methods=["GET", "POST"])
 def update_profile(username):
+    """
+    Function allows a registered user to edit and update their
+    profile details.
+    """
+    user = mongo.db.user.find_one({"email": session["user"]})
     if request.method == "POST":
         user = mongo.db.users
         user.update(
             {"username": session["user"]},
             {"$set":
                 {
-                    "gender": request.form.get("gender"),
+                    "gender": request.form.get("gender.patient_gender"),
                     "dob": request.form.get("dob"),
                     "email": request.form.get("email"),
-                    "tel": request.form.get("tel")
+                    "telephone": int(request.form.get("telephone"))
                 }}
         )
         flash("Your profile was successfully updated")
@@ -153,13 +160,13 @@ def update_profile(username):
     user = mongo.db.users.find_one({"username": session["user"]})
     username = user["username"]
     email = user["email"]
-    tel = user["tel"]
+    telephone = user["telephone"]
     dob = user["dob"]
-    gender = mongo.db.gender.find().sort("gender", 1)
+    gender = mongo.db.gender.find().sort("gender.patient_gender", 1)
 
     return render_template(
         "update_profile.html", username=username, user=user,
-        email=email, tel=tel, dob=dob, gender=gender)
+        email=email, telephone=telephone, dob=dob, gender=gender)
 
 
 @app.route("/logout")
@@ -223,15 +230,14 @@ def add_doctor():
     return render_template("add_doctor.html", specialities=specialities)
 
 
-@app.route("/doctor_profile/<email>", methods=["GET", "POST"])
-def doctor_profile(email):
+@app.route("/doctor_profile/<username>", methods=["GET", "POST"])
+def doctor_profile(username):
     # grab the session user's email from the database
-    user = mongo.db.doctors.find_one({"email": session["user"]})
-    email = user["email"]
-    doctors = mongo.db.doctors.find({"email": user["email"]})
+    user = mongo.db.doctors.find_one({"username": session["username"]})
+    doctors = mongo.db.doctors.find({"usernmae": user["username"]})
     if session["user"]:
         return render_template(
-            "doctor_profile.html", email=email, doctors=doctors)
+            "doctor_profile.html", username=username, doctors=doctors)
 
     return redirect(url_for("doctor_login"))
 
