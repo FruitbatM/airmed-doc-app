@@ -12,31 +12,31 @@
     <div class="row">
         <form class="col s6 offset-s3" method="POST" action="{{ url_for('update_profile', username=session['user']) }}">
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <select class="options" id="gender" name="gender" required class="validate">
-                        <option value="" required disabled selected>Please select gender</option>
-                        <option value="1">Female</option>
-                        <option value="2">Male</option>
+                        <label for="gender">Gender</label>
+                        {% for gen in gender %}
+                            <option value="{{ gender }}" required disabled selected></option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
-            <div class="col">
-                <!-- Enter DOB -->
-                <div class="row center-align">
-                    <label for="dob" class="col s12"><strong>Date of Birth</strong></label>
-                        <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                        <input type="text" class="datepicker" id="dob" name="dob" class="form-control" placeholder="DD/MM/YYYY" required value="{{ dob }}"><br>
+            <!-- Enter Age -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="text" id="age" name="age" class="form-control" required value="{{ age }}"><br>
+                    <label for="age">Age</label>
                 </div>
             </div>
             <!-- Email -->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <input type="text" id="email" name="email" value="{{ user.email }}" class="validate" required>
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <input id="telephone" name="telephone" type="tel" value="{{ user.telephone }}" placeholder="Phone" pattern="[0-9]{8}" class="validate" required>
                     <label for="Phone">Phone</label>
                 </div>

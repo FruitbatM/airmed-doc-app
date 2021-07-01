@@ -144,12 +144,13 @@ def update_profile(username):
     user = mongo.db.user.find_one({"email": session["user"]})
     if request.method == "POST":
         user = mongo.db.users
+        gender = mongo.db.gender
         user.update(
             {"username": session["user"]},
             {"$set":
                 {
-                    "gender": request.form.get("gender.patient_gender"),
-                    "dob": request.form.get("dob"),
+                    "gender": request.form.get("gen.gender"),
+                    "age": request.form.get("age"),
                     "email": request.form.get("email"),
                     "telephone": int(request.form.get("telephone"))
                 }}
@@ -161,12 +162,12 @@ def update_profile(username):
     username = user["username"]
     email = user["email"]
     telephone = user["telephone"]
-    dob = user["dob"]
-    gender = mongo.db.gender.find().sort("gender.patient_gender", 1)
+    age = user["age"]
+    gender = mongo.db.gender.find().sort("gender", 1)
 
     return render_template(
         "update_profile.html", username=username, user=user,
-        email=email, telephone=telephone, dob=dob, gender=gender)
+        email=email, telephone=telephone, age=age, gender=gender)
 
 
 @app.route("/logout")
