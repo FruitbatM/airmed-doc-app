@@ -68,7 +68,7 @@ def register():
             "email": request.form.get("email"),
             "telephone": request.form.get("telephone"),
             "gender": "",
-            "dob": ""
+            "age": ""
         }
         mongo.db.users.insert_one(register)
 
@@ -144,7 +144,6 @@ def update_profile(username):
     """
     user = mongo.db.users
     gender = mongo.db.gender.find()
-    print(gender)
     if request.method == "POST":
         user.update(
             {"username": session["user"]},
@@ -153,7 +152,7 @@ def update_profile(username):
                     "gender": request.form.get("gender"),
                     "age": request.form.get("age"),
                     "email": request.form.get("email"),
-                    "telephone": int(request.form.get("telephone"))
+                    "telephone": request.form.get("telephone")
                 }}
         )
         flash("Your profile was successfully updated")
