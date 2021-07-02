@@ -128,7 +128,8 @@ def profile(username):
     if session["user"]:
         return render_template(
             "profile.html", username=username, first_name=first_name,
-            last_name=last_name, email=email, telephone=telephone, profiles=profiles)
+            last_name=last_name, email=email, telephone=telephone,
+            profiles=profiles)
 
     return redirect(url_for("login"))
 
@@ -139,17 +140,17 @@ def profile(username):
 def update_profile(username):
     """
     Function allows a registered user to edit and update their
-    profile details.
+    profile details
     """
-    user = mongo.db.user.find_one({"email": session["user"]})
+    user = mongo.db.users
+    gender = mongo.db.gender.find()
+    print(gender)
     if request.method == "POST":
-        user = mongo.db.users
-        gender = mongo.db.gender
         user.update(
             {"username": session["user"]},
             {"$set":
                 {
-                    "gender": request.form.get("gen.gender"),
+                    "gender": request.form.get("gender"),
                     "age": request.form.get("age"),
                     "email": request.form.get("email"),
                     "telephone": int(request.form.get("telephone"))

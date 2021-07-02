@@ -15,8 +15,9 @@
                 <div class="input-field col s6">
                     <select class="options" id="gender" name="gender" required class="validate">
                         <label for="gender">Gender</label>
+                        <option value="" required disabled selected>Please select gender</option>
                         {% for gen in gender %}
-                            <option value="{{ gender }}" required disabled selected></option>
+                            <option value="{{ gen.sex }}">{{ gen.sex }}</option>
                         {% endfor %}
                     </select>
                 </div>
