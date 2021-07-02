@@ -276,6 +276,30 @@ select[required]{
     margin-top: 5rem;
 }
 
+/* Custom modal design - code source: https://www.jquery-az.com/materialize/demo.php?ex=53.0_4#! */
+.modal {
+    left: 0;
+    right: 0;
+    background-color: #e1f5fe;
+    padding: 0;
+    max-height: 40%;
+    width: 35%;
+    will-change: top, opacity;
+}
+
+.modal .modal-footer {
+    border-radius: 0 0 0.125rem 0.125rem;
+    background-color: #B9DFD2;
+    padding: 0.25rem 0.375rem;
+    height: 3.75rem;
+    width: 100%;
+    text-align: right;
+}
+
+#btn-delete {
+    margin-left: 1rem;
+}
+
 /* Media Queries */
 /* Display on tablet devices */  
 @media only screen 
