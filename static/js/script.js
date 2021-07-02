@@ -5,10 +5,18 @@ $(document).ready(function(){
 
   $('.parallax').parallax();
 
-  $('.dropdown-trigger').dropdown({
+  // Modal cannot be closed by clicking anywhere outside the modal itself
+  $('.modal').modal(
+    {
+      dismissible: false,
+    }
+  );
+
+  $('.dropdown-trigger').dropdown(
+    {
       coverTrigger: false
-  });
-  
+    }
+  );
   
   $('.sidenav').sidenav(
     {
@@ -24,11 +32,6 @@ $(document).ready(function(){
       height: 450
     }
   );
-
-  $('.datepicker').datepicker(
-    {
-      autoClose: true
-    });
 
     // Carousel Slider autoplay
     $('.carousel.carousel-slider').carousel({
