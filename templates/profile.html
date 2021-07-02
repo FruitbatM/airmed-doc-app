@@ -40,6 +40,26 @@
                             </p>
                         </div>
                     {% endfor %}
+                    
+                    <!-- Delete button -->
+                    <!-- Resource: sourced from Materialize: https://materializecss.com/modals.html#! and custom styled -->
+                    <span>
+                        <a type="button" class="btn modal-trigger" id="btn-delete" href="#modal1">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h5>Are you sure you want to delete patient profile?</h5>
+                                <p>A bunch of text</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
+                                <a href="#!" class="modal-close waves-effect waves-green btn red">Delete</a>
+                            </div>
+                        </div>
+                    </span>
                     <!-- Edit button -->
                     <span>
                         <a class="edit-profile left" href="{{ url_for('update_profile', username=session['user']) }}">

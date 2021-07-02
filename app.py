@@ -170,6 +170,26 @@ def update_profile(username):
         email=email, telephone=telephone, age=age, gender=gender)
 
 
+# Delete user profile
+@app.route("/delete_profile/<username>")
+def delete_profile(username):
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    newdata = {"$set": {
+        "email": " ",
+        "telephone": " ",
+        "gender": " ",
+        "age": " "
+        }}
+
+    user.update_one(newdata)
+
+    flash("Profile was successfully deleted")
+    return redirect(
+        url_for("profile", username=session["user"]))
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies
