@@ -262,6 +262,14 @@ def doctor_profile():
     return redirect(url_for("doctor_login"))
 
 
+@app.route("/doctor_logout")
+def doctor_logout():
+    # remove user from session cookies
+    flash("You have been successfully logged out")
+    session.pop("user")
+    return redirect(url_for("doctor_login"))
+
+
 # 404 error
 @app.errorhandler(404)
 def error_404(error):
