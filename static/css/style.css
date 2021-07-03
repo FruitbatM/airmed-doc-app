@@ -180,7 +180,13 @@ a.edit-profile {
 }
 
 #register-heading {
-    margin-top: 3rem;
+    margin: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #F18541;
+    font-weight: 600;
+    text-shadow: 0.1rem 0.1rem #343a40;
+    letter-spacing: 0.12rem;
+    font-size: 2.5rem;
 }
 
 .btn-register {
