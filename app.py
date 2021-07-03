@@ -191,38 +191,11 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/doctor_login", methods=["GET", "POST"])
-def doctor_login():
-    if request.method == "POST":
-        # check if email exists in the database
-        existing_doctor = mongo.db.doctors.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_doctor:
-            # ensure hashed password matches user input
-            if check_password_hash(
-                        existing_doctor["password"],
-                        request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
-                        request.form.get("username")))
-                return redirect(url_for(
-                        "doctor_profile", username=session["user"]))
-
-            else:
-                # invalid password match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("doctor_login"))
-
-        else:
-            # username doesn't exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
-    return render_template("doctor_login.html")
-
-
 @app.route("/add_doctor", methods=["GET", "POST"])
 def add_doctor():
+    """
+    Function to add a new doctor in the database
+    """
     if request.method == "POST":
         doctor = {
             "title": request.form.get("title"),
@@ -244,14 +217,47 @@ def add_doctor():
     return render_template("add_doctor.html", specialities=specialities)
 
 
-@app.route("/doctor_profile/<username>", methods=["GET", "POST"])
-def doctor_profile(username):
+@app.route("/doctor_login", methods=["GET", "POST"])
+def doctor_login():
+    """
+    Doctor log in function which checks that user email and password
+    match doctor values in the database
+    """
+    if request.method == "POST":
+        # Check if email exists in the database
+        existing_doctor = mongo.db.doctors.find_one(
+            {"email": request.form.get("email")})
+
+        if existing_doctor:
+            # Ensure that hashed password matches doctor's input
+            if check_password_hash(
+                        existing_doctor["password"],
+                        request.form.get("password")):
+                session["user"] = request.form.get("email")
+                flash("Welcome, dr. {}".format(
+                        request.form.get("email")))
+                return redirect(url_for(
+                        "doctor_profile", doctor_first_name=session["user"]))
+
+            else:
+                # Invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("doctor_login"))
+
+        else:
+            # Username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+    return render_template("doctor_login.html")
+
+
+@app.route("/doctor_profile", methods=["GET", "POST"])
+def doctor_profile():
     # grab the session user's email from the database
-    user = mongo.db.doctors.find_one({"username": session["username"]})
-    doctors = mongo.db.doctors.find({"usernmae": user["username"]})
+    doctor = mongo.db.doctors.find_one({"email": session["doctor"]})
     if session["user"]:
         return render_template(
-            "doctor_profile.html", username=username, doctors=doctors)
+            "doctor_profile.html", doctor=doctor)
 
     return redirect(url_for("doctor_login"))
 

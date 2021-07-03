@@ -9,11 +9,10 @@
             <form class="col s12" method="POST" action="{{ url_for('doctor_login') }}">
                 <div class="card-panel left">
                     <h3 class="center-align login-heading">Doctor Log in</h3>
-                        <!-- Username -->
+                        <!-- Email -->
                         <div class="input-field col s12">
-                            <input  id="username" name="username" type="text" minlength="5" 
-                                maxlength="15" class="validate" required>
-                            <label for="username">Username</label>
+                            <input  id="email" name="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
                         </div>
                         <!-- Password -->
                         <div class="input-field col s12">

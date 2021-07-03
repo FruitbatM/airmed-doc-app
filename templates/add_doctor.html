@@ -2,44 +2,45 @@
 {% set active_page = 'add_doctor' %}
 
 {% block content %}
-    <div class="row center-align">
-        <h3>Add new doctor</h3>
+    <h4 class="center-align patient-heading" id="register-heading">Add a new doctor</h4>
+    <!-- Register doctor profile -->
+    <div class="row" id="register-form">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_doctor') }}">
             <div class="card-panel">
                 <div class="row">
-                    <!-- first name -->
+                    <!-- First name -->
                     <div class="input-field col s6">
                         <input type="text" id="doctor_first_name" name="doctor_first_name" class="validate" required>
                         <label for="doctor_first_name">First Name</label>
                     </div>
-                    <!-- last name -->
+                    <!-- Last name -->
                     <div class="input-field col s6">
                         <input  id="doctor_last_name" name="doctor_last_name" type="text" class="validate" required>
                         <label for="doctor_last_name">Last Name</label>
                     </div>
-                    <!-- username -->
+                    <!-- Username -->
                     <div class="input-field col s6">
                         <input  id="username" name="username" type="text" minlength="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
                     </div>
-                    <!-- password -->
+                    <!-- Password -->
                     <div class="input-field col s6">
                         <input id="password" name="password" type="password" minlength="5" 
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
-                    <!-- email -->
+                    <!-- Email -->
                     <div class="input-field col s6">
                         <input id="email" name="email" type="email" class="validate" required>
                         <label for="email">Email</label>
                     </div>
-                    <!-- contact number -->
+                    <!-- Contact number -->
                     <div class="input-field col s6">
                         <input id="phone" name="phone" type="tel" placeholder="Phone xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate" required>
                         <label for="Phone"></label>
                     </div>
-                    <!-- speciality name -->
+                    <!-- Speciality name -->
                     <div class="input-field col s6">
                         <select class="options" id="speciality_name" name="speciality_name" required class="validate">
                             <option value="" required disabled selected>Select speciality</option>
@@ -48,7 +49,7 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <!-- experience -->
+                    <!-- Experience -->
                     <div class="input-field col s6">
                         <input  id="experience" name="experience" type="text" class="validate" required>
                         <label for="experience">Experience</label>
