@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% set active_page = 'profile' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col s12">
+            <h4 class="center-align" id="profile-heading">Edit dr. {{doctor.doctor_first_name}}'s Profile</h4>
+            <hr width="50%">
+        </div>
+    </div>
+    <div class="row">
+        <form class="col s6 offset-s3" method="POST" action="{{ url_for('update_doctor_profile') }}">
+            <h5>Please, upload your image</h5>
+            <!-- Upload doctor image -->
+            <div class="row">
+                <div class="input-field responsive-img">
+                    <label for="doctor-image" class="col s12 md3"><strong>Profile Image</strong></label>
+                    <div class="col s12 md8">
+                        <input id="doctor-image" name="doctor-image" class="form-control" type="url" 
+                            placeholder="Add Image URL" required value="{{ doctor.image_url }}">
+                    </div>
+                </div>
+            </div>
+            <!-- Phone -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="telephone" name="telephone" type="tel" value="{{ doctor.phone }}" placeholder="Phone" 
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate" required>
+                    <label for="Phone">Enter your phone number in the format 123-444-7890</label>
+                </div>
+            </div>
+            <!-- About -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="about" name="about" minlength="15" maxlength="200" value="{{ doctor.about }}"
+                    class="materialize-textarea validate"></textarea>>
+                    <label for="about">About</label>
+                </div>
+            </div>
+            <!-- Update doctor profile and cancel buttons-->
+            <div class="row s12">
+                <div class="row s6">
+                    <div class="btn-profile">
+                        <button type="submit" class="btn btn-submit"><strong>Update Profile</strong></button>
+                    </div>
+                    <div class="btn-profile">
+                        <a href="{{ url_for('doctor_profile') }}" class="btn cancel-button">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
