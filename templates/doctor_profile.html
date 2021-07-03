@@ -4,22 +4,53 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2> Doctor's Profile</h2>
+                <h4 class="center-align" id="profile-heading"> dr. {{ doctor.doctor_last_name }}'s Profile</h4>
+                <hr>
             </div>
         </div>
         <div class="col s12 m6">
             <div class="dashboard">
                 <div class="profile-details">
+                    <img class="doctor-image" src="{{ doctor.image_url}}" alt="Doctor profile image">
                     <p><strong>First name: </strong>{{ doctor.doctor_first_name }}</p>
                     <p><strong>Last name: </strong>{{ doctor.doctor_last_name }}</p>
                     <p><strong>Email: </strong>{{ doctor.email }}</p>
                     <p><strong>Phone: </strong>{{ doctor.phone }}</p>
-                    <p><strong>Speciality name: </strong>{{ doctor.speciality_name }}</p>
+                    <p><strong>Speciality: </strong>{{ doctor.speciality_name }}</p>
                     <p><strong>Experience: </strong>{{ doctor.experience }}</p>
                     <p><strong>About: </strong>{{ doctor.about }}</p>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <!-- Delete button -->
+                <!-- Resource: sourced from Materialize: https://materializecss.com/modals.html#! and custom styled -->
+                <span>
+                    <a type="button" data-target="modal1" class="btn modal-trigger" id="btn-delete" href="#modal1">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+        
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h5>Are you sure you want to delete patient profile?</h5>
+                            <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
+                            <a href="#" class="modal-close waves-effect waves-green btn red">Delete</a>
+                        </div>
+                    </div>
+                </span>
+                <!-- Edit button -->
+                <span>
+                    <a class="edit-profile left" href="{{ url_for('update_doctor_profile') }}">
+                        <i class="fas fa-user-edit"></i>
+                        Edit Profile
+                    </a>
+                </span>
+            </div>
     </div>
+    
 
 {% endblock %}
