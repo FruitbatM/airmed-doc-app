@@ -251,7 +251,7 @@ def doctor_login():
     return render_template("doctor_login.html")
 
 
-@app.route("/doctor_profile", methods=["GET", "POST"])
+@app.route("/doctor_profile", methods=["GET"])
 def doctor_profile():
     # grab the session user's email from the database
     doctor = mongo.db.doctors.find_one({"email": session["doctor"]})
@@ -260,6 +260,35 @@ def doctor_profile():
             "doctor_profile.html", doctor=doctor)
 
     return redirect(url_for("doctor_login"))
+
+
+@app.route("/update_doctor_profile", methods=["GET", "POST"])
+def update_doctor_profile():
+    """
+    Function allows a registered doctor to update some of their
+    profile details
+    """
+    doctor = mongo.db.doctors
+    if request.method == "POST":
+        doctor.update(
+            {"$set":
+                {
+                    "image_url": request.form.get("image_url"),
+                    "phone": request.form.get("telephone"),
+                    "about": request.form.get("about")
+                }}
+        )
+        flash("Your profile was successfully updated")
+        return redirect(url_for("doctor_profile"))
+
+    doctor = mongo.db.users.find_one({"email": session["doctor"]})
+    image_url = doctor["image_url"]
+    phone = doctor["phone"]
+    about = doctor["about"]
+
+    return render_template(
+        "update_doctor_profile.html", doctor=doctor, image_url=image_url,
+        email=email, phone=phone, about=about)
 
 
 @app.route("/doctor_logout")
