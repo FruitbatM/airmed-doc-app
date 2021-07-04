@@ -11,14 +11,13 @@
     </div>
     <div class="row">
         <form class="col s6 offset-s3" method="POST" action="{{ url_for('update_doctor_profile') }}">
-            <h5>Please, upload your image</h5>
             <!-- Upload doctor image -->
             <div class="row">
                 <div class="input-field responsive-img">
-                    <label for="doctor-image" class="col s12 md3"><strong>Profile Image</strong></label>
+                    <label for="doctor-image" class="col s12 md3">Add Image URL</label>
                     <div class="col s12 md8">
                         <input id="doctor-image" name="doctor-image" class="form-control" type="url" 
-                            placeholder="Add Image URL" required value="{{ doctor.image_url }}">
+                            required value="{{ doctor.image_url }}">
                     </div>
                 </div>
             </div>
@@ -34,7 +33,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="about" name="about" minlength="15" maxlength="200" value="{{ doctor.about }}"
-                    class="materialize-textarea validate"></textarea>>
+                    class="materialize-textarea validate"></textarea>
                     <label for="about">About</label>
                 </div>
             </div>
