@@ -333,6 +333,30 @@ def error_500(error):
                            title="Internal Server Error"), 500
 
 
+@app.route('/linkedin')
+def linkedin():
+    """
+    Function to load Linkedin
+    """
+    return redirect("https://www.linkedin.com")
+
+
+@app.route('/facebook')
+def facebook():
+    """
+    Function to load Facebook
+    """
+    return redirect("https://www.facebook.com")
+
+
+@app.route('/instagram')
+def instagram():
+    """
+    Function to load Instagram
+    """
+    return redirect("https://www.instagram.com")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

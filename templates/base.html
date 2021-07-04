@@ -59,9 +59,6 @@
                 <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
             {% else %}
-                
-                
-                
                 <li class="{{ 'active' if active_page == 'login' else '' }}"><a href="{{ url_for('login') }}">LOG IN</a></li>
                 <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
                     <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
@@ -90,10 +87,16 @@
     <footer class="page-footer">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
+                <div class="col m6 s12">
                     <h5 class="white-text">AIRMED CLINIC</h5>
+                    <h6 class="grey-text text-lighten-4">Social Media:</h6>
+                <div class="col s12 social-media">
+                    <a href="{{ url_for('linkedin') }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="{{ url_for('facebook') }}" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="{{ url_for('instagram') }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div> 
                 </div>
-                <div class="col l4 offset-l2 s12">
+                <div class="col m4 offset-m2 s12">
                     <h5 class="white-text">Working Hours</h5>
                         <span><strong>8:00am - 5:30pm</strong>- Mon - Fri</span><br>
                         <span><strong>9:00am - 5:30pm</strong>- Sat</span><br>

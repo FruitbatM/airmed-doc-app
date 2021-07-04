@@ -316,6 +316,12 @@ select[required]{
     height: 15rem;
 }
 
+.social-media > a {
+    color: #fafafa;
+    font-size: 2rem;
+    padding-right: 0.3rem;
+}
+
 /* Media Queries */
 /* Display on tablet devices */  
 @media only screen 
