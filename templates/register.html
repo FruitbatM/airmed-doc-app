@@ -3,63 +3,58 @@
 
 {% block content %}
 
-    <h4 class="center-align patient-heading" id="register-heading">Become our Patient</h4>
     <!-- Register -->
-    <div class="row" id="register-form">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
-                <div class="row">
-                    <!-- first name -->
-                    <div class="input-field col s6">
-                        <input type="text" id="first_name" name="first_name" class="validate" required>
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <!-- last name -->
-                    <div class="input-field col s6">
-                        <input  id="last_name" name="last_name" type="text" class="validate" required>
-                        <label for="last_name">Last Name</label>
-                    </div>
-                    <!-- email -->
-                    <div class="input-field col s6">
-                        <input id="email" name="email" type="email" class="validate" required>
-                        <label for="email">Email</label>
-                    </div>
-                    <!-- contact number -->
-                    <div class="input-field col s6">
-                        <input id="telephone" name="telephone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate" required>
-                        <label for="telephone">Enter your phone number in the format 123-444-7890</label>
-                        
-                    </div>
-
-                    <!-- username -->
-                    <div class="input-field col s6">
-                        <input  id="username" name="username" type="text" minlength="5" 
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="username">Username</label>
-                    </div>
-                    <!-- password -->
-                    <div class="input-field col s6">
-                        <input id="password" name="password" type="password" minlength="5" 
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="password">Password</label>
-                    </div>
+    <div class="register-image">
+        <div class="row" id="register-form">
+            <form class="col 12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+                <div class="card-panel left">
+                    <h3 class="center-align patient-heading" id="register-heading">Become our Patient</h3>
+                        <!-- First name -->
+                        <div class="input-field col s12">
+                            <input type="text" id="first_name" name="first_name" class="validate" required>
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <!-- Last name -->
+                        <div class="input-field col s12">
+                            <input  id="last_name" name="last_name" type="text" class="validate" required>
+                            <label for="last_name">Last Name</label>
+                        </div>
+                        <!-- Email -->
+                        <div class="input-field col s12">
+                            <input id="email" name="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <!-- Contact number -->
+                        <div class="input-field col s12">
+                            <input id="telephone" name="telephone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate" required>
+                            <label for="telephone">Enter your phone number in the format 123-444-7890</label>
+                        </div>
+                        <!-- Username -->
+                        <div class="input-field col s12">
+                            <input  id="username" name="username" type="text" minlength="5" 
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <label for="username">Username</label>
+                        </div>
+                        <!-- Password -->
+                        <div class="input-field col s12">
+                            <input id="password" name="password" type="password" minlength="5" 
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <label for="password">Password</label>
+                        </div>
+                        <!-- Register button-->
+                        <div class="row">
+                            <button type="submit" class="col s8 offset-s2 btn-large sign-btn center-align">
+                                Register <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
+                        <div class="col s12">
+                            <p class="center-align">
+                                Already Registred? 
+                                <a href="{{ url_for('login') }}">Log In</a>
+                            </p>
+                        </div>
                 </div>
-                <div class="row">
-                    <button type="submit" class="col s12 m8 offset-m2 btn-large sign-btn center-align">
-                        Register <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already Registred? 
-                <a href="{{ url_for('login') }}">Log In</a>
-            </p>
+            </form>
         </div>
     </div>
-
 {% endblock %}

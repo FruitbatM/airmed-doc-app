@@ -85,6 +85,12 @@ nav {
     min-height: 100vh;
 }
 
+.register-image {
+    background: url(../images/mother_with_babies.jpg) no-repeat center;
+    background-size: cover;
+    position: absolute;
+}
+
 .login-heading {
     margin: 2rem;
     font-family: 'Montserrat', sans-serif;
