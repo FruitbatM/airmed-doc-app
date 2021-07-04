@@ -306,6 +306,10 @@ select[required]{
     margin-left: 1rem;
 }
 
+.materialize-textarea {
+    height: 15rem;
+}
+
 /* Media Queries */
 /* Display on tablet devices */  
 @media only screen 

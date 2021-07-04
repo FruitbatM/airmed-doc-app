@@ -298,6 +298,7 @@ def update_doctor_profile(email):
     image_url = doctor["image_url"]
     phone = doctor["phone"]
     about = doctor["about"]
+    print(about)
 
     return render_template(
         "update_doctor_profile.html", doctor=doctor, image_url=image_url,

@@ -24,7 +24,7 @@
             <!-- Phone -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="telephone" name="telephone" type="tel" value="{{ doctor.phone }}" placeholder="Phone" 
+                    <input id="phone" name="phone" type="tel" value="{{ doctor.phone }}" placeholder="Phone" 
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate" required>
                     <label for="Phone">Enter your phone number in the format 123-444-7890</label>
                 </div>
@@ -32,8 +32,9 @@
             <!-- About -->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="about" name="about" minlength="15" maxlength="200" value="{{ doctor.about }}"
-                    class="materialize-textarea validate"></textarea>
+                    <textarea id="about" name="about" class="materialize-textarea validate" minlength="50" maxlength="200">
+                        {{- doctor.about -}}
+                    </textarea>
                     <label for="about">About</label>
                 </div>
             </div>
