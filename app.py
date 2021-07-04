@@ -237,7 +237,7 @@ def doctor_login():
                 flash("Welcome, dr. {}".format(
                         request.form.get("email")))
                 return redirect(url_for(
-                        "doctor_profile", doctor_first_name=session["user"]))
+                        "doctor_profile", email=session["user"]))
 
             else:
                 # Invalid password match
@@ -251,19 +251,31 @@ def doctor_login():
     return render_template("doctor_login.html")
 
 
-@app.route("/doctor_profile", methods=["GET"])
-def doctor_profile():
+@app.route("/doctor_profile/<email>", methods=["GET"])
+def doctor_profile(email):
     # grab the session user's email from the database
     doctor = mongo.db.doctors.find_one({"email": session["user"]})
+    doctor_first_name = doctor["doctor_first_name"]
+    doctor_last_name = doctor["doctor_last_name"]
+    email = doctor["email"]
+    phone = doctor["phone"]
+    speciality_name = doctor["speciality_name"]
+    experience = doctor["experience"]
+    about = doctor["about"]
+
     if session["user"]:
         return render_template(
-            "doctor_profile.html", doctor=doctor)
+            "doctor_profile.html", doctor=doctor,
+            doctor_first_name=doctor_first_name,
+            doctor_last_name=doctor_last_name, email=email,
+            phone=phone, speciality_name=speciality_name,
+            experience=experience, about=about)
 
     return redirect(url_for("doctor_login"))
 
 
-@app.route("/update_doctor_profile", methods=["GET", "POST"])
-def update_doctor_profile():
+@app.route("/update_doctor_profile/<email>", methods=["GET", "POST"])
+def update_doctor_profile(email):
     """
     Function allows a registered doctor to update some of their
     profile details
@@ -275,12 +287,12 @@ def update_doctor_profile():
             {"$set":
                 {
                     "image_url": request.form.get("image_url"),
-                    "phone": request.form.get("telephone"),
+                    "phone": request.form.get("phone"),
                     "about": request.form.get("about")
                 }}
         )
         flash("Your profile was successfully updated")
-        return redirect(url_for("doctor_profile"))
+        return redirect(url_for("doctor_profile", email=session["user"]))
 
     doctor = mongo.db.doctors.find_one({"email": session["user"]})
     image_url = doctor["image_url"]

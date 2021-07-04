@@ -43,7 +43,7 @@
                 </span>
                 <!-- Edit button -->
                 <span>
-                    <a class="edit-profile left" href="{{ url_for('update_doctor_profile') }}">
+                    <a class="edit-profile left" href="{{ url_for('update_doctor_profile', email=session['user']) }}">
                         <i class="fas fa-user-edit"></i>
                         Edit Profile
                     </a>

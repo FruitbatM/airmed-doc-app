@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="row">
-        <form class="col s6 offset-s3" method="POST" action="{{ url_for('update_doctor_profile') }}">
+        <form class="col s6 offset-s3" method="POST" action="{{ url_for('update_doctor_profile', email=session['user']) }}">
             <!-- Upload doctor image -->
             <div class="row">
                 <div class="input-field responsive-img">
@@ -44,7 +44,7 @@
                         <button type="submit" class="btn btn-submit"><strong>Update Profile</strong></button>
                     </div>
                     <div class="btn-profile">
-                        <a href="{{ url_for('doctor_profile') }}" class="btn cancel-button">Cancel</a>
+                        <a href="{{ url_for('doctor_profile', email=session['user']) }}" class="btn cancel-button">Cancel</a>
                     </div>
                 </div>
             </div>
