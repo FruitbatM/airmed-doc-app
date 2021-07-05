@@ -36,15 +36,40 @@ def about():
     return render_template("about.html", specialities=specialities)
 
 
-# Search for the list of doctors based on their speciality
-# Currently not working
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    specialities = mongo.db.specialities
-    doctors = mongo.db.doctors.find()
+@app.route("/specialists")
+def specialists():
+    """
+    Search for the list of doctors based on their speciality
+    """
+    try:
+        if session["user"]:
+            user = True
+    except KeyError:
+        user = False
+    finally:
+        query = request.args.get("query")
+        specialities = request.args.get("specialities")
+        print(specialities)
 
-    return render_template(
-            "search.html", specialities=specialities, doctors=doctors)
+        # Check if search query
+        if query is not None:
+            doctor_list = list(
+                mongo.db.doctors.find(
+                    {"$text": {"$search": query}}))
+        # Check if speciality name filter
+        elif specialities is not None:
+            doctor_list = list(
+                mongo.db.doctors.find(
+                    {"specialities": specialities}).sort(
+                        [("_id", -1)]))
+        else:
+            # Find all doctors
+            doctor_list = list(
+                mongo.db.doctors.find().sort([("specialities", -1)]))
+
+        return render_template(
+            "specialists.html", doctors=doctor_list,
+            user=user, specialities=specialities)
 
 
 # Register function was adapted from Code Institute walkthrough project
@@ -298,7 +323,6 @@ def update_doctor_profile(email):
     image_url = doctor["image_url"]
     phone = doctor["phone"]
     about = doctor["about"]
-    print(about)
 
     return render_template(
         "update_doctor_profile.html", doctor=doctor, image_url=image_url,
