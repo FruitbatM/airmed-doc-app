@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Specialist heading-->
+    <div class="section-heading">
+        {% if speciality %}
+        <h2 id="specialist-type" class="page-header">{{ speciality_name }}</h2>
+        {% else %}
+        <h2 id="specialist-type" class="page-header">all</h2>
+        {% endif %}
+    </div>
+    
+    {% for doctor in doctors %}
+    <div class="container">
+        <div class="col s12 m6">
+            <div class="dashboard">
+                <div class="profile-details">
+                    <p><strong>{{ doctor.doctor_first_name }} {{ doctor.doctor_last_name }}</strong></p>
+                    <p><strong>{{ doctor.speciality_name }}</strong></p>
+                    <p>About:{{ doctor.about }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
