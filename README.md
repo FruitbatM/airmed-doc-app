@@ -27,18 +27,19 @@
 3. [Features](#features)
     - [Existing Features](#existing-features)
     - [Future Implementation](#future-implementation)
-4. [Technologies](#technologies)
-5. [Testing](#testing)
-6. [Deployment](#deployment)
+4. [Database](#database)
+5. [Technologies](#technologies)
+6. [Testing](#testing)
+7. [Deployment](#deployment)
     - [GitHub pages](#github-pages)
     - [Forking the Repository](#forking-the-repository)
     - [Local Deployment](#local-deployment)
-7. [Credits](#credits)
+8. [Credits](#credits)
     - [Code](#code)
     - [Media](#media)
     - [Content](#content)
-8. [Acknowledgements](#acknowledgements)
-9. [Disclaimer](#disclaimer)
+9. [Acknowledgements](#acknowledgements)
+10. [Disclaimer](#disclaimer)
 
 </details>
 
@@ -162,6 +163,15 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - Ratings & Reviews
 - Subscription packages
 
+## Database
+
+MongoDB was used to store the data in four collections for this project. The database scheme is visible below.
+
+<h2 align="center"><img src="readme/images/airmed_diagram.png" alt="color palette" target="_blank" width="75%" height="75%"></h2>
+
+[dbdiagram.io - DBMS Tools](https://dbdiagram.io/) was used to create database scheme.
+
+## Technologies
 ## Languages
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) was used to complete the structure of the website.
