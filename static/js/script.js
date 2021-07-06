@@ -12,6 +12,15 @@ $(document).ready(function(){
     }
   );
 
+  // Datepicker for contact form
+  $('.datepicker').datepicker(
+    {
+      yearRange: [2021,2023],
+      disableWeekends: true,
+      closeOnSelect: true,
+    }
+  );
+
   $('.dropdown-trigger').dropdown(
     {
       coverTrigger: false
@@ -46,3 +55,4 @@ $(document).ready(function(){
       setTimeout(autoplay, 5000);
     }
 });
+
