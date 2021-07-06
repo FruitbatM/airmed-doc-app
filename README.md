@@ -103,11 +103,16 @@ App users will be able to make appointments quickly, while doctors are not invol
 
 Delicate and soothing color palette will be chosen for medical app. Users should feel calm and comforted when opening AIRMED app, knowing that they have come to the right place to address their healthcare needs, questions, and any concerns.
 
-- Celadon Blue (#247ba0)
-- White (#FFFFFF)
+- Celadon Blue (#247BA0)
+- Blue Sapphire(#16546E)
 - Green Sheen (#70C1B3)
-- Turqouise Green (#b2dbbf)
+- Middle Blue Green (#91CEB9)
 - Mango Tango (#f68c48)
+- White (#FFFFFF)
+
+<h2 align="center"><img src="readme/images/airmed_palette.jpg" alt="color palette" target="_blank" width="75%" height="75%"></h2>
+
+[Coolors](https://coolors.co/) was used to create a color palette.
 
 Mainly cold colors will be selected throughout the app in order to establish an overall sense of tranquility that is necessary to help users concentrate on the more important app features.
 
@@ -292,6 +297,7 @@ Once above steps have been followed the website can be deployed. Please find the
 Below websites were used for a general layout inspiration:
 
 The text was adapted from:
+https://www.massgeneral.org/
 
 # Acknowledgements
 
