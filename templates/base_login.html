@@ -89,6 +89,13 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPoIamA8ClFfv8tTm2sOFCpCtSrBUSxxw&callback=initMap&libraries=&v=weekly" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.29.2/sweetalert2.all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("user_DkY6Dzw8RNHgzSkoWcGLn");
+        })();
+    </script>
     {% block scripts %}
     {% endblock %}
 </body>
