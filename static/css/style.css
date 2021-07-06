@@ -334,6 +334,17 @@ select[required]{
     will-change: top, opacity;
 }
 
+#modal-contact {
+    left: 0;
+    right: 0;
+    padding: 0;
+    background-color: #fafafa !important;
+    max-height: 100% !important;
+    width: 90% !important;
+    overflow-y: hidden !important ;
+    will-change: top, opacity;
+}
+
 .modal .modal-footer {
     border-radius: 0 0 0.125rem 0.125rem;
     background-color: #B9DFD2;
@@ -342,6 +353,16 @@ select[required]{
     width: 100%;
     text-align: right;
 }
+
+.form-control {
+    padding: .375rem .75rem;
+}
+
+/* Resize datepicker
+.datepicker-modal {
+    transform: scale(1.5) !important;
+}
+*/
 
 #btn-delete {
     margin-left: 1rem;
