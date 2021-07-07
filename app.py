@@ -36,6 +36,12 @@ def about():
     return render_template("about.html", specialities=specialities)
 
 
+@app.route("/appointment_request")
+def appointment_request():
+    specialities = mongo.db.specialities.find()
+    return render_template("appointment_request", specialities=specialities)
+
+
 @app.route("/specialists")
 def specialists():
     """
