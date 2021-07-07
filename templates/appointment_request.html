@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% set active_page = 'home' %}
+
+{% block content %}
+
+	<section id="appointment-section">
+		<div class="container">
+			<div class="row s12 center-align">
+				<h3>Request an Appointment</h3>
+			</div>
+		</div>
+		<div class="row s12">
+			<p>Please use this form only if:</p><br>
+			<ul>
+				<li>You have never been a patient at AIRMED Clinic, OR</li>
+				<li>You have been a patient at AIRMED Clinic but are seeking an appointment with a new doctor
+			</ul>
+			<p>	After you submit the form, a representative will call you back with the information you’ll need 
+				to make an appointment. You may also speak with a representative directly Monday–Friday, 8:30 am
+				to 5:00 pm by calling 0800-726-2000.
+			</p>
+		</div>
+		<div class="container">
+			<div class="row s12">
+				<form class="col s12" onsubmit="return sendMail(this);">
+					<div class="row">
+						<div class="input-field col s12 m6">
+							<input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+						</div>
+						<div class="input-field col s12 m6">
+							<input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 m6">
+							<input type="email" name="email" id="email" placeholder="E-mail" required>
+						</div>
+						<div class="input-field col s12 m6">
+							<input type="tel" name="telephone" id="telephone" placeholder="Phone" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 m6">
+							<input type="text" class="datepicker" placeholder="Date" required>
+						</div>
+						<div class="input-field col s12 m6">
+							<select name="time" id="time">
+								<option value="" disabled selected>Select time:</option>
+								<option value="morning">Morning</option>
+								<option value="afternoon">Afternoon</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s6">
+							<select class="options" id="speciality_name" name="speciality_name" class="validate">
+								<option value="" required disabled selected>Select speciality</option>
+								{% for speciality in specialities %}
+									<option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<textarea class="materialize-textarea validate" name="message" id="message" rows="4" placeholder="Message" required></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn-contact mt-4" aria-label="Submit the contact form">
+							SUBMIT
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+{% endblock%}

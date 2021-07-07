@@ -39,7 +39,8 @@ def about():
 @app.route("/appointment_request")
 def appointment_request():
     specialities = mongo.db.specialities.find()
-    return render_template("appointment_request", specialities=specialities)
+    return render_template(
+        "appointment_request.html", specialities=specialities)
 
 
 @app.route("/specialists")
