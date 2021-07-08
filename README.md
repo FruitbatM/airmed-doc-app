@@ -428,3 +428,9 @@ https://www.massgeneral.org/
 # Disclaimer
 
 The information provided on this website is for educational purposes only.
+
+# Support
+
+For any issue resolution or assistance, please email  Marina Pavlovic at mar.pavlovic@gmail.com
+
+> [Back to Top](#table-of-contents)  
