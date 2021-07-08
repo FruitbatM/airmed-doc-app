@@ -16,9 +16,8 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
-
-MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
-MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 
 mongo = PyMongo(app)
 
@@ -30,6 +29,9 @@ mongo = PyMongo(app)
 def home():
     specialities = mongo.db.specialities.find()
     return render_template("home.html", specialities=specialities)
+
+
+print(app.config["MAIL_PASSWORD"])
 
 
 # About page
@@ -54,19 +56,16 @@ def appointment_request():
     last_name = request.form.get("last_name")
     email = request.form.get("email")
 
-    message = "Thank you for getting in touch! We will get back to you shortly."
+    message = "Thank you for getting in touch!"
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
-    server.login("info.airmed.app@gmail.com", "tidcsctoxofrwqzr")
+    server.login("info.airmed.app@gmail.com", "MAIL_PASSWORD")
     server.sendmail("info.airmed.app@gmail.com", email, message)
 
-    if not first_name or not last_name or not email:
-        error_statement = "All Form fields required"
-
-        return render_template(
-            "appointment_request.html",
-            error_statement=error_statement, first_name=first_name,
-            last_name=last_name, email=email, specialities=specialities)
+    return render_template(
+        "appointment_request.html",
+        first_name=first_name,
+        last_name=last_name, email=email, specialities=specialities)
 
 
 @app.route("/specialists")
