@@ -307,7 +307,7 @@ Register for a free account with [MongoDB](https://account.mongodb.com/account/r
 - Create a new database and call it 'airmed_db'
 - Create four Collections named 'users', 'gender', 'doctors', and 'specialities'. Detailed db scheme is available below:
 
-  - users
+- users
   
     |       Key         |         Data Type      |   Notes                                     |
     | :-----------:     | :--------------------: | :-----------------------------------------: |
@@ -356,9 +356,15 @@ Register for a free account with [MongoDB](https://account.mongodb.com/account/r
 
 [dbdiagram.io - DBMS Tools](https://dbdiagram.io/) was used to create database scheme.
 
-## Deploy to Heroku
+### Deploy locally
 
-The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/), which is a cloud platform with a service supporting several programming languages, because GitHub can only host a static website
+- To run the project locally, in the terminal type `python3 app.py`
+- This will open a localhost address, which is provided in the CLI
+- Either copy and paste the url into a new browser tab, or hover over it and click the link
+
+### Deploy to Heroku
+
+The website of this project requires back-end technologies such as server, application, and database so the website is deployed on [Heroku](https://www.heroku.com/), which is a cloud platform with a service supporting several programming languages, because GitHub can only host a static websites.
 
 Before deploying the website to Heroku, there are three important steps to follow to make the application work in Heroku correctly.
 
@@ -368,7 +374,7 @@ Before deploying the website to Heroku, there are three important steps to follo
 
 Once above steps have been followed the website can be deployed. Please find the steps of the deployment in Heroku:
 
-1. Create an account in Heroku
+1. Create an account in [Heroku](https://signup.heroku.com/login)
 
 2. Click **New** & **Create new app** to create a new app
 
@@ -392,11 +398,18 @@ Once above steps have been followed the website can be deployed. Please find the
 
 ## Code
 
+- Register function was adapted from Code Institute walkthrough project
+- Slider, parallax, modal and navbar functionalities were sourced from [Materialize](https://materializecss.com/) framework
+- Validate select option for a Materialize dropdown code was sourced from [Stack Overflow](https://stackoverflow.com/questions/34248898/how-to-validate-select-option-for-a-materialize-dropdown/38671029#38671029)
+- Custom modal design was found [HERE](https://www.jquery-az.com/materialize/demo.php?ex=53.0_4#!)
+
 ## Media
 
 ### Images
 
 ### Icons
+
+- All icons were sourced from [Font Awesome](https://fontawesome.com/)
 
 ## Content
 
