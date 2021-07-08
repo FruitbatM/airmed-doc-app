@@ -24,8 +24,7 @@
 		</div>
 		<div class="container">
 			<div class="row s12">
-				<form action="/appointment_request" id="contactForm" class="col s12" onsubmit="return sendMail(this);" 
-					method="POST">
+				<form action="{{ url_for('appointment_request') }}" class="col s12" method="POST">
 					<div class="row">
 						<div class="input-field col s12 m6">
 							<input type="text" name="first_name" id="first_name" placeholder="First Name" required>
