@@ -6,23 +6,26 @@
 	<section id="appointment-section">
 		<div class="container">
 			<div class="row s12 center-align">
-				<h3>Request an Appointment</h3>
+				<h3 class="login-heading center-align">Request an Appointment</h3>
 			</div>
-		</div>
-		<div class="row s12">
-			<p>Please use this form only if:</p><br>
-			<ul>
-				<li>You have never been a patient at AIRMED Clinic, OR</li>
-				<li>You have been a patient at AIRMED Clinic but are seeking an appointment with a new doctor
-			</ul>
-			<p>	After you submit the form, a representative will call you back with the information you’ll need 
-				to make an appointment. You may also speak with a representative directly Monday–Friday, 8:30 am
-				to 5:00 pm by calling 0800-726-2000.
-			</p>
 		</div>
 		<div class="container">
 			<div class="row s12">
-				<form class="col s12" onsubmit="return sendMail(this);">
+				<p>Please use this form only if:</p>
+				<ul>
+					<li>You have never been a patient at AIRMED Clinic, OR</li>
+					<li>You have been a patient at AIRMED Clinic but are seeking an appointment with a new doctor
+				</ul>
+				<p>	After you submit the form, a representative will call you back with the information you’ll need 
+					to make an appointment. You may also speak with a representative directly Monday–Friday, 8:30 am
+					to 5:00 pm by calling 0800-726-2000.
+				</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row s12">
+				<form action="/appointment_request" id="contactForm" class="col s12" onsubmit="return sendMail(this);" 
+					method="POST">
 					<div class="row">
 						<div class="input-field col s12 m6">
 							<input type="text" name="first_name" id="first_name" placeholder="First Name" required>
@@ -67,7 +70,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn-contact mt-4" aria-label="Submit the contact form">
+						<button type="submit" class="btn waves-effect btn-contact" name="action" aria-label="Submit the contact form">
 							SUBMIT
 						</button>
 					</div>

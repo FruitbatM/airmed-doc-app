@@ -6,7 +6,7 @@ function sendMail(contactForm) {
       'subject': contactForm.subject.value,
       'message': contactForm.message.value
     })
-  
+    
       .then(
         // Sweet Alert custom pop-up alert if success; credit: https://sweetalert2.github.io/
         function() {

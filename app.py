@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+import smtplib
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,6 +16,9 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
+MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 mongo = PyMongo(app)
 
@@ -36,11 +40,33 @@ def about():
     return render_template("about.html", specialities=specialities)
 
 
-@app.route("/appointment_request")
+@app.route("/appointment")
+def appointment():
+    specialities = mongo.db.specialities.find()
+    return render_template("appointment.html", specialities=specialities)
+
+
+@app.route("/appointment_request", methods=["GET", "POST"])
 def appointment_request():
     specialities = mongo.db.specialities.find()
-    return render_template(
-        "appointment_request.html", specialities=specialities)
+
+    first_name = request.form.get("first_name")
+    last_name = request.form.get("last_name")
+    email = request.form.get("email")
+
+    message = "Thank you for getting in touch! We will get back to you shortly."
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login("info.airmed.app@gmail.com", "tidcsctoxofrwqzr")
+    server.sendmail("info.airmed.app@gmail.com", email, message)
+
+    if not first_name or not last_name or not email:
+        error_statement = "All Form fields required"
+
+        return render_template(
+            "appointment_request.html",
+            error_statement=error_statement, first_name=first_name,
+            last_name=last_name, email=email, specialities=specialities)
 
 
 @app.route("/specialists")
