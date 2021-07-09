@@ -4,6 +4,10 @@
 
 [Please view the live project here](#)
 
+<h2 align="center"><img src="readme/images/mockup_img.jpg" target="_blank" width="75%" height="75%"></h2>
+
+Mockup responsive image was created with [Techsini](http://techsini.com/multi-mockup/index.php).
+
 ## Table of Contents
 
 <details>
