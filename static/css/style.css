@@ -55,10 +55,32 @@ nav {
 
 .btn-slider {
     background-color: #F68C48;
+    border-radius: 0.5rem;
 }
 
 .button-wrap {
     margin-top: 3rem;
+}
+
+#search-section {
+    background-color: #f4f4f4;
+}
+
+.main-section{
+    margin-top: 2rem;
+}
+
+.main-section > i {
+    color: #2bbbad;
+    margin-top: 3rem;
+}
+
+.main-heading {
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 2rem;
+    color: #16546e;
+    font-weight: 600;
+    letter-spacing: 0.12rem;
 }
 
 .request-btn {
