@@ -39,7 +39,7 @@ nav {
 
 .slides h2 {
     font-family: 'Roboto', sans-serif;
-    text-shadow: 0.125rem 0.125rem 0.313rem #343a40;
+    text-shadow: 0.25rem 0.25rem 0.3rem #343a40;
     color: #fff;
     font-weight: 700;
 }
@@ -47,6 +47,13 @@ nav {
 .slide-subh {
     font-family: 'Montserrat', sans-serif;
     color: #00234B;
+    text-shadow: 0.25rem 0.25rem 0.8rem #343a40;
+}
+
+.highlight {
+    color: #16546e;
+    font-family: 'Montserrat';
+    font-style: italic;
 }
 
 #search-container {
@@ -64,18 +71,17 @@ nav {
 
 #search-section {
     background-color: #f4f4f4;
+    padding-bottom: 3rem;
 }
 
 .main-section{
     margin-top: 2rem;
 }
 
-
 .icon {
     color: #2bbbad;
     margin-top: 3rem;
 }
-
 
 .main-heading {
     font-family: 'Roboto', sans-serif;
@@ -83,6 +89,10 @@ nav {
     color: #16546e;
     font-weight: 600;
     letter-spacing: 0.12rem;
+}
+
+#why-section {
+    margin-bottom: 6rem;
 }
 
 .request-btn {
