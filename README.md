@@ -291,8 +291,13 @@ For sensitive information like passwords and api keys, create an `env.py` file t
 - Create a file called **.gitignore** in the root directory and ensure it contains the following git exclusions:
 
 ```text
-          env.py
-          __pycache__/
+    core.Microsoft*
+    core.mongo*
+    core.python*
+    env.py
+    __pycache__/
+    *.py[cod]
+    node_modules/
 ```
 ### Install project dependencies
 
