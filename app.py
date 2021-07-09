@@ -16,8 +16,11 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
+app.config["MAPS_API_KEY"] = os.environ.get("MAPS_API_KEY")
 app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
 app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
+
 
 mongo = PyMongo(app)
 
@@ -31,9 +34,6 @@ def home():
     return render_template("home.html", specialities=specialities)
 
 
-print(app.config["MAIL_PASSWORD"])
-
-
 # About page
 # Show top specialities with icons
 @app.route("/about")
@@ -42,30 +42,14 @@ def about():
     return render_template("about.html", specialities=specialities)
 
 
-@app.route("/appointment")
-def appointment():
-    specialities = mongo.db.specialities.find()
-    return render_template("appointment.html", specialities=specialities)
-
-
-@app.route("/appointment_request", methods=["GET", "POST"])
-def appointment_request():
-    specialities = mongo.db.specialities.find()
-
-    first_name = request.form.get("first_name")
-    last_name = request.form.get("last_name")
-    email = request.form.get("email")
-
-    message = "Thank you for getting in touch!"
-    server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.starttls()
-    server.login("info.airmed.app@gmail.com", "MAIL_PASSWORD")
-    server.sendmail("info.airmed.app@gmail.com", email, message)
-
-    return render_template(
-        "appointment_request.html",
-        first_name=first_name,
-        last_name=last_name, email=email, specialities=specialities)
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Search for a doctor based on their first name, last name or a speciality
+    """
+    query = request.form.get("query")
+    doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
+    return render_template("specialists.html", doctors=doctors)
 
 
 @app.route("/specialists")
@@ -102,6 +86,45 @@ def specialists():
         return render_template(
             "specialists.html", doctors=doctor_list,
             user=user, specialities=specialities)
+
+
+@app.route("/appointment")
+def appointment():
+    """
+    Appointment page where a user will have an option to submit an
+    appointment request and select from a list of given specialities.
+    """
+    specialities = mongo.db.specialities.find()
+    return render_template("appointment.html", specialities=specialities)
+
+
+@app.route("/appointment_request", methods=["POST"])
+def appointment_request():
+
+    appointment = {
+        "first_name": request.form.get("first_name"),
+        "last_name": request.form.get("last_name"),
+        "email": request.form.get("email"),
+        "telephone": request.form.get("telephone"),
+        "date": request.form.get("date"),
+        "time": request.form.get("time"),
+        "speciality_name": request.form.get("speciality_name"),
+        "msg": request.form.get("msg")
+    }
+    mongo.db.appointments.insert_one(appointment)
+
+    flash("Your message was submited")
+    message = "Thank you for getting in touch! /n We will get back to you shortly."
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login("info.airmed.app@gmail.com", "Airmed@2022")
+    server.sendmail("info.airmed.app@gmail.com", email, message)
+
+    if not first_name or not last_name or not email:
+        error_statement = "All Form fields required"
+
+    return render_template(
+        "home.html", error_statement=error_statement)
 
 
 # Register function was adapted from Code Institute walkthrough project

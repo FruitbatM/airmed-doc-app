@@ -31,46 +31,41 @@
       		</li>
     	</ul>
   	</div>
-	<!--  -->
+	<!-- Search feature -->
 	<div class="container">
-		<div class="row button-wrap">
-			<div class="col s12 m4">
-				<a href="{{ url_for('appointment') }}" class="btn btn-request">
-					Request an appointment<i class="fas fa-chevron-right fa-1x icon"></i>
-				</a>
+		<div class="row valign-wrapper center-align">
+			<div class="input-field col s12">
+				<select class="options" id="speciality_name" name="speciality_name" class="validate">
+					<option value="" required disabled selected>Please select speciality</option>
+					{% for speciality in specialities %}
+						<option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="col">
+				<a href="{{ url_for('specialists') }}" class="btn btn-slider">GO</a>
 			</div>
 		</div>
 	</div>
-	<!-- Search feature -->
+	<!-- Search by a specilatiy -->
 	<div class="container" id="search-container">
 		<div class="row card-panel grey lighten-5">
-			<form action="{{ url_for('specialists') }}" method="GET" class="col s12">
-				<div class="input-field col s4 m6">
-                    <i class="fas fa-search prefix"></i>
-                    <input type="text" name="query" id="query" minlength="3" placeholder="Search Specialists" class="validate">
-                    <label for="query"></label>
-                </div>
-				<div class="col s12 m4">
-					<button type="submit" class="btn small">
-						<i class="fas fa-search"></i> 
-						Search
-					</button>
-				</div>
-				<div class="row valign-wrapper center-align">
-					<div class="input-field col s6">
-						<select class="options" id="speciality_name" name="speciality_name" class="validate">
-							<option value="" required disabled selected>Please select speciality</option>
-							{% for speciality in specialities %}
-								<option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
-							{% endfor %}
-						</select>
+			<form action="{{ url_for('search') }}" method="POST" class="col s12">
+				<div class="row">
+					<div class="input-field col s12 m8">
+						<i class="fas fa-search fa-2x icon prefix"></i>
+						<input type="text" name="query" id="query" minlength="3" class="validate" required>
+						<label for="query">Search for a doctor or a speciality</label>
 					</div>
 					<div class="col s12 m4">
-						<a href="{{ url_for('specialists') }}" class="btn btn-slider">GO</a>
+						<button type="submit" class="btn small">
+							Search
+						</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
+
 
 {% endblock%}
