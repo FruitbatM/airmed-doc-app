@@ -70,7 +70,8 @@ nav {
     margin-top: 2rem;
 }
 
-.main-section > i {
+/* */
+.fas {
     color: #2bbbad;
     margin-top: 3rem;
 }
