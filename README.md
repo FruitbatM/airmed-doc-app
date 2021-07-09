@@ -4,7 +4,7 @@
 
 [Please view the live project here](#)
 
-<h2 align="center"><img src="readme/images/mockup_img.jpg" target="_blank" width="75%" height="75%"></h2>
+<h2 align="center"><img src="readme/images/mockup_img.jpg" target="_blank" width="90%" height="90%"></h2>
 
 Mockup responsive image was created with [Techsini](http://techsini.com/multi-mockup/index.php).
 
@@ -423,6 +423,7 @@ Once above steps have been followed the website can be deployed. Please find the
 ## Content
 
 Below websites were used for a general layout inspiration:
+[UBERDOC](https://uber-docs.com/)
 
 The text was adapted from:
 https://www.massgeneral.org/

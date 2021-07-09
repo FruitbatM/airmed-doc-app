@@ -3,6 +3,8 @@
 $(document).ready(function(){
   $('select').formSelect();
 
+  $('.collapsible').collapsible();
+
   $('.parallax').parallax();
 
   // Modal cannot be closed by clicking anywhere outside the modal itself

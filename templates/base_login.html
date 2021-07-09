@@ -47,7 +47,7 @@
                 <li><a href="{{ url_for('doctor_login') }}">DOCTOR</a></li>
         </ul>
         <!-- Mobile navbar -->
-        <ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav collapsible" id="mobile-demo">
             <li>
                 <a href="{{ url_for('home') }}" class="brand-logo">
                     <h4 class="center-align">AIRMED</h4>
@@ -59,7 +59,16 @@
                 <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
             {% else %}
-                <li class="{{ 'active' if active_page == 'login' else '' }}"><a href="{{ url_for('login') }}">LOG IN</a></li>
+                <li>
+                    <div class="collapsible-header">LOG IN<i class="fas fa-caret-down right"></i></div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="{{ url_for('login') }}">PATIENT</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ url_for('doctor_login') }}">DOCTOR</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
                     <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
             {% endif %}

@@ -33,8 +33,13 @@ nav {
     background: #16546e;
 }
 
-.nav-dropdown {
-    background: #16546e;
+.nav-dropdown, .collapsible-body {
+    background: #16546e !important;
+}
+
+.collapsible-header {
+    color: #fafafa;
+    padding: 0 2.3rem !important;
 }
 
 .slides h2 {
