@@ -6,7 +6,9 @@
         <div class="row">
             <div class="section-heading">
                 {% for doctor in doctors %}
-                    <h3 id="specialist-type" class="page-header">{{ doctor.speciality_name }}</h3>
+                    {% if loop.index <= 1 %}
+                        <h3 id="specialist-type" class="page-header">{{ doctor.speciality_name }}</h3>
+                    {% endif %}
             </div>
         </div>
     </div>

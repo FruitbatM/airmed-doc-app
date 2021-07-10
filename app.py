@@ -47,7 +47,7 @@ def about():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
-    Search for a doctor based on their first name and last name
+    Search for a doctor based on their first name, last name or speciality
     """
     query = request.form.get("query")
     doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
