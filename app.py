@@ -280,7 +280,7 @@ def add_doctor():
     """
     if request.method == "POST":
         doctor = {
-            "title": request.form.get("title"),
+            "title": request.form.get("title").str.lower(),
             "doctor_first_name": request.form.get("doctor_first_name"),
             "doctor_last_name": request.form.get("doctor_last_name"),
             "username": request.form.get("username"),
@@ -339,19 +339,21 @@ def doctor_profile(email):
     doctor = mongo.db.doctors.find_one({"email": session["user"]})
     doctor_first_name = doctor["doctor_first_name"]
     doctor_last_name = doctor["doctor_last_name"]
+    title = doctor["title"]
     email = doctor["email"]
     phone = doctor["phone"]
     speciality_name = doctor["speciality_name"]
     experience = doctor["experience"]
+    visit_type = doctor["visit_type"]
     about = doctor["about"]
 
     if session["user"]:
         return render_template(
             "doctor_profile.html", doctor=doctor,
-            doctor_first_name=doctor_first_name,
+            doctor_first_name=doctor_first_name, title=title,
             doctor_last_name=doctor_last_name, email=email,
             phone=phone, speciality_name=speciality_name,
-            experience=experience, about=about)
+            experience=experience, about=about, visit_type=visit_type)
 
     return redirect(url_for("doctor_login"))
 

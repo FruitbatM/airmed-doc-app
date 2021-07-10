@@ -2,25 +2,32 @@
 {% block content %}
 
     <!-- Specialist heading-->
-    <div class="section-heading">
-        {% if speciality %}
-        <h2 id="specialist-type" class="page-header">{{ speciality_name }}</h2>
-        {% else %}
-        <h2 id="specialist-type" class="page-header">all</h2>
-        {% endif %}
-    </div>
-    
-    {% for doctor in doctors %}
     <div class="container">
-        <div class="col s12 m6">
-            <div class="dashboard">
-                <div class="profile-details">
-                    <p><strong>{{ doctor.doctor_first_name }} {{ doctor.doctor_last_name }}</strong></p>
-                    <p><strong>{{ doctor.speciality_name }}</strong></p>
-                    <p>About:{{ doctor.about }}</p>
-                </div>
+        <div class="row">
+            <div class="section-heading">
+                {% for doctor in doctors %}
+                    <h3 id="specialist-type" class="page-header">{{ doctor.speciality_name }}</h3>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <img src="{{ doctor.image_url }}" alt="doctor profile image" class="circle" id="doc-image">
+                        <div id="doctor-details">
+                            <h5 class="doctor-name"><strong>{{doctor.title}}. {{ doctor.doctor_first_name }} {{ doctor.doctor_last_name }}</strong></h5>
+                            <p><strong>Speciality:</strong> {{ doctor.speciality_name }}</p>
+                            <p><strong>Visit Types Available:</strong> {{ doctor.visit_type }}</p>
+                            <span><strong>Experience:</strong> {{ doctor.experience }} years</span><br>
+                            <hr>
+                            <p><strong>About:</strong> {{ doctor.about }}</p> <br>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-
 {% endblock %}
