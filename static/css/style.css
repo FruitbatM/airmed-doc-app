@@ -188,6 +188,10 @@ nav {
     font-size: 1.5rem;
 }
 
+#para-sub {
+    padding: 1.4rem;
+}
+
 .patient-card {
     background-color: #f4f4f4;
     border-radius: 1rem;
@@ -203,6 +207,14 @@ a.edit-profile {
     font-size: 1.1rem;
     font-weight: bold;
     text-shadow: 0 0 #343a40;
+}
+
+.dotted-border{
+    border-top: 0.09rem dashed #F18541;
+}
+
+.full-border{
+    border-top: 0.09rem solid #F18541;
 }
 
 .fa-user-edit {

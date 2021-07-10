@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col s12">
             <h4 class="center-align" id="profile-heading">{{ first_name }}'s Profile</h4>
-            <hr>
+            <hr width="50%">
         </div>
     </div>
 
@@ -23,24 +23,29 @@
                                         {{ profile.first_name }} {{ profile.last_name }}
                                         <br>
                                     </p>
-                                    <span class="para-sub">Please call us at (855) 900-3621 if you need to change your name.</span>
+                                    <span id="para-sub"><i>Please call us at (855) 900-3621 if you need to change your name.</i></span>
                                 </div>
+                                <hr class="dotted-border">
                                 <p class="para-details">
                                     <strong>Email:</strong><br>
                                     {{ profile.email }}
                                 </p>
+                                <hr class="dotted-border">
                                 <p class="para-details">
                                     <strong>Phone:</strong><br>
                                     {{ profile.telephone}}
                                 </p>
+                                <hr class="dotted-border">
                                 <p class="para-details">
                                     <strong>Gender:</strong><br>
                                     {{ profile.gender}}
                                 </p>
+                                <hr class="dotted-border">
                                 <p class="para-details">
                                     <strong>Age:</strong><br>
                                     {{ profile.age}}
                                 </p>
+                                <hr class="full-border">
                             </div>
                         {% endfor %}
                         
