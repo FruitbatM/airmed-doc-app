@@ -4,72 +4,79 @@
 {% block content %}
 
     <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <h4 class="center-align" id="profile-heading">Profile</h4>
+        <div class="col s12">
+            <h4 class="center-align" id="profile-heading">{{ first_name }}'s Profile</h4>
             <hr>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col s12 m5">
-            <div class="card patient-card">
-                <div class="card-content">
-                    <span class="card-title center-align">{{ first_name }}'s details</span>
-                    <hr width="50%">
-                    {% for profile in profiles %}
-                        <div class="profile-details">
-                            <p class="para-details">
-                                <strong>Name:</strong><br>
-                                {{ profile.first_name }} {{ profile.last_name }}
-                            </p>
-                            <p class="para-details">
-                                <strong>Email:</strong><br>
-                                {{ profile.email }}
-                            </p>
-                            <p class="para-details">
-                                <strong>Phone:</strong><br>
-                                {{ profile.telephone}}
-                            </p>
-                            <p class="para-details">
-                                <strong>Gender:</strong><br>
-                                {{ profile.gender}}
-                            </p>
-                            <p class="para-details">
-                                <strong>Age:</strong><br>
-                                {{ profile.age}}
-                            </p>
-                        </div>
-                    {% endfor %}
-                    
-                    <!-- Delete button -->
-                    <!-- Resource: sourced from Materialize: https://materializecss.com/modals.html#! and custom styled -->
-                    <span>
-                        <a type="button" data-target="modal1" class="btn modal-trigger" id="btn-delete" href="#modal1">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-
-                        <!-- Modal Structure -->
-                        <div id="modal1" class="modal">
-                            <div class="modal-content">
-                                <h5>Are you sure you want to delete patient profile?</h5>
-                                <p>A bunch of text</p>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 offset-m2 m8 offset-m2">
+                <div class="card patient-card">
+                    <div class="card-content">
+                        {% for profile in profiles %}
+                            <div class="profile-details">
+                                <div class="name-details">
+                                    <p class="para-details">
+                                        <strong>Name:</strong><br>
+                                        {{ profile.first_name }} {{ profile.last_name }}
+                                        <br>
+                                    </p>
+                                    <span class="para-sub">Please call us at (855) 900-3621 if you need to change your name.</span>
+                                </div>
+                                <p class="para-details">
+                                    <strong>Email:</strong><br>
+                                    {{ profile.email }}
+                                </p>
+                                <p class="para-details">
+                                    <strong>Phone:</strong><br>
+                                    {{ profile.telephone}}
+                                </p>
+                                <p class="para-details">
+                                    <strong>Gender:</strong><br>
+                                    {{ profile.gender}}
+                                </p>
+                                <p class="para-details">
+                                    <strong>Age:</strong><br>
+                                    {{ profile.age}}
+                                </p>
                             </div>
-                            <div class="modal-footer">
-                                <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
-                                <a href="{{ url_for('delete_profile', username=session['user']) }}" class="modal-close waves-effect waves-green btn red">Delete</a>
+                        {% endfor %}
+                        
+                        <!--  Profile congiguration buttons -->
+                        <div class="row">
+                            <div class="profile-buttons right">
+                                <!-- Edit button -->
+                                <span>
+                                    <a class="edit-profile" href="{{ url_for('update_profile', username=session['user']) }}">
+                                        <i class="fas fa-user-edit"></i>
+                                        Edit Profile
+                                    </a>
+                                </span>
+                                <!-- Delete button -->
+                                <!-- Resource: sourced from Materialize: https://materializecss.com/modals.html#! and custom styled -->
+                                <span>
+                                    <a type="button" data-target="modal1" class="btn modal-trigger" id="btn-delete" href="#modal1">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </span>
+                            <!-- Modal Structure -->
+                            <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                    <h5>Are you sure you want to delete patient profile?</h5>
+                                    <p>A bunch of text</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
+                                    <a href="{{ url_for('delete_profile', username=session['user']) }}" class="modal-close waves-effect waves-green btn red">Delete</a>
+                                </div>
                             </div>
-                        </div>
-                    </span>
-                    <!-- Edit button -->
-                    <span>
-                        <a class="edit-profile left" href="{{ url_for('update_profile', username=session['user']) }}">
-                            <i class="fas fa-user-edit"></i>
-                            Edit Profile
-                        </a>
-                    </span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
 {% endblock %}

@@ -184,20 +184,25 @@ nav {
 }
 
 .para-details {
-    padding: 0.6rem;
+    padding: 1.4rem;
     font-size: 1.5rem;
 }
 
 .patient-card {
-    background-color: #B9DFD2;
+    background-color: #f4f4f4;
     border-radius: 1rem;
-    padding-bottom: 2rem;
+}
+
+.profile-buttons {
+    padding-right: 1rem;
+    padding-top: 1rem;
 }
 
 a.edit-profile {
-    color: #f18541;
+    color: #26a69a;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: bold;
+    text-shadow: 0 0 #343a40;
 }
 
 .fa-user-edit {
