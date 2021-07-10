@@ -25,11 +25,13 @@ app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 mongo = PyMongo(app)
 
 
-# Home page
 @app.route("/")
-# Show the list of specialities for user to select from the dropdown list
 @app.route("/home")
 def home():
+    """
+    Renders homepage from main website link and shows the list of the specialities 
+    for the users to select from the dropdown list
+    """
     specialities = mongo.db.specialities.find()
     return render_template("home.html", specialities=specialities)
 
@@ -45,7 +47,7 @@ def about():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
-    Search for a doctor based on their first name, last name or a speciality
+    Search for a doctor based on their first name and last name
     """
     query = request.form.get("query")
     doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
@@ -92,7 +94,7 @@ def specialists():
 def appointment():
     """
     Appointment page where a user will have an option to submit an
-    appointment request and select from a list of given specialities.
+    appointment request
     """
     specialities = mongo.db.specialities.find()
     return render_template("appointment.html", specialities=specialities)
