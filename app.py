@@ -255,14 +255,14 @@ def update_profile(username):
 @app.route("/delete_profile/<username>")
 def delete_profile(username):
     """
-    Delete a user profile from the collection
+    Delete a user profile from the database and logout from the session
     """
     mongo.db.users.remove(
         {"username": session["user"]})
 
     flash("Profile was successfully deleted")
     return redirect(
-        url_for("login", username=session["user"]))
+        url_for("logout", username=session["user"]))
 
 
 @app.route("/logout")
