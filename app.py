@@ -44,30 +44,32 @@ def about():
     return render_template("about.html", specialities=specialities)
 
 
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search", methods=["POST"])
 def search():
     """
-    Search for a doctor based on their first name, last name or speciality
+    Search for a doctor based on their first name, last name or speciality.
+    If no results found return flash messag and redirect to home page.
     """
     query = request.form.get("query")
     doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
-    return render_template("specialists.html", doctors=doctors)
+
+    if len(doctors) <= 0:
+        flash(f"No Results found for {query}'")
+        return redirect(url_for("home"))
+    else:
+        return render_template("specialists.html", doctors=doctors)
 
 
-@app.route("/specialists")
-def specialists():
+@app.route("/specialists/<speciality_name>", methods=["GET", "POST"])
+def specialists(speciality_name):
     """
-    Search for the list of doctors based on their speciality
+    Search for the list of doctors based on their speciality available from a
+    dropdown list
     """
-    try:
-        if session["user"]:
-            user = True
-    except KeyError:
-        user = False
-    finally:
+    if request.method == "POST":
         query = request.args.get("query")
         specialities = request.args.get("specialities")
-        print(specialities)
+        doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
 
         # Check if search query
         if query is not None:
@@ -79,11 +81,13 @@ def specialists():
             doctor_list = list(
                 mongo.db.doctors.find(
                     {"specialities": specialities}).sort(
-                        [("_id", -1)]))
+                        [("speciality_name", -1)]))
         else:
             # Find all doctors
             doctor_list = list(
-                mongo.db.doctors.find().sort([("specialities", -1)]))
+                    mongo.db.doctors.find(
+                        {"specialities": specialities}).sort(
+                            [("speciality_name", -1)]))
 
         return render_template(
             "specialists.html", doctors=doctor_list,
