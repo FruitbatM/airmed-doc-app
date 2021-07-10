@@ -32,4 +32,16 @@
         </div>
     </div>
     {% endfor %}
+
+    <!-- Request appointment button -->
+    <div class="container">
+		<div class="row button-wrap">
+			<div class="col s12">
+				<a href="{{ url_for('appointment') }}" class="btn btn-request">
+					Request Appointment
+				</a>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

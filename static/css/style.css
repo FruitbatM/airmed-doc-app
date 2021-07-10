@@ -57,8 +57,15 @@ nav {
 
 .highlight {
     color: #16546e;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
+}
+
+.search-heading {
+    font-family: 'Roboto', sans-serif;
+    color: #16546e;
+    font-family: 1.3rem;
+    margin-bottom: 2rem;
 }
 
 #search-container {
@@ -290,6 +297,12 @@ a.edit-profile {
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #F68C48;
+}
+
+.btn-request {
+    top: 75%;
+    left: 50%;
     background-color: #F68C48;
 }
 
