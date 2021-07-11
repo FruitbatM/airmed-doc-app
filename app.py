@@ -1,8 +1,8 @@
 import os
+import mail_settings
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-import smtplib
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -18,8 +18,6 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 app.config["MAPS_API_KEY"] = os.environ.get("MAPS_API_KEY")
-app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
-app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 
 
 mongo = PyMongo(app)
@@ -29,8 +27,8 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     """
-    Renders homepage from main website link and shows the list of the specialities 
-    for the users to select from the dropdown list
+    Renders homepage from main website link and shows the list of the
+    specialities for the users to select from the dropdown list
     """
     specialities = mongo.db.specialities.find()
     return render_template("home.html", specialities=specialities)
@@ -96,30 +94,21 @@ def appointment():
     return render_template("appointment.html", specialities=specialities)
 
 
-@app.route("/appointment_request", methods=["POST"])
+@app.route("/appointment_request", methods=["GET", "POST"])
 def appointment_request():
 
-    appointment = {
-        "first_name": request.form.get("first_name"),
-        "last_name": request.form.get("last_name"),
-        "email": request.form.get("email"),
-        "telephone": request.form.get("telephone"),
-        "date": request.form.get("date"),
-        "time": request.form.get("time"),
-        "speciality_name": request.form.get("speciality_name"),
-        "msg": request.form.get("msg")
-    }
-    mongo.db.appointments.insert_one(appointment)
+    if request.method == "POST":
+        with app.app_context():
+            msg = Message(subject="New Email Appointment Request",
+                          sender=app.config.get("MAIL_USERNAME"),
+                          recipients=["<recipient email here>"],
+                          body="This is a test email I sent with Gmail and Python!")
+            mail.send(msg)
 
-    flash("Your message was submited")
-    message = "Thank you for getting in touch! /n We will get back to you shortly."
-    server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.starttls()
-    server.login("info.airmed.app@gmail.com", "Airmed@2022")
-    server.sendmail("info.airmed.app@gmail.com", email, message)
+            flash("Email Sent!")
+            return redirect(url_for('appointment'))
 
-    return render_template(
-        "home.html", error_statement=error_statement)
+    return render_template("appointment.html")
 
 
 # Register function was adapted from Code Institute walkthrough project

@@ -426,6 +426,7 @@ Once above steps have been followed the website can be deployed. Please find the
 - Slider, parallax, modal and navbar functionalities were sourced from [Materialize](https://materializecss.com/) framework
 - Validate select option for a Materialize dropdown code was sourced from [Stack Overflow](https://stackoverflow.com/questions/34248898/how-to-validate-select-option-for-a-materialize-dropdown/38671029#38671029)
 - Custom modal design was found [HERE](https://www.jquery-az.com/materialize/demo.php?ex=53.0_4#!)
+- Sending emails with Flask-Email was sourced from [Sending Emails Using API in Flask-Mail](https://www.geeksforgeeks.org/)sending-emails-using-api-in-flask-mail/
 
 ## Media
 
