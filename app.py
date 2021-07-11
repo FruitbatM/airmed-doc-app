@@ -54,7 +54,7 @@ def search():
     doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
 
     if len(doctors) <= 0:
-        flash(f"No Results found for {query}'")
+        flash(f"No Results found for {query}. Please search again.")
         return redirect(url_for("home"))
     else:
         return render_template("specialists.html", doctors=doctors)
@@ -67,31 +67,23 @@ def specialists(speciality_name):
     dropdown list
     """
     if request.method == "POST":
-        query = request.args.get("query")
-        specialities = request.args.get("specialities")
-        doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
+        search = request.form.get("speciality_name")
 
-        # Check if search query
-        if query is not None:
-            doctor_list = list(
-                mongo.db.doctors.find(
-                    {"$text": {"$search": query}}))
-        # Check if speciality name filter
-        elif specialities is not None:
-            doctor_list = list(
-                mongo.db.doctors.find(
-                    {"specialities": specialities}).sort(
-                        [("speciality_name", -1)]))
+        if search is None:
+            flash(f"No Results found for {search}. Please search again.")
+            return redirect(url_for("home"))
+
         else:
-            # Find all doctors
-            doctor_list = list(
-                    mongo.db.doctors.find(
-                        {"specialities": specialities}).sort(
+            specialities = mongo.db.specialities.find_one(
+                {"speciailty_name": str()})
+            doctors = list(
+                mongo.db.doctors.find({"doctors": speciality_name}).sort(
                             [("speciality_name", -1)]))
+            print(doctors)
 
         return render_template(
-            "specialists.html", doctors=doctor_list,
-            user=user, specialities=specialities)
+            "specialists.html", doctors=doctors,
+            specialities=specialities)
 
 
 @app.route("/appointment")
@@ -398,6 +390,19 @@ def doctor_logout():
     flash("You have been successfully logged out")
     session.pop("user")
     return redirect(url_for("doctor_login"))
+
+
+@app.route("/delete_doctor_profile/<email>")
+def delete_doctor_profile(email):
+    """
+    Delete a doctor's profile from the database and logout from the session
+    """
+    mongo.db.doctors.remove(
+        {"email": session["user"]})
+
+    flash("Profile was successfully deleted")
+    return redirect(
+        url_for("doctor_logout", email=session["user"]))
 
 
 # 404 error

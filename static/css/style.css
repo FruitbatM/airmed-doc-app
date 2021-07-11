@@ -64,7 +64,7 @@ nav {
 .search-heading {
     font-family: 'Roboto', sans-serif;
     color: #16546e;
-    font-family: 1.3rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
 }
 
@@ -101,6 +101,14 @@ nav {
     color: #16546e;
     font-weight: 600;
     letter-spacing: 0.12rem;
+}
+
+.about-heading {
+    font-family: 'Roboto', sans-serif;
+    color: #16546e;
+    font-weight: 600;
+    letter-spacing: 0.12rem;
+    margin-top: 5rem;
 }
 
 #why-section {
