@@ -118,9 +118,6 @@ def appointment_request():
     server.login("info.airmed.app@gmail.com", "Airmed@2022")
     server.sendmail("info.airmed.app@gmail.com", email, message)
 
-    if not first_name or not last_name or not email:
-        error_statement = "All Form fields required"
-
     return render_template(
         "home.html", error_statement=error_statement)
 
