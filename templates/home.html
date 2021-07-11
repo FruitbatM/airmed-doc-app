@@ -16,8 +16,8 @@
 			<li>
         		<img src="{{ url_for('static', filename='images/carousel-2.jpg') }}">
         		<div class="caption left-align">
-          			<h2 class="slide-heading">Exceptional Care through Research and Innovation</h2>
-          			<h5 class="text-darken-2 slide-subh">Here's our small slogan</h5>
+          			<h2 class="slide-heading">Quality Healthcare Made Simple</h2>
+          			<h5 class="text-darken-2 slide-subh">Airmed Health Clinic</h5>
 					<a href="{{ url_for('register') }}" class="btn btn-slider waves-effect">REGISTER</a>
         		</div>
       		</li>
@@ -25,7 +25,7 @@
 		  		<img src="{{ url_for('static', filename='images/carousel-3.jpg') }}">
         		<div class="caption right-align">
 					<h2 class="slide-heading">Safe. Trusted. HERE FOR YOU.</h2>
-        			<h5 class="slide-subh">Here's our small slogan.</h5>
+        			<h5 class="slide-subh">Airmed Health Clinic</h5>
 					<a href="{{ url_for('register') }}" class="btn btn-slider waves-effect">REGISTER</a>
         		</div>
       		</li>
@@ -56,21 +56,23 @@
 					<h6 class="search-heading">Use our smart search to find the best doctor suited for your healthcare needs</h6>
 				</div>
 			</div>
-			<div class="row valign-wrapper center-align">
-				<div class="input-field col s12">
-					<select class="options" id="speciality_name" name="speciality_name" class="validate">
-						<option value="" required disabled selected>Please select speciality</option>
-						{% for speciality in specialities %}
-							<option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="col">
-					<a href="{{ url_for('specialists') }}" class="btn btn-slider">GO</a>
-				</div>
+			<div class="row">
+				<form action="{{ url_for('specialists', speciality_name=speciality_name) }}" method="POST" class="col s12"></form>
+					<div class="input-field col s12">
+						<select class="options" id="speciality_name" name="speciality_name" class="validate">
+							<option value="" disabled selected required>Please select speciality</option>
+							{% for speciality in specialities %}
+								<option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
+							{% endfor %}
+						</select>
+					</div>
+                    <button type="submit" class="btn-small btn-slider right">
+                        GO
+                    </button>
+				</form>
 			</div>
 		</div>
-		<!-- Search by a specilatiy -->
+		<!-- Search by doctor name or speciality -->
 		<div class="container" id="search-container">
 			<div class="row card-panel grey lighten-5">
 				<form action="{{ url_for('search') }}" method="POST" class="col s12">

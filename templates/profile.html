@@ -9,7 +9,6 @@
             <hr width="50%">
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col s12 offset-m2 m8 offset-m2">
@@ -49,7 +48,7 @@
                             </div>
                         {% endfor %}
                         
-                        <!--  Profile congiguration buttons -->
+                        <!--  Profile configuration buttons -->
                         <div class="row">
                             <div class="profile-buttons right">
                                 <!-- Edit button -->
@@ -66,22 +65,21 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </span>
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h5>Are you sure you want to delete patient profile?</h5>
-                                    <p>A bunch of text</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
-                                    <a href="{{ url_for('delete_profile', username=session['user']) }}" class="modal-close waves-effect waves-green btn red">Delete</a>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h5>Are you sure you want to delete Patient profile?</h5>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
+                                        <a href="{{ url_for('delete_profile', username=session['user']) }}" class="modal-close waves-effect waves-green btn red">Delete</a>
+                                    </div>
                                 </div>
                             </div>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     
 {% endblock %}
