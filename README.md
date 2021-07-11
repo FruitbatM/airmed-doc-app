@@ -221,8 +221,7 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - [CSS Autoprefixer](https://autoprefixer.github.io/) was used for adding CSS vendor prefixes.
 - [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to test and debug the code.
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) was used to display Google Map within the website.
-- [EmailJS](https://www.emailjs.com/) was used to create an email template and enable users to send emails directly without using the server.
-- [SweetAlert2](https://sweetalert2.github.io/) was used to add an interactive custom modal popup box when the user submits a contact form.
+- [Animate On Scroll Library](https://michalsnik.github.io/aos/) was used to integrate animate on scroll effect on home page.
 - [Cloudinary](https://cloudinary.com/) was used to store images and handle image uploading.
 - [Randomkeygen](https://randomkeygen.com/) was used to generate random passwords and keys.
 
