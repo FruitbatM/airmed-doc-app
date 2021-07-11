@@ -51,13 +51,13 @@ Mockup responsive image was created with [Techsini](http://techsini.com/multi-mo
 
 The project was created as a **Milestone Project 3** as a part of **Diploma in Full Stack Software Development** with **Code Institute**. The project is developed using Python, JavaScript, HTML, CSS, and Materialize framework.
 
-AIRMED is an application that contains information about AIRMED, a fictional clinic, it doctors, and services. The application will provide the information required for the patientes to 
+AIRMED is a healthcare application that contains information about AIRMED, a fictional clinic, its doctors, services and patient data. Its main purpose is to give a real-time access to high-quality, affordable healthcare to all. In Irish mythology, Airmed was the goddess of healing and this name seemed appropriate for the application name.
 
-In Irish mithyology, Airmed was the goddess of healing.
+Users will be able to make appointments quickly, while doctors are not involved in the appointment process, so their time will also be saved. All the information from AIRMED, patient personal data, doctor data is saved in one place, easily accessible from any digital device, 24/7.
 
-App users will be able to make appointments quickly, while doctors are not involved in the appointment process, so their time will also be saved.
+Well-done UI is one of the key factors defining the success of AIRMED healthcare application. The application is easy to use and simple to navigate. Also, the User Interface is engaging, attractive and professional. It is taken in consideration that the patient and doctor's user data should be safe and secure to access.
 
-
+**Please note, this project is for educational purposes only and provided clinic's and doctor's information is fictional.**
 
 # User Experience (UX)
 
