@@ -99,15 +99,27 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 
 - Fully responsive mobile first website
 - Interactive features that allow the user to engage and find needed information fast and easy
-- 
-
 
 ## Structure
 
+The website will be designed to be pleasing to the eye, consistent and user friendly.
+- Interaction Design
+    - Consistent design will be used throughout the website to maintain a good UX.
+    - The navigation with effective slider background images will make the website look elegant and attractive.
+    - Easy and fast patient log in and register forms 
+
+- Information Architecture (IA)
+    - The project was conceptualized as a websige divided in four pages. This structure was used because it is simple and familiar to the site visitors and it is sufficient for all user stories.
+    - Short paragraphs providing the relevant information will be used. This approach was selected to provide enough information, yet not to overwhelm.
+    - The content is organized and categorized by importance from top to bottom and left to right
+    - Personal user profiles for doctors and patients
+
 ## Skeleton
+The wireframes were created in [Balsamiq](https://balsamiq.com/).
+
+TO BE ADDED 
 
 ## Design
-
 ### Color Scheme
 
 Delicate and soothing color palette will be chosen for medical app. Users should feel calm and comforted when opening AIRMED app, knowing that they have come to the right place to address their healthcare needs, questions, and any concerns.
