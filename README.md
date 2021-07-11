@@ -51,7 +51,7 @@ Mockup responsive image was created with [Techsini](http://techsini.com/multi-mo
 
 The project was created as a **Milestone Project 3** as a part of **Diploma in Full Stack Software Development** with **Code Institute**. The project is developed using Python, JavaScript, HTML, CSS, and Materialize framework.
 
-AIRMED is a healthcare application that contains information about AIRMED, a fictional clinic, its doctors, services and patient data. Its main purpose is to give a real-time access to high-quality, affordable healthcare to all. In Irish mythology, Airmed was the goddess of healing and this name seemed appropriate for the application name.
+AIRMED is a healthcare application that contains information about AIRMED, a fictional clinic, its doctors, services, and patient data. Its main purpose is to give a real-time access to high-quality, affordable healthcare to all. In Irish mythology, Airmed was the goddess of healing and this name seemed appropriate for the application name.
 
 Users will be able to make appointments quickly, while doctors are not involved in the appointment process, so their time will also be saved. All the information from AIRMED, patient personal data, doctor data is saved in one place, easily accessible from any digital device, 24/7.
 
@@ -89,14 +89,18 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 2. As an admin, I would like to have an option to add new doctor and his/her personal data on the system.
 
 ## Strategy
-
 ### Project Goals
-
+- The main function of the application is to make the app accessible for each and every potential user who is a potential patient
+- AIRMED will be created with a primary purpose to solve patient problems, beginning with an online appointment booking
 - Attractive and good quality UI design
-
-- The main function of doctor appointment app is to make the app accessible for each and every potential user who is potential patient.
+- To enable an easy access to the heatlh clinic, services, and doctor's information
 
 ## Scope
+
+- Fully responsive mobile first website
+- Interactive features that allow the user to engage and find needed information fast and easy
+- 
+
 
 ## Structure
 
