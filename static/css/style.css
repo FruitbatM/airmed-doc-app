@@ -95,6 +95,12 @@ nav {
     margin-top: 3rem;
 }
 
+#search-icon {
+    margin-top: 0;
+    color: #F68C48;
+    padding-right: 1.2rem;
+}
+
 .main-heading {
     font-family: 'Roboto', sans-serif;
     padding-bottom: 2rem;
