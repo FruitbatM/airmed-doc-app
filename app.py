@@ -25,7 +25,9 @@ mail_settings = {
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
     "MAIL_USERNAME": os.environ['MAIL_USERNAME'],
-    "MAIL_PASSWORD": os.environ['MAIL_PASSWORD']
+    "MAIL_PASSWORD": os.environ['MAIL_PASSWORD'],
+    "MAIL_DEFAULT_SENDER": os.environ['MAIL_DEFAULT_SENDER'],
+    "ADMIN_EMAIL": os.environ.get('ADMIN_EMAIL')
 }
 
 app.config.update(mail_settings)
@@ -107,20 +109,47 @@ def appointment():
 
 @app.route("/appointment_request", methods=["GET", "POST"])
 def appointment_request():
-    try:
-        msg = Message("AIRMED Appointment Request",
-                      sender=app.config.get("MAIL_USERNAME"),
-                      recipients=["info.airmed.app@gmail.com"])
-        msg.body = "Hello, \nYour request was received.\nWe will contact you shortly."
-        mail.send(msg)
+    """
+    Populate properties from contact form entries and
+    return results via Flask Mail to specified email
+    address.
+    """
+    if request.method == "POST":
+        appointment = {
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email"),
+            "telephone": request.form.get("telephone"),
+            "date": request.form.get("date"),
+            "time": request.form.get("time"),
+            "speciality_name": request.form.get("speciality_name"),
+            "message": request.form.get("message")
+        }
+        mongo.db.appointments.insert_one(appointment)
 
-        flash("Thank you. Your appointment request has been received!")
-        return redirect(url_for('home'))
+        try:
+            msg = Message("AIRMED Appointment Request",
+                          recipients=[mail_settings["ADMIN_EMAIL"]])
+            msg.body = ('Hello, \nYour request was received.'
+                        '\nWe will contact you shortly.'
+                        '\nAIRMED Team')
+            mail.send(msg)
 
-    except Exception as e:
-        flash("Your email could not be sent. \
-             Please try again later.")
-        return str(e)
+            flash("Thank you. Your appointment request has been received!")
+            return redirect(url_for('home'))
+
+        except Exception as e:
+            flash("Your email could not be sent. \
+                 Please try again later.")
+            return str(e)
+
+    if "user" in session:
+        userToTarget = mongo.db.users.find_one({"username": session["user"]})
+        user_email = userToTarget["email"]
+    else:
+        user_email = ""
+
+    return render_template("home.html", user_email=user_email)
 
 
 # Register function was adapted from Code Institute walkthrough project

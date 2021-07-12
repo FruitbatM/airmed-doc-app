@@ -35,7 +35,8 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12 m6">
-							<input type="email" name="email" id="email" placeholder="E-mail" required>
+							<input type="email" name="email" id="email" class="validate" placeholder="E-mail" 
+							value="{{ user_email }}" required>
 						</div>
 						<div class="input-field col s12 m6">
 							<input type="tel" name="telephone" id="telephone" placeholder="Phone" required>
@@ -65,7 +66,8 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<textarea class="materialize-textarea validate" name="msg" id="msg" rows="4" placeholder="Message" required></textarea>
+							<textarea class="materialize-textarea validate" name="message" id="message" rows="4" 
+								minlength="5" maxlength="300" aria-label="Message" required></textarea>
 						</div>
 					</div>
 					<div class="modal-footer">
