@@ -198,10 +198,7 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - [Git](https://git-scm.com/) was used for version control.
 - [GitHub](https://github.com/) was used to store the project repository and deploy the site via GitHub pages.
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) was used to generate HTML from site templates.
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/) the project uses the Flask micro-web framework to simplify web server tasks.
-- [Werkzeug](https://palletsprojects.com/p/werkzeug/) - the project uses the Werkzeug WSGI library to manage the Web Server Gateway Interface and related tasks.
 - [PyMongo](https://pypi.org/project/pymongo/) contains tools for interacting with MongoDB database from Python.
-- [dnspython](https://pypi.org/project/dnspython/) is a DNS toolkit for Python.
 - [jQuery](https://jquery.com/) was used to simplify DOM manipulation.
 - [Balsamiq](https://balsamiq.com/) was used to create the wireframes for the website.
 - [Font Awesome](https://fontawesome.com/) icons were used throughout the website for better user experience.
@@ -225,6 +222,16 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - [Cloudinary](https://cloudinary.com/) was used to store images and handle image uploading.
 - [Randomkeygen](https://randomkeygen.com/) was used to generate random passwords and keys.
 
+## Flask extensions
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+	- Flask micro framework was used to build the web app using python code
+
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/utils/#module-werkzeug.security)
+	- Werkzeug Security Helpers were used to hash the user passwords before storing in the database
+
+- [Flask-Mail](https://flask-login.readthedocs.io/en/latest/)
+	- was used for sending emails relating to the appointment request
+
 ## Platforms
 - [Heroku](https://www.heroku.com/platform) - the project uses Heroku as it's deployment platform.
 
@@ -233,7 +240,6 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used for CSS code validation.
 - [JSHint](https://jshint.com/) was used for JavaScript code validation.
 - []()
-
 
 # Testing
 
