@@ -27,7 +27,7 @@ mail_settings = {
     "MAIL_USERNAME": os.environ['MAIL_USERNAME'],
     "MAIL_PASSWORD": os.environ['MAIL_PASSWORD'],
     "MAIL_DEFAULT_SENDER": os.environ['MAIL_DEFAULT_SENDER'],
-    "ADMIN_EMAIL": os.environ.get['ADMIN_EMAIL']
+    "ADMIN_EMAIL": os.environ['ADMIN_EMAIL']
 }
 
 app.config.update(mail_settings)
