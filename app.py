@@ -1,11 +1,11 @@
 import os
-import mail_settings
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_mail import Mail, Message
 if os.path.exists("env.py"):
     import env
 
@@ -16,9 +16,20 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
-
 app.config["MAPS_API_KEY"] = os.environ.get("MAPS_API_KEY")
 
+# mail settings
+mail_settings = {
+    "MAIL_SERVER": 'smtp.gmail.com',
+    "MAIL_PORT": 465,
+    "MAIL_USE_TLS": False,
+    "MAIL_USE_SSL": True,
+    "MAIL_USERNAME": os.environ['MAIL_USERNAME'],
+    "MAIL_PASSWORD": os.environ['MAIL_PASSWORD']
+}
+
+app.config.update(mail_settings)
+mail = Mail(app)
 
 mongo = PyMongo(app)
 
@@ -96,19 +107,20 @@ def appointment():
 
 @app.route("/appointment_request", methods=["GET", "POST"])
 def appointment_request():
+    try:
+        msg = Message("AIRMED Appointment Request",
+                      sender=app.config.get("MAIL_USERNAME"),
+                      recipients=["info.airmed.app@gmail.com"])
+        msg.body = "Hello, \nYour request was received.\nWe will contact you shortly."
+        mail.send(msg)
 
-    if request.method == "POST":
-        with app.app_context():
-            msg = Message(subject="New Email Appointment Request",
-                          sender=app.config.get("MAIL_USERNAME"),
-                          recipients=["<recipient email here>"],
-                          body="This is a test email I sent with Gmail and Python!")
-            mail.send(msg)
+        flash("Thank you. Your appointment request has been received!")
+        return redirect(url_for('home'))
 
-            flash("Email Sent!")
-            return redirect(url_for('appointment'))
-
-    return render_template("appointment.html")
+    except Exception as e:
+        flash("Your email could not be sent. \
+             Please try again later.")
+        return str(e)
 
 
 # Register function was adapted from Code Institute walkthrough project
