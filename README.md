@@ -300,6 +300,8 @@ For sensitive information like passwords and api keys, create an `env.py` file t
         # mail settings
         os.environ.setdefault("MAIL_PASSWORD", "MAIL_PASSWORD")
         os.environ.setdefault("MAIL_USERNAME", "MAIL_USERNAME")
+        os.environ.setdefault("MAIL_DEFAULT_SENDER", "MAIL_DEFAULT_SENDER")
+        os.environ.setdefault("ADMIN_EMAIL", "ADMIN_EMAIL")
 
         # Google maps settings
         os.environ.setdefault("MAPS_API_KEY", "MAPS_API_KEY")
