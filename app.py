@@ -360,6 +360,7 @@ def doctor_login():
 def doctor_profile(email):
     # grab the session user's email from the database
     doctor = mongo.db.doctors.find_one({"email": session["user"]})
+    image_url = doctor["image_url"]
     doctor_first_name = doctor["doctor_first_name"]
     doctor_last_name = doctor["doctor_last_name"]
     title = doctor["title"]
@@ -376,7 +377,8 @@ def doctor_profile(email):
             doctor_first_name=doctor_first_name, title=title,
             doctor_last_name=doctor_last_name, email=email,
             phone=phone, speciality_name=speciality_name,
-            experience=experience, about=about, visit_type=visit_type)
+            experience=experience, about=about, visit_type=visit_type,
+            image_url=image_url)
 
     return redirect(url_for("doctor_login"))
 

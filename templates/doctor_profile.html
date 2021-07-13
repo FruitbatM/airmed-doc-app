@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h4 class="center-align" id="profile-heading"> dr. {{ doctor.doctor_last_name }}'s Profile</h4>
+            <h4 class="center-align" id="profile-heading"> dr. {{ doctor.doctor_last_name }}'s <br> Profile</h4>
             <hr width="50%">
         </div>
     </div>
@@ -12,6 +12,11 @@
             <div class="col s12 offset-m2 m8 offset-m2">
                 <div class="card patient-card">
                     <div class="card-content">
+                        <p class="para-details">
+                            <img class="doctor-image center-align" src="{{ image_url }}">
+                            <br>
+                        </p>
+                        <hr class="dotted-border">
                         <p class="para-details">
                             <strong>Title: </strong>
                             {{ title }}

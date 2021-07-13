@@ -476,6 +476,13 @@ select[required]{
     padding-left: 1rem;
 }
 
+.doctor-image {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
 /* Media Queries */
 /* Display on tablet devices */  
 @media only screen 
