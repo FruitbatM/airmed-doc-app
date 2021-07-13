@@ -303,10 +303,9 @@ def add_doctor():
     """
     if request.method == "POST":
         doctor = {
-            "title": request.form.get("title").str.lower(),
+            "title": request.form.get("title").lower(),
             "doctor_first_name": request.form.get("doctor_first_name"),
             "doctor_last_name": request.form.get("doctor_last_name"),
-            "username": request.form.get("username"),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
             "phone": request.form.get("phone"),
@@ -315,8 +314,8 @@ def add_doctor():
             "experience": request.form.get("experience")
         }
         mongo.db.doctors.insert_one(doctor)
-        flash("Doctor successfully added")
-        return redirect(url_for("add_doctor"))
+        flash("Doctor was successfully added")
+        return redirect(url_for("doctor_login"))
 
     specialities = mongo.db.specialities.find().sort("speciality_name", 1)
     return render_template("add_doctor.html", specialities=specialities)
