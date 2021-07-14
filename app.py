@@ -448,11 +448,11 @@ def admin():
     return session['user'] == 'admin'
 
 
-# ADMIN PANEL
-@app.route("/admin/panel", methods=["GET", "POST"])
-def admin_panel():
+# ADMIN DASHBOARD
+@app.route("/admin/dashboard", methods=["GET", "POST"])
+def admin_dashboard():
     """
-    Display Admin Panel. This page is restricted to the admin user only.
+    Display Admin Dashboard. This page is restricted to the admin user only.
     """
     # check that someone isn't brute-forcing the url get admin functionalities
     if admin():
@@ -461,8 +461,8 @@ def admin_panel():
     else:
         flash("You are not authorised to view this page")
         return redirect(url_for("login"))
-    # return the admin panel
-    return render_template("admin_panel.html", doctors=doctors,
+    # return dashboard
+    return render_template("dashboard.html", doctors=doctors,
                            users=users)
 
 

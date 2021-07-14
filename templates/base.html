@@ -26,14 +26,16 @@
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="{{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
-                    <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
+                    {% if not session["user"] %}
+                        <li class="{{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
+                        <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
+                    {% endif %}
                     {% if session.user %}
                         <li class="{{ 'active' if active_page == 'profile' else '' }}">
                             <a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                         {% if session.user|lower == "admin"|lower %}
                             <li class="{{ 'active' if active_page == 'add_doctor' else '' }}"><a href="{{ url_for('add_doctor') }}">ADD DOCTOR</a></li>
-                            <li class="{{ 'active' if active_page == 'add_doctor' else '' }}"><a href="{{ url_for('admin_panel') }}">PANEL</a></li>
+                            <li class="{{ 'active' if active_page == 'dashboard' else '' }}"><a href="{{ url_for('admin_dashboard') }}">DASHBOARD</a></li>
                         {% endif %} 
                         <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
                         {% else %}
@@ -58,12 +60,15 @@
                     <h4 class="center-align">AIRMED</h4>
                 </a>
             </li>
-            <li class="sidenav-close {{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
-            <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            {% if not session["user"] %}
+                <li class="sidenav-close {{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
+                <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            {% endif %}
             {% if session.user %}
                 <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 {% if session.user|lower == "admin"|lower %}
                     <li class="{{ 'active' if active_page == 'add_doctor' else '' }}"><a href="{{ url_for('add_doctor') }}">ADD DOCTOR</a></li>
+                    <li class="{{ 'active' if active_page == 'admin_dashboard' else '' }}"><a href="{{ url_for('admin_dashboard') }}">DASHBOARD</a></li>
                 {% endif %} 
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
             {% else %}
