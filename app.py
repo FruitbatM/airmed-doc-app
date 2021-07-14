@@ -107,7 +107,7 @@ def appointment():
     return render_template("appointment.html", specialities=specialities)
 
 
-@app.route("/appointment_request", methods=["GET", "POST"])
+@app.route("/appointment/request", methods=["GET", "POST"])
 def appointment_request():
     """
     Populate properties from contact form entries and
@@ -242,7 +242,7 @@ def profile(username):
 
 # Post profile data to MongoDB
 # Link MongoDB gender data to form dropdown
-@app.route("/update_profile/<username>", methods=["GET", "POST"])
+@app.route("/update/profile/<username>", methods=["GET", "POST"])
 def update_profile(username):
     """
     Function allows a registered user to edit and update their
@@ -276,7 +276,7 @@ def update_profile(username):
         email=email, telephone=telephone, age=age, gender=gender)
 
 
-@app.route("/delete_profile/<username>")
+@app.route("/delete/profile/<username>")
 def delete_profile(username):
     """
     Delete a user profile from the database and logout from the session
@@ -297,7 +297,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_doctor", methods=["GET", "POST"])
+@app.route("/add/doctor", methods=["GET", "POST"])
 def add_doctor():
     """
     Function to add a new doctor in the database
@@ -326,7 +326,7 @@ def add_doctor():
     return render_template("add_doctor.html", specialities=specialities)
 
 
-@app.route("/doctor_login", methods=["GET", "POST"])
+@app.route("/doctor/login", methods=["GET", "POST"])
 def doctor_login():
     """
     Doctor log in function which checks that user email and password
@@ -360,7 +360,7 @@ def doctor_login():
     return render_template("doctor_login.html")
 
 
-@app.route("/doctor_profile/<email>", methods=["GET"])
+@app.route("/doctor/profile/<email>", methods=["GET"])
 def doctor_profile(email):
     # grab the session user's email from the database
     doctor = mongo.db.doctors.find_one({"email": session["user"]})
@@ -385,7 +385,7 @@ def doctor_profile(email):
     return redirect(url_for("doctor_login"))
 
 
-@app.route("/update_doctor_profile/<email>", methods=["GET", "POST"])
+@app.route("/update/doctor/profile/<email>", methods=["GET", "POST"])
 def update_doctor_profile(email):
     """
     Function allows a registered doctor to update some of their
@@ -419,7 +419,7 @@ def update_doctor_profile(email):
         phone=phone, experience=experience, about=about, visit_type=visit_type)
 
 
-@app.route("/doctor_logout")
+@app.route("/doctor/logout")
 def doctor_logout():
     # remove user from session cookies
     flash("You have been successfully logged out")
@@ -427,7 +427,7 @@ def doctor_logout():
     return redirect(url_for("doctor_login"))
 
 
-@app.route("/delete_doctor_profile/<email>")
+@app.route("/delete/doctor/profile/<email>")
 def delete_doctor_profile(email):
     """
     Delete a doctor's profile from the database and logout from the session
@@ -449,7 +449,7 @@ def admin():
 
 
 # ADMIN PANEL
-@app.route("/admin_panel")
+@app.route("/admin/panel", methods=["GET", "POST"])
 def admin_panel():
     """
     Display Admin Panel. This page is restricted to the admin user only.
