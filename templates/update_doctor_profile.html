@@ -16,6 +16,7 @@
                 <div class="input-field responsive-img">
                     <label for="image_url" class="col s12 md3"></label>
                     <div class="col s12 md8">
+                        <label for="image_url">Please add image url</label>
                         <input id="image_url" name="image_url" class="form-control" type="url" 
                             required value="{{ doctor.image_url }}">
                     </div>
@@ -26,7 +27,21 @@
                 <div class="input-field col s12">
                     <input id="phone" name="phone" type="tel" value="{{ doctor.phone }}" placeholder="Phone" 
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate" required>
-                    <label for="Phone">Enter your phone number in the format 123-444-7890</label>
+                    <label for="Phone">Add your phone number in the format 123-444-7890</label>
+                </div>
+            </div>
+            <!-- Experience -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" id="experience" name="experience" class="form-control" required value="{{ experience }}"><br>
+                    <label for="experience">Experience</label>
+                </div>
+            </div>
+            <!-- Visit type -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" id="visit_type" name="visit_type" class="form-control" required value="{{ visit_type }}"><br>
+                    <label for="visit_type">Visit type</label>
                 </div>
             </div>
             <!-- About -->

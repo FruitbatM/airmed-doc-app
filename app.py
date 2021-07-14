@@ -313,7 +313,9 @@ def add_doctor():
             "phone": request.form.get("phone"),
             "speciality_name": request.form.get("speciality_name"),
             "about": request.form.get("about"),
-            "experience": request.form.get("experience")
+            "experience": request.form.get("experience"),
+            "image_url": "",
+            "visit_type": ""
         }
         mongo.db.doctors.insert_one(doctor)
         flash("Doctor was successfully added")
@@ -369,17 +371,15 @@ def doctor_profile(email):
     phone = doctor["phone"]
     speciality_name = doctor["speciality_name"]
     experience = doctor["experience"]
-    visit_type = doctor["visit_type"]
     about = doctor["about"]
 
     if session["user"]:
         return render_template(
-            "doctor_profile.html", doctor=doctor,
+            "doctor_profile.html", doctor=doctor, image_url=image_url,
             doctor_first_name=doctor_first_name, title=title,
             doctor_last_name=doctor_last_name, email=email,
             phone=phone, speciality_name=speciality_name,
-            experience=experience, about=about, visit_type=visit_type,
-            image_url=image_url)
+            experience=experience, about=about)
 
     return redirect(url_for("doctor_login"))
 
@@ -400,7 +400,8 @@ def update_doctor_profile(email):
                     "phone": request.form.get("phone"),
                     "speciality_name": request.form.get("speciality_name"),
                     "experience": request.form.get("experience"),
-                    "about": request.form.get("about")
+                    "about": request.form.get("about"),
+                    "visit_type": request.form.get("visit_type")
                 }}
         )
         flash("Your profile was successfully updated")
@@ -409,11 +410,13 @@ def update_doctor_profile(email):
     doctor = mongo.db.doctors.find_one({"email": session["user"]})
     image_url = doctor["image_url"]
     phone = doctor["phone"]
+    experience = doctor["experience"]
+    visit_type = doctor["visit_type"]
     about = doctor["about"]
 
     return render_template(
         "update_doctor_profile.html", doctor=doctor, image_url=image_url,
-        phone=phone, about=about)
+        phone=phone, experience=experience, about=about, visit_type=visit_type)
 
 
 @app.route("/doctor_logout")
