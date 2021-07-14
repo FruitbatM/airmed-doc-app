@@ -448,6 +448,24 @@ def admin():
     return session['user'] == 'admin'
 
 
+# ADMIN PANEL
+@app.route("/admin_panel")
+def admin_panel():
+    """
+    Display Admin Panel. This page is restricted to the admin user only.
+    """
+    # check that someone isn't brute-forcing the url get admin functionalities
+    if admin():
+        doctors = list(mongo.db.doctors.find().sort("doctor_last_name", 1))
+        users = list(mongo.db.usrs.find().sort("last_name", 1))
+    else:
+        flash("You are not authorised to view this page")
+        return redirect(url_for("login"))
+    # return the admin panel
+    return render_template("admin_panel.html", doctors=doctors,
+                           users=users)
+
+
 # 404 error
 @app.errorhandler(404)
 def error_404(error):
