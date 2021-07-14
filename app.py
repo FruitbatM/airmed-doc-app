@@ -398,7 +398,6 @@ def update_doctor_profile(email):
                 {
                     "image_url": request.form.get("image_url"),
                     "phone": request.form.get("phone"),
-                    "speciality_name": request.form.get("speciality_name"),
                     "experience": request.form.get("experience"),
                     "about": request.form.get("about"),
                     "visit_type": request.form.get("visit_type")
