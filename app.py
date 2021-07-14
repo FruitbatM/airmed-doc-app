@@ -172,6 +172,7 @@ def register():
             "last_name": request.form.get("last_name").capitalize(),
             "email": request.form.get("email"),
             "telephone": request.form.get("telephone"),
+            "is_admin": False,
             "gender": "",
             "age": ""
         }
@@ -303,7 +304,7 @@ def add_doctor():
     """
     if request.method == "POST":
         doctor = {
-            "title": request.form.get("title").lower(),
+            "title": request.form.get("title").capitalize(),
             "doctor_first_name": request.form.get(
                 "doctor_first_name").capitalize(),
             "doctor_last_name": request.form.get(
@@ -437,6 +438,14 @@ def delete_doctor_profile(email):
     flash("Profile was successfully deleted")
     return redirect(
         url_for("doctor_logout", email=session["user"]))
+
+
+# Administrator user function
+def admin():
+    """
+    Define admin user
+    """
+    return session['user'] == 'admin'
 
 
 # 404 error
