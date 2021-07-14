@@ -168,8 +168,8 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "first_name": request.form.get("first_name"),
-            "last_name": request.form.get("last_name"),
+            "first_name": request.form.get("first_name").capitalize(),
+            "last_name": request.form.get("last_name").capitalize(),
             "email": request.form.get("email"),
             "telephone": request.form.get("telephone"),
             "gender": "",
@@ -304,8 +304,10 @@ def add_doctor():
     if request.method == "POST":
         doctor = {
             "title": request.form.get("title").lower(),
-            "doctor_first_name": request.form.get("doctor_first_name"),
-            "doctor_last_name": request.form.get("doctor_last_name"),
+            "doctor_first_name": request.form.get(
+                "doctor_first_name").capitalize(),
+            "doctor_last_name": request.form.get(
+                "doctor_last_name").capitalize(),
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email"),
             "phone": request.form.get("phone"),
