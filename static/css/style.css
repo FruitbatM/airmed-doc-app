@@ -480,7 +480,8 @@ select[required]{
     display: block;
     margin-right: auto;
     margin-left: auto;
-    width: 50%;
+    height: 12rem;
+    width: 12rem;
 }
 
 .config-buttons {

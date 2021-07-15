@@ -77,7 +77,7 @@
                         <div class="profile-buttons right">
                             <!-- Edit button -->
                             <span>
-                                <a class="edit-profile" href="{{ url_for('update_doctor_profile', email=session['user']) }}">
+                                <a class="edit-profile" href="{{ url_for('update_doctor_profile', email=session['email']) }}">
                                     <i class="fas fa-user-edit"></i>
                                     Edit Profile
                                 </a>
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
-                                    <a href="{{ url_for('delete_doctor_profile', email=session['user']) }}" class="modal-close waves-effect waves-green btn red">Delete</a>
+                                    <a href="{{ url_for('delete_doctor_profile', email=session['email']) }}" class="modal-close waves-effect waves-green btn red">Delete</a>
                                 </div>
                             </div>
                         </div>
