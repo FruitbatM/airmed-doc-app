@@ -173,6 +173,7 @@ def register():
             "email": request.form.get("email"),
             "telephone": request.form.get("telephone"),
             "is_admin": False,
+            "is_doctor": False,
             "gender": "",
             "age": ""
         }
@@ -293,7 +294,7 @@ def delete_profile(username):
 def logout():
     # remove user from session cookies
     flash("You have been successfully logged out")
-    session.pop("user")
+    session.pop("user", None) or session.pop("email", None)
     return redirect(url_for("login"))
 
 
@@ -342,11 +343,11 @@ def doctor_login():
             if check_password_hash(
                         existing_doctor["password"],
                         request.form.get("password")):
-                session["user"] = request.form.get("email")
+                session["email"] = request.form.get("email")
                 flash("Welcome, dr. {}".format(
                         request.form.get("email")))
                 return redirect(url_for(
-                        "doctor_profile", email=session["user"]))
+                        "doctor_profile", email=session["email"]))
 
             else:
                 # Invalid password match
@@ -363,7 +364,7 @@ def doctor_login():
 @app.route("/doctor/profile/<email>", methods=["GET"])
 def doctor_profile(email):
     # grab the session user's email from the database
-    doctor = mongo.db.doctors.find_one({"email": session["user"]})
+    doctor = mongo.db.doctors.find_one({"email": session["email"]})
     image_url = doctor["image_url"]
     doctor_first_name = doctor["doctor_first_name"]
     doctor_last_name = doctor["doctor_last_name"]
@@ -374,7 +375,7 @@ def doctor_profile(email):
     experience = doctor["experience"]
     about = doctor["about"]
 
-    if session["user"]:
+    if session["email"]:
         return render_template(
             "doctor_profile.html", doctor=doctor, image_url=image_url,
             doctor_first_name=doctor_first_name, title=title,
@@ -394,7 +395,7 @@ def update_doctor_profile(email):
     doctor = mongo.db.doctors
     if request.method == "POST":
         doctor.update(
-            {"email": session["user"]},
+            {"email": session["email"]},
             {"$set":
                 {
                     "image_url": request.form.get("image_url"),
@@ -405,9 +406,9 @@ def update_doctor_profile(email):
                 }}
         )
         flash("Your profile was successfully updated")
-        return redirect(url_for("doctor_profile", email=session["user"]))
+        return redirect(url_for("doctor_profile", email=session["email"]))
 
-    doctor = mongo.db.doctors.find_one({"email": session["user"]})
+    doctor = mongo.db.doctors.find_one({"email": session["email"]})
     image_url = doctor["image_url"]
     phone = doctor["phone"]
     experience = doctor["experience"]
@@ -423,7 +424,7 @@ def update_doctor_profile(email):
 def doctor_logout():
     # remove user from session cookies
     flash("You have been successfully logged out")
-    session.pop("user")
+    session.pop("email")
     return redirect(url_for("doctor_login"))
 
 
@@ -433,11 +434,11 @@ def delete_doctor_profile(email):
     Delete a doctor's profile from the database and logout from the session
     """
     mongo.db.doctors.remove(
-        {"email": session["user"]})
+        {"email": session["email"]})
 
     flash("Profile was successfully deleted")
     return redirect(
-        url_for("doctor_logout", email=session["user"]))
+        url_for("doctor_logout", email=session["email"]))
 
 
 # Administrator user function
