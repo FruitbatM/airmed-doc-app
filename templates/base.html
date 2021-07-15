@@ -14,7 +14,7 @@
 
     {% block styles %}
     {% endblock %}
-    <title>Airmed Application</title>
+    <title>Airmed Doctor Application</title>
 </head>
 <body>
     <header>
@@ -33,16 +33,21 @@
                     {% if session.user %}
                         <li class="{{ 'active' if active_page == 'profile' else '' }}">
                             <a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                        {% elif session.email %}
+                        <li class="{{ 'active' if active_page == 'doctor_profile' else '' }}">
+                            <a href="{{ url_for('doctor_profile', email=session['email']) }}"> DOC PROFILE</a></li>
+                        {% endif %}
                         {% if session.user|lower == "admin"|lower %}
                             <li class="{{ 'active' if active_page == 'add_doctor' else '' }}"><a href="{{ url_for('add_doctor') }}">ADD DOCTOR</a></li>
                             <li class="{{ 'active' if active_page == 'dashboard' else '' }}"><a href="{{ url_for('admin_dashboard') }}">DASHBOARD</a></li>
-                        {% endif %} 
+                        {% endif %}
+                        {% if session.user or session.email %}
                         <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
                         {% else %}
                             <!-- Dropdown Trigger -->
-                            <li><a class="dropdown-trigger {{ 'active' if active_page == 'login' else '' }}" href="#!" 
-                                data-target="dropdown1">LOG IN<i class="fas fa-caret-down right"></i></a></li>
-                            <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
+                        <li><a class="dropdown-trigger {{ 'active' if active_page == 'login' else '' }}" href="#!" 
+                            data-target="dropdown1">LOG IN<i class="fas fa-caret-down right"></i></a></li>
+                        <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -60,18 +65,23 @@
                     <h4 class="center-align">AIRMED</h4>
                 </a>
             </li>
-            {% if not session["user"] %}
+            {% if session.user|lower != "admin"|lower %}
                 <li class="sidenav-close {{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
                 <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
-            {% endif %}
-            {% if session.user %}
-                <li class="{{ 'active' if active_page == 'profile' else '' }}"><a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
-                {% if session.user|lower == "admin"|lower %}
+            
+            {% elif session.user %}
+                <li class="{{ 'active' if active_page == 'profile' else '' }}">
+                    <a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
+                {% elif session.email %}
+                    <li class="{{ 'active' if active_page == 'doctor_profile' else '' }}">
+                        <a href="{{ url_for('doctor_profile', email=session['email']) }}">DOC PROFILE</a></li>
+                
+                {% elif session.user|lower == "admin"|lower %}
                     <li class="{{ 'active' if active_page == 'add_doctor' else '' }}"><a href="{{ url_for('add_doctor') }}">ADD DOCTOR</a></li>
                     <li class="{{ 'active' if active_page == 'admin_dashboard' else '' }}"><a href="{{ url_for('admin_dashboard') }}">DASHBOARD</a></li>
-                {% endif %} 
+                
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
-            {% else %}
+                {% else %}
                 <li>
                     <div class="collapsible-header">LOG IN<i class="fas fa-caret-down right"></i></div>
                     <div class="collapsible-body">
@@ -82,8 +92,8 @@
                         </ul>
                     </div>
                 </li>
-                <li class="{{ 'active' if active_page == 'register' else '' }}"><a href="{{ url_for('register') }}">REGISTER</a></li>
-                    <img src="{{ url_for('static', filename='images/logo.png') }} " class="clinic-logo">
+                <li class="{{ 'active' if active_page == 'register' else '' }}">
+                    <a href="{{ url_for('register') }}">REGISTER</a></li>
             {% endif %}
         </ul>
     </header>
