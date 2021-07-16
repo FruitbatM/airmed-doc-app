@@ -420,14 +420,6 @@ def update_doctor_profile(email):
         phone=phone, experience=experience, about=about, visit_type=visit_type)
 
 
-@app.route("/doctor/logout")
-def doctor_logout():
-    # remove user from session cookies
-    flash("You have been successfully logged out")
-    session.pop("email")
-    return redirect(url_for("doctor_login"))
-
-
 @app.route("/delete/doctor/profile/<email>")
 def delete_doctor_profile(email):
     """
@@ -501,6 +493,14 @@ def facebook():
     Function to load Facebook
     """
     return redirect("https://www.facebook.com")
+
+
+@app.route('/github')
+def github():
+    """
+    Function to load Github
+    """
+    return redirect("https://github.com/FruitbatM")
 
 
 @app.route('/instagram')
