@@ -17,9 +17,11 @@ $(document).ready(function(){
   // Datepicker for contact form
   $('.datepicker').datepicker(
     {
+      autoClose: true,
       yearRange: [2021,2023],
       disableWeekends: true,
       closeOnSelect: true,
+      setDefaultDate: true
     }
   );
 

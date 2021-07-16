@@ -442,15 +442,15 @@ select[required]{
     text-align: right;
 }
 
+/* Overwrite modal size defined for profile updates */
+.datepicker-modal {
+    max-height: 100%;
+    width: 100%;
+}
+
 .form-control {
     padding: .375rem .75rem;
 }
-
-/* Resize datepicker
-.datepicker-modal {
-    transform: scale(1.5) !important;
-}
-*/
 
 #btn-delete {
     margin-left: 1rem;
