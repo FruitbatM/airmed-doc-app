@@ -2,7 +2,7 @@
 {% set active_page = 'home' %}
 
 {% block content %}
-<!--Slider-->
+	<!--Slider-->
 	<div class="slider">
 		<ul class="slides">
 			<li>
@@ -38,6 +38,7 @@
 				comfortable environment for all your healthcare needs.</h5>
 		</div>
 	</div>
+	<!-- Search section -->
 	<section id="search-section" data-aos="zoom-in-down">
 		<div class="container">
 			<div class="row center-align main-section">
@@ -55,7 +56,7 @@
 			</div>
 		</div>
 		<!-- Search feature - search by doctor name or speciality -->
-		<div class="container" id="search-container" data-aos="zoom-in-down">
+		<div class="container" id="search-container">
 			<div class="row card-panel grey lighten-5">
 				<form action="{{ url_for('search') }}" method="POST" class="col s12">
 					<div class="row valign-wrapper center-align">
@@ -74,7 +75,35 @@
 			</div>
 		</div>
 	</section>
-	<section id="why-section">
+	<!-- Specialities section -->
+	<section id="specialities-section">
+		<div class="container">
+			<div class="row center-align main-section">
+				<i class="fas fa-clinic-medical fa-3x icon" aria-hidden="true"></i>
+				<div class="col-12">
+					<div class="main-heading">
+						<h3>OUR SPECIALITIES</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row col s12 m4 center-align">
+				{% for speciality in specialities %}
+				<div class="card-container col s6 m4 center-align" data-aos="zoom-in-down">
+					<div class="main-content">
+						<i class="{{ speciality.icon_url }} fa-3x icon"></i>
+					</div>
+					<div class="card-title center-align">
+						<h6>{{ speciality.speciality_name|upper }}</h6>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Why to choose section -->
+	<section id="why-section" data-aos="zoom-in-down">
 		<div class="container" data-aos="zoom-in-down">
 			<div class="row center-align main-section">
 				<i class="fas fa-plus-square fa-3x icon" aria-hidden="true"></i>

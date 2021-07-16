@@ -119,6 +119,7 @@ nav {
 
 #why-section {
     margin-bottom: 6rem;
+    background-color: #f4f4f4;
 }
 
 .request-btn {
@@ -278,7 +279,7 @@ a.edit-profile {
 }
 
 .card-title {
-    color: #247BA0;
+    color: #16546e;
     font-family: 'Roboto', sans-serif;
     font-weight: 500 !important;
     font-size: 2rem !important;
