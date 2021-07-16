@@ -69,7 +69,12 @@ nav {
 }
 
 #search-container {
-    margin-top: 5rem;
+    margin-top: 3rem;
+    height: auto;
+}
+
+#query-box {
+    padding-top: 1.5rem;
 }
 
 .btn-slider {
@@ -279,7 +284,6 @@ a.edit-profile {
 
 .card-panel {
     border-radius: 1rem;
-    margin: 2.5rem;
 }
 
 .card-title {
@@ -509,6 +513,10 @@ select[required]{
         position: absolute;
         font-family: 'Roboto', sans-serif;
     }
+
+    #query-box {
+        padding-top: 0;
+    }
 }
 
 /* Display on large devices */
@@ -528,4 +536,24 @@ select[required]{
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    #query-box {
+        padding-top: 0;
+    }
+
+    .card-panel {
+        margin: 2.5rem;
+    }
+}
+
+/* iPhone 5 only (portrait mode)
+resource: https://coderwall.com/p/mwvbea/media-queries-only-for-the-iphone-5-part-i */ 
+
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-device-pixel-ratio: 2) 
+  and (min-aspect-ratio: 40/71) and (orientation:portrait) {
+
+
 }

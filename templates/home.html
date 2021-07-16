@@ -60,12 +60,12 @@
 			<div class="row card-panel grey lighten-5">
 				<form action="{{ url_for('search') }}" method="POST" class="col s12">
 					<div class="row valign-wrapper center-align">
-						<div class="input-field col s12 m8">
-							<i class="fas fa-search fa-2x icon prefix" id="search-icon"></i>
+						<div class="input-field col s12 m8" id="query-box">
+							<i class="fas fa-search fa-2x icon prefix hide-on-small-only" id="search-icon"></i>
 							<input type="text" name="query" id="query" minlength="4" class="validate" required>
 							<label for="query">Search for a doctor by name or speciality</label>
 						</div>
-						<div class="col s12 m4">
+						<div class="col s4 m4">
 							<button type="submit" class="btn small btn-slider">
 								Search
 							</button>
