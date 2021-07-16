@@ -184,7 +184,7 @@ def register():
         flash("You have been Successfully Registered")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html")
+    return render_template("patient/register.html")
 
 
 # Patient log in
@@ -216,7 +216,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("patient/login.html")
 
 
 # Patient Profile
@@ -234,7 +234,7 @@ def profile(username):
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username, first_name=first_name,
+            "patient/profile.html", username=username, first_name=first_name,
             last_name=last_name, email=email, telephone=telephone,
             profiles=profiles)
 
@@ -273,7 +273,7 @@ def update_profile(username):
     gender = mongo.db.gender.find().sort("gender", 1)
 
     return render_template(
-        "update_profile.html", username=username, user=user,
+        "patient/update_profile.html", username=username, user=user,
         email=email, telephone=telephone, age=age, gender=gender)
 
 
@@ -324,7 +324,7 @@ def add_doctor():
         return redirect(url_for("doctor_login"))
 
     specialities = mongo.db.specialities.find().sort("speciality_name", 1)
-    return render_template("add_doctor.html", specialities=specialities)
+    return render_template("doctor/add_doctor.html", specialities=specialities)
 
 
 @app.route("/doctor/login", methods=["GET", "POST"])
@@ -358,7 +358,7 @@ def doctor_login():
             # Username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-    return render_template("doctor_login.html")
+    return render_template("doctor/doctor_login.html")
 
 
 @app.route("/doctor/profile/<email>", methods=["GET"])
@@ -377,7 +377,7 @@ def doctor_profile(email):
 
     if session["email"]:
         return render_template(
-            "doctor_profile.html", doctor=doctor, image_url=image_url,
+            "doctor/doctor_profile.html", doctor=doctor, image_url=image_url,
             doctor_first_name=doctor_first_name, title=title,
             doctor_last_name=doctor_last_name, email=email,
             phone=phone, speciality_name=speciality_name,
@@ -416,8 +416,10 @@ def update_doctor_profile(email):
     about = doctor["about"]
 
     return render_template(
-        "update_doctor_profile.html", doctor=doctor, image_url=image_url,
-        phone=phone, experience=experience, about=about, visit_type=visit_type)
+        "doctor/update_doctor_profile.html",
+        doctor=doctor, image_url=image_url,
+        phone=phone, experience=experience, about=about,
+        visit_type=visit_type)
 
 
 @app.route("/delete/doctor/profile/<email>")
