@@ -118,8 +118,12 @@ nav {
 }
 
 #why-section {
-    margin-bottom: 6rem;
+    padding-bottom: 6rem;
     background-color: #f4f4f4;
+}
+
+#why-heading {
+    padding-top: 3rem;
 }
 
 .request-btn {
@@ -488,6 +492,11 @@ select[required]{
 .config-buttons {
     padding-bottom: 2.2rem;
     padding-right: 1.6rem;
+}
+
+.fa-github {
+    color: #dcd8d8;
+    padding-left: 0.8rem;
 }
 
 /* Media Queries */

@@ -68,18 +68,21 @@
             {% if session.user|lower != "admin"|lower %}
                 <li class="sidenav-close {{ 'active' if active_page == 'home' else '' }}"><a href="{{ url_for('home') }}">HOME</a></li>
                 <li class="{{ 'active' if active_page == 'about' else '' }}"><a href="{{ url_for('about') }}">ABOUT US</a></li>
-            
-            {% elif session.user %}
+            {% endif %}
+            {% if session.user %}
                 <li class="{{ 'active' if active_page == 'profile' else '' }}">
                     <a href="{{ url_for('profile', username=session['user']) }}">PROFILE</a></li>
                 {% elif session.email %}
                     <li class="{{ 'active' if active_page == 'doctor_profile' else '' }}">
                         <a href="{{ url_for('doctor_profile', email=session['email']) }}">DOC PROFILE</a></li>
-                
-                {% elif session.user|lower == "admin"|lower %}
-                    <li class="{{ 'active' if active_page == 'add_doctor' else '' }}"><a href="{{ url_for('add_doctor') }}">ADD DOCTOR</a></li>
-                    <li class="{{ 'active' if active_page == 'admin_dashboard' else '' }}"><a href="{{ url_for('admin_dashboard') }}">DASHBOARD</a></li>
-                
+                {% endif %}
+                {% if session.user|lower == "admin"|lower %}
+                    <li class="{{ 'active' if active_page == 'add_doctor' else '' }}">
+                        <a href="{{ url_for('add_doctor') }}">ADD DOCTOR</a></li>
+                    <li class="{{ 'active' if active_page == 'admin_dashboard' else '' }}">
+                        <a href="{{ url_for('admin_dashboard') }}">DASHBOARD</a></li>
+                {% endif %}
+                {% if session.user or session.email %}
                 <li><a href="{{ url_for('logout') }}">LOG OUT</a></li>
                 {% else %}
                 <li>
@@ -138,6 +141,9 @@
         <div class="footer-copyright">
             <div class="container center-align">
                 © 2021 Marina Pavlovic
+                <a href="{{ url_for('github') }}" target="_blank">
+                    <i class="fab fa-github fa-2x icon"></i>
+                </a>
             </div>
         </div>
     </footer>

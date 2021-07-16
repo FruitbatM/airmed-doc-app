@@ -76,7 +76,7 @@
 		</div>
 	</section>
 	<!-- Specialities section -->
-	<section id="specialities-section">
+	<section id="specialities-section" data-aos="zoom-in-down">
 		<div class="container">
 			<div class="row center-align main-section">
 				<i class="fas fa-clinic-medical fa-3x icon" aria-hidden="true"></i>
@@ -88,9 +88,9 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="row col s12 m4 center-align">
+			<div class="row col s12 center-align">
 				{% for speciality in specialities %}
-				<div class="card-container col s6 m4 center-align" data-aos="zoom-in-down">
+				<div class="card-container col s6 m4 l3 center-align" data-aos="zoom-in-down">
 					<div class="main-content">
 						<i class="{{ speciality.icon_url }} fa-3x icon"></i>
 					</div>
@@ -105,7 +105,7 @@
 	<!-- Why to choose section -->
 	<section id="why-section" data-aos="zoom-in-down">
 		<div class="container" data-aos="zoom-in-down">
-			<div class="row center-align main-section">
+			<div class="row center-align" id="why-heading" >
 				<i class="fas fa-plus-square fa-3x icon" aria-hidden="true"></i>
 				<div class="col-12">
 					<div class="main-heading">
