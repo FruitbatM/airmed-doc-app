@@ -21,6 +21,20 @@
 
 ## [W3C Markup Validation Service](https://validator.w3.org/) - Markup Validation
 
+### Home Page
+- There are no errors
+- There is one warning
+
+### About Us Page
+
+### 
+
+## [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - CSS Validation
+
+- There are no errors.
+- There are several warnings about the vendor prefixes which can be ignored.
+
+    <h2 align="center"><img src="readme/images/css_validation.jpg" alt="CSS Validation" target="_blank" width="60%" height="60%"></h2>
 
 ## [JSHint](https://jshint.com/) - JavaScript Validation
 # script.js
