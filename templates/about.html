@@ -10,12 +10,17 @@
 		<h2 class="parallax-heading center-align">Get the fastest access to the best doctors</h2>
 		<a href="{{ url_for('register') }}" class="btn btn-large btn-register waves-effect">REGISTER</a>
 	</div>
-	<div class="row">
-		<div class="col s12">
-			<h3 class="center-align about-heading">OUR MISSION</h3>
+	<div class="container" data-aos="zoom-in-down">
+		<div class="row center-align main-section">
+			<i class="fas fas fa-bullseye fa-3x icon" aria-hidden="true"></i>
+			<div class="col-12">
+				<div class="main-heading">
+					<h3>Our Mission</h3>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" data-aos="zoom-in-down">
 		<div class="row">
 			<div class="col s12">
 				<p>
@@ -32,16 +37,21 @@
 		</div>
 	</div>
 	<!-- Parallax -->
-	<div class="parallax-container">
+	<div class="parallax-container" data-aos="zoom-in-down">
 		<div class="parallax">
 			<img src="{{ url_for('static', filename='images/clinic_blur.jpg') }}" alt="clinic building">
 		</div>
 	</div>
-	<div class="container">
-		<div class="row">
-			<h3 class="col s12 center-align about-heading">World-Class Patient Care</h3>
+	<div class="container" data-aos="zoom-in-down">
+		<div class="row center-align main-section">
+			<i class="fas fa-hand-holding-heart fa-3x icon" aria-hidden="true"></i>
+			<div class="col-12">
+				<div class="main-heading">
+					<h3>World-Class Patient Care</h3>
+				</div>
+			</div>
 		</div>
-		<div class="row s12">
+		<div class="row s12" data-aos="zoom-in-down">
 				<p>
 					AIRMED CLINIC is consistently ranked among the top hospitals in Ireland.
 					Our patients have access to a vast network of physicians, nearly all of whom are are leaders within their fields.
@@ -58,33 +68,45 @@
 		</div>
 	</div>
 	<!-- Parallax -->
-	<div class="parallax-container">
+	<div class="parallax-container" data-aos="zoom-in-down">
 		<div class="parallax">
 			<img src="{{ url_for('static', filename='images/clinic-about.jpg') }}" alt="doctor showing scan to the patient">
 		</div>
 	</div>
 	<!-- Map section -->
-    <section id="map-section">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12">
-                    <h3 class="center-align about-heading">Where to find us</h3>
-                </div>
-            </div>
-			<div class="row">
-				<div class="col s12 m6">
-					<div id="address">
-						<h5>Address:</h5>
-						<span>Airmed Rd. 17</span><br>
-						<span>South Dublin, Co. Dublin</span><br>
-						<span>Ireland</span>
+	<section id="map-section" data-aos="zoom-in-down">
+		<div class="container">
+			<div class="row center-align main-section">
+				<i class="fas fa-map-signs fa-3x icon" aria-hidden="true"></i>
+				<div class="col-12">
+					<div class="main-heading">
+						<h3>How to find AIRMED Clinic</h3>
 					</div>
 				</div>
-                <div class="col s12 m6">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+			</div>
+			<div class="row s12 center-align">
+				<p>
+					The clinic is within walking distance of Baker Street and Poenix's Park.
+					Parking is available in Beaumont Street and Moxon Street NCP Car Parks behind 
+					Waitrose. Alternatively, metered parking may be found in the immediate vicinity.
+				</p>
+				<br>
+			</div>
+			<div class="row center-align">
+				<div class="col s12 m6 center-align">
+					<p>
+						<strong>Airmed Rd. 17</strong>
+						<br>
+						<strong>South Dublin, Co. Dublin</strong>
+						<br>
+						<strong>Ireland</strong>
+					</p>
+				</div>
+				<div class="col s12 m6 center-align">
+					<img src="{{ url_for('static', filename='images/map.jpg') }}" alt="Google map pointing to AIRMED address" id="map">
+				</div>
+			</div>
+		</div>
+	</section>
 
 {% endblock%}

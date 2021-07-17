@@ -125,6 +125,7 @@ nav {
     color: #16546e;
     font-weight: 600;
     letter-spacing: 0.12rem;
+    text-transform: uppercase;
 }
 
 .about-heading {
@@ -138,6 +139,10 @@ nav {
 #why-section {
     padding-bottom: 6rem;
     background-color: #f4f4f4;
+}
+
+#map-section {
+    padding-bottom: 3rem;
 }
 
 #why-heading {
@@ -416,12 +421,6 @@ select[required]{
     border: none;
     top: 0;
 }
-
-#map {
-    height: 300px;
-    width: 80%;
-    margin: auto;
-  }
 
 #address {
     margin-bottom: 1rem;
