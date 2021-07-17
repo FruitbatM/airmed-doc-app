@@ -450,10 +450,8 @@ select[required]{
     right: 0;
     background-color: #e1f5fe;
     padding: 0;
-    max-height: 40%;
-    width: 35%;
-    will-change: top, opacity;
 }
+
 
 #modal-contact {
     left: 0;
@@ -572,6 +570,12 @@ select[required]{
 
     .card-panel {
         margin: 2.5rem;
+    }
+
+    .modal {
+        max-height: 50%;
+        width: 45%;
+        will-change: top, opacity;
     }
 }
 
