@@ -74,7 +74,8 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 1. As a patient, I would like to have an option to register on the site and to create my personal account.
 2. As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.
 3. As a patient, I want to be able to update my personal data.
-4. As a patient, I want to have an option to make an appointment with a medical professional.
+4. As a patient, I want to have an option to search for doctors by the name or specialty.
+5. As a patient, I want to have an option to make an appointment with a medical professional.
 
 ### Doctor Stories
 
@@ -152,11 +153,11 @@ White will be primarily used as the background because it represents reverence, 
 
 ### Logo
 
-- I used [Canva](https://www.canva.com/) to design the custom logo. 
+- I used [Canva](https://www.canva.com/) to design the custom logo which was used only for favicon.
 
 ### Icons
 
-Icons should be obvious and very intuitive so that users can easily understand what a particular icon represents. Also, a detailed heading will be used for each icon to describe top specialities the Airmed clinic offers. 
+Icons should be obvious and very intuitive so that users can easily understand what a particular icon represents. Also, a detailed heading will be used for each icon to describe top specialties the Airmed clinic offers. 
 
 # Features
 
@@ -166,21 +167,43 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 
 - Navigation menu
     - responsive on all devices
+    - hamgurger menu on smaller devices
+- Responsiveness
+    - by using the mobile-first approach, the website will be built to be fully responsive
+- Slider (carousel)
+    - a slider with an effective hero background images will be used to gain instant user attention
+    - a hero text strategically placed in transparent text box
+- Interactive
+    - back to top arrow button will appear on the lower right of the page when the user starts to scroll down the page
+    - animate on scroll library (AOS)
+    - parallax feature
+- Social media
+    - social media icons will be located at the footer
+    - allow users to find more information on national parks on the social media
 - Registration and Log in option for patients
 - Log in option for doctors
-- Personal profile
-- Appointment scheduling
-
-- Manage / Adding / Edit / Delete profiles
+- Patients and doctors will have separate form to log in
+- Personal profile for patients and doctors
+- Appointment request form
+    - visitors and patients 
+- Search feature
+    - visitors and patients will have ability to search for doctors by the doctor's name or specialties
+    - after the search users will have an option to make an appointment request
+    - admin users will have an option to search for doctors by the doctor's name or specialties
+- Create / Manage / Add / Edit / Delete profiles
+    - patients will have an ability to create, update and delete their profiles
+    - doctor users will have an ability to update their profiles
+    - admin users will have an ability to update their profiel and to create and delete doctor's profiles
 
 ## Future Implementation
 
+- Ratings & Reviews for doctors
+- Appointment approval and rejection available on the app 
+- Pagination
 - Real time chat
 - Video consultation
 - Payment integration
 - Smart scheduling
-- Appointment approval and rejection
-- Ratings & Reviews
 - Subscription packages
 
 ## Technologies
@@ -188,7 +211,7 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) was used to complete the structure of the website.
 - [CSS3](https://en.wikipedia.org/wiki/CSS) was used to style the website.
-- [Python](#)
+- [Python](https://www.python.org/) was used was used for the backend of the website.
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was used to make webpage interactive.
 
 ## Frameworks, Libraries and Programs
@@ -244,7 +267,7 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 # Testing
 
 Testing process was written in a separate file. 
-Please click [here](testing.md) for the testing process.
+Please click [here](TESTING.md) for the testing process.
 
 
 ## Version Control
@@ -349,7 +372,7 @@ Register for a free account with [MongoDB](https://account.mongodb.com/account/r
     | telephone         |        String          |  The telephone of the user                  |
     | gender            |        String          |  The telephone of the user                  |
     | age               |        Int             |  The age of the user                        |
-    | is_admin          |        Boolean         |  Indicates is the user an Administrator                 |
+    | is_admin          |        Boolean         |  Indicates is the user anAdministrator      |
 
  - gender
   
@@ -380,10 +403,28 @@ Register for a free account with [MongoDB](https://account.mongodb.com/account/r
     | :-----------:     | :--------------------: | :-----------------------------------------: |
     | _id               |        ObjectId        |  Automatically generated by MongoDB |
     | speciality_name   |        String          |  The name of the speciality                 |
-
+    
 <h2 align="center"><img src="readme/images/airmed_diagram.png" alt="color palette" target="_blank" width="75%" height="75%"></h2>
 
 [dbdiagram.io - DBMS Tools](https://dbdiagram.io/) was used to create database scheme.
+
+Appointments collection was created but not yet fully utilized. When the user sends an appointment request form, data is collected in the database. In the next version this information will be visible on the app both to the patient and doctor.
+Also, it is planned for the next version to confim / cancel / reject the appointment.
+
+- appointments 
+
+    |       Key         |         Data Type      |   Notes                                     |
+    | :-----------:     | :--------------------: | :-----------------------------------------: |
+    | _id               |        ObjectId        |  Automatically generated by MongoDB         |
+    | first_name        |        String          |  The first name of the patient              |
+    | last_name         |        String          |  The last name of the patient               |
+    | date              |        String          |  The date of the appointment                |
+    | time              |        String          |  The time of the appointment                |
+    | email             |        String          |  The email of the patient                   |
+    | telephone         |        String          |  The telephone of the patient               |
+    | email             |        String          |  The email of the patient                   |
+    | speciality_name   |        String          |  The name of the doctor's speciality        |
+    | message           |        String          |  Custom message                             |
 
 ### Deploy locally
 
