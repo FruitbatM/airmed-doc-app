@@ -373,6 +373,16 @@ a.edit-profile {
     font-weight: 400;
   }
 
+#contact-us {
+    margin-left: 0.5rem;
+}
+
+#contact-us  a {
+    color: #fafafa;
+    font-family: 'Merriweather', sans-serif;
+    margin-left: 0.5rem;
+}
+
 /* forces body to full height so footer can be positioned to bottom */
 body {
     display: -webkit-box;
