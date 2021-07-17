@@ -147,7 +147,6 @@ def register():
             "email": request.form.get("email"),
             "telephone": request.form.get("telephone"),
             "is_admin": False,
-            "is_doctor": False,
             "gender": "",
             "age": ""
         }
