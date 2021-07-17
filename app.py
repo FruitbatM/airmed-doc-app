@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, abort)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -295,7 +295,7 @@ def add_doctor():
         }
         mongo.db.doctors.insert_one(doctor)
         flash("Doctor was successfully added")
-        return redirect(url_for("doctor_login"))
+        return redirect(url_for("add_doctor"))
 
     specialities = mongo.db.specialities.find().sort("speciality_name", 1)
     return render_template("doctor/add_doctor.html", specialities=specialities)
@@ -449,6 +449,31 @@ def admin_search():
         return redirect(url_for("admin_dashboard"))
     else:
         return render_template("dashboard.html", doctors=doctors)
+
+
+@app.route("/admin/delete/doctor/<doctor_id>")
+def admin_delete_profile(doctor_id):
+    """
+    Delete a doctor's profile from the database and logout from the session
+    """
+    if admin():
+        if not is_object_id_valid(doctor_id):
+            abort(404)
+        mongo.db.doctors.remove({"_id": ObjectId(doctor_id)})
+        flash("Doctor profile was successfully deleted")
+        return redirect(url_for("admin_dashboard"))
+
+    else:
+        flash("You do not have permission to execute that operation")
+        return redirect(url_for("login"))
+
+
+# Code sourced from CI student project "ai-chat-annotator"
+# https://github.com/NgiapPuoyKoh/ai-chat-annotator/blob/7b37842579f8d1783de8d11be544f9790b248f05/app.py
+def is_object_id_valid(id_value):
+    """ Validate is the id_value is a valid ObjectId
+    """
+    return id_value != "" and ObjectId.is_valid(id_value)
 
 
 # 404 error
