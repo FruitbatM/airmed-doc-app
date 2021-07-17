@@ -59,7 +59,7 @@ def about():
 def search():
     """
     Search for a doctor based on their first name, last name or speciality.
-    If no results found return flash messag and redirect to home page.
+    If no results found return flash message and redirect to home page.
     """
     query = request.form.get("query")
     doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
@@ -69,32 +69,6 @@ def search():
         return redirect(url_for("home"))
     else:
         return render_template("specialists.html", doctors=doctors)
-
-
-@app.route("/specialists/<speciality_name>", methods=["GET", "POST"])
-def specialists(speciality_name):
-    """
-    Search for the list of doctors based on their speciality available from a
-    dropdown list
-    """
-    if request.method == "POST":
-        search = request.form.get("speciality_name")
-
-        if search is None:
-            flash(f"No Results found for {search}. Please search again.")
-            return redirect(url_for("home"))
-
-        else:
-            specialities = mongo.db.specialities.find_one(
-                {"speciailty_name": str()})
-            doctors = list(
-                mongo.db.doctors.find({"doctors": speciality_name}).sort(
-                            [("speciality_name", -1)]))
-            print(doctors)
-
-        return render_template(
-            "specialists.html", doctors=doctors,
-            specialities=specialities)
 
 
 @app.route("/appointment")
@@ -451,14 +425,30 @@ def admin_dashboard():
     """
     # check that someone isn't brute-forcing the url get admin functionalities
     if admin():
-        doctors = list(mongo.db.doctors.find().sort("doctor_last_name", 1))
-        users = list(mongo.db.usrs.find().sort("last_name", 1))
+        doctors = list(mongo.db.doctors.find().sort("email", 1))
+        users = list(mongo.db.users.find().sort("username", 1))
     else:
         flash("You are not authorised to view this page")
         return redirect(url_for("login"))
     # return dashboard
     return render_template("dashboard.html", doctors=doctors,
                            users=users)
+
+
+@app.route("/admin/search", methods=["POST"])
+def admin_search():
+    """
+    Search for a doctor on admin dashboard based on their
+    first name, last name or speciality.
+    """
+    query = request.form.get("query")
+    doctors = list(mongo.db.doctors.find({"$text": {"$search": query}}))
+
+    if len(doctors) <= 0:
+        flash(f"No Results found for {query}. Please search again.")
+        return redirect(url_for("admin_dashboard"))
+    else:
+        return render_template("dashboard.html", doctors=doctors)
 
 
 # 404 error

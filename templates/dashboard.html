@@ -9,6 +9,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Search feature - search by doctor name or speciality -->
+    <div class="container" id="search-container">
+        <div class="row card-panel grey lighten-5">
+            <form action="{{ url_for('admin_search') }}" method="POST" class="col s12">
+                <div class="row valign-wrapper center-align">
+                    <div class="input-field col s12 m8" id="query-dashboard">
+                        <input type="text" name="query" id="query" minlength="4" class="validate" required>
+                        <label for="query">Search for a doctor</label>
+                    </div>
+                    <div class="col s4 m4">
+                        <button type="submit" class="btn small btn-slider">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
     {% for doctor in doctors %}
     <div class="container">
         <div class="row">

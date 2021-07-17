@@ -24,6 +24,7 @@ nav {
     color: #fafafa;
 }
 
+/* CHECK
 .clinic-logo {
     height: 100px;
     width: 100px;
@@ -31,6 +32,7 @@ nav {
     margin: auto;
     margin-top: 7rem;
 }
+*/
 
 .dropdown-content li > a {
     color: #fafafa;
@@ -230,6 +232,7 @@ nav {
     border-radius: 1rem;
 }
 
+/* profile style */
 .profile-buttons {
     padding-right: 1rem;
     padding-top: 1rem;
@@ -282,6 +285,10 @@ a.edit-profile {
     font-size: 0.85rem;
     font-weight: bold;
     text-shadow: 0.05rem 0.05rem #000;;
+}
+
+.section-heading {
+    margin-top: 4rem;
 }
 
 .card-panel {
