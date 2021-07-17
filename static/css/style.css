@@ -86,6 +86,10 @@ nav {
     padding-top: 1.5rem;
 }
 
+#admin-btn {
+    padding-bottom: 1rem;
+}
+
 .btn-slider {
     background-color: #F68C48;
     border-radius: 0.5rem;
