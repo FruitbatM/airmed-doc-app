@@ -111,7 +111,31 @@ Performance was tested using [Lighthouse](https://developers.google.com/web/tool
 
 ## Desktop
 
+### Home page
+
+<h2 align="center"><img src="readme/images/desktop_home.jpg" alt="lighthouse performance for home page" target="_blank" width="45%" height="45%"></h2>
+
+### About Us page
+
+<h2 align="center"><img src="readme/images/desktop_about.jpg" alt="lighthouse performance for about page" target="_blank" width="45%" height="45%"></h2>
+
+For desktop performance, results were similar every time for both home and about pages.
+The result is somewhat lover for 'Best Practices' due to Trust and Safety - the page 'Does not use HTTPS'. Since this is a project for educational purpose only it is not required to instal SSL certificate and therefore this warning can be ignored. 
+
+The performance results are overall satisfying as the website is heavy loaded with the content.
+
 ## Mobile
+### Home page
+
+<h2 align="center"><img src="readme/images/mobile_home.jpg" alt="lighthouse performance for home page" target="_blank" width="45%" height="45%"></h2>
+
+### About Us page
+
+<h2 align="center"><img src="readme/images/mobile_about.jpg" alt="lighthouse performance for about page" target="_blank" width="45%" height="45%"></h2>
+
+The mobile results were somewhat different every time. Following article [Why are my Lighthouse scores different from my other test results?](https://support.speedcurve.com/en/articles/4088236-why-are-my-lighthouse-scores-different-from-my-other-test-results#:~:text=The%20performance%20score%20is%20strongly,cause%20variability%20in%20your%20scores.) gives an explanation on Lighthouse that "the performance score is strongly influenced by Time to Interactive (TTI) and Total Blocking Time (TBT), which can be quite different depending on the test environment and runtime settings."
+
+The performance results are overall satisfying as the website is heavy loaded with the content.
 
 <br/>
 Click here to return to [README.md](README.md) file.
