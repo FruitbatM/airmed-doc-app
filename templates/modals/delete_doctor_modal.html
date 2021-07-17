@@ -1,0 +1,10 @@
+<!-- Modal Structure -->
+<div id="admin_delete_profile{{doctor._id}}" class="modal">
+    <div class="modal-content">
+        <h5>Are you sure you want to delete Doctor's profile?</h5>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close modal-action waves-effect waves-green btn green">Cancel</a>
+        <a href="{{ url_for('admin_delete_profile', doctor_id=doctor._id) }}" class="modal-close waves-effect waves-green btn red">Delete</a>
+    </div>
+</div>

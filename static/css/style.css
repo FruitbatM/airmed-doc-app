@@ -338,6 +338,10 @@ a.edit-profile {
     background-color: #F68C48;
 }
 
+#reg-password {
+    padding-bottom: 0.6rem;
+}
+
 .btn-request {
     top: 75%;
     left: 50%;
