@@ -65,7 +65,7 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 
 ### Visitor Stories
 
-1. As a site visitor, I would like to gain an understanding of the website's purpose from the landing page.
+1. As a site visitor, I would like to gain an understanding of the website's purpose from the home page.
 2. As a site visitor, I would like to easily navigate through the site on all devices and find what I am looking for with an ease.
 3. As a site visitor, I would like to see clinic's location and address on the map.
 
@@ -75,18 +75,18 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 2. As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.
 3. As a patient, I want to be able to update my personal data.
 4. As a patient, I want to have an option to make an appointment with a medical professional.
-5. As a patient, I want to be able to view the appointment I made and have an option to cancel the same.
 
 ### Doctor Stories
 
 1. As a doctor, I want to be able to see my personal data.
-2. As a doctor, I want to be able to view the appointments that were booked with me.
-3. As a doctor, I want to have an option to confirm / reject the made appointment.
+2. As a doctor, I want to be able to update my personal data.
+3. As a doctor, I want to have an option to uploade profile image.
 
 ### Administrator Stories
 
-1. As an admin, I want to be able to edit and delete patient and doctor data to ensure it adheres to site conditions.
-2. As an admin, I would like to have an option to add new doctor and his/her personal data on the system.
+1. As an admin, I would like to have an option to add new doctor and his/her personal data on the system.
+2. As an admin, I want to be able to delete doctor profile to ensure it adheres to site conditions.
+3. As an admin, I would like to have an option to search for doctors by the name or specialty.
 
 ## Strategy
 ### Project Goals

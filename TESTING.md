@@ -13,6 +13,307 @@
 
 # User Stories Testing
 
+Manual tests were carried out across all user stories and features:
+
+## Visitor Stories
+
+**As a site visitor, I would like to gain an understanding of the website's purpose from the home page.**
+
+### Test Case 1
+
+**Description:**
+Verify that on the homepage slider feature is displayed and working corectly on all devices
+
+**Expected Result:** 
+- Slider showcases three background images with relevant content for healthcare applicaton and gives immediately a firts glimpse on the website's content and purpose and it works correctly on different devices
+- Strategically placed headline also indicates to the user what is the website's purpose
+
+**Actual Result:** Slider showcases three background images with relevant content for healthcare applicaton and it works correctly on different devices
+
+**Pass/Fail:** Pass
+
+<br >
+  <h2 align="center"><img src="readme/images/TC_1.jpg" alt="Test case 1" target="_blank" width="60%" height="60%"></h2>
+*Three screen devices combined together*
+
+### Test Case 2
+
+**Description:**
+Verify that on the homepage, slider feature is displayed and working corectly on all devices
+
+**Expected Result:** 
+- Slider showcases three background images with relevant content for healthcare applicaton and gives immediately a firts glimpse on the website's content and purpose and it works correctly on different devices
+- Strategically placed headline also indicates to the user what is the website's purpose
+
+**Actual Result:** Slider showcases three background images with relevant content for healthcare applicaton and it works correctly on different devices
+
+### Test Case 2
+
+**Description:**
+Verify the homepage displays a relevant hero images and text
+
+**Expected Result:**
+Correct text displays over hero images 
+
+**Actual Result:**
+Correct text displays over hero images
+
+**Pass/Fail:**
+Pass
+
+*Please see image under Test Case 1*
+
+### Test Case 3
+
+**Description:**
+Verify the homepage shows correct navigation tabs for a visitor
+
+**Expected Result:**
+On the homepage correct navigation tabs (links) are showing both on the main navigation and under mobile (side) navigation:
+- Home
+- About
+- Login In
+- Register
+
+**Actual Result:**
+Actual result equals Expected result
+
+**Pass/Fail:**
+Pass
+
+<br >
+  <h2 align="center"><img src="readme/images/TC_2.jpg" alt="Test case 3" target="_blank" width="60%" height="60%"></h2>
+
+---
+**As a site visitor, I would like to easily navigate through the site on all devices and find what I am looking for with an ease.**
+
+### Test Case 4
+
+**Description:**
+Verify the website's responsiveness across varying device types
+
+**Expected Result:**
+- The website is responsive on varying device types
+- All images are responsive
+
+**Actual Result:**
+- The website is responsive on varying device types 
+- All images are responsive
+
+**Pass/Fail:**
+Pass
+
+### Test Case 5
+**Description:**
+Verify the hamburger menu appears on small devices
+
+**Expected Result:**
+Navbar hamburger menu displays and functions on mobile
+
+**Actual Result:**
+Navbar hamburger menu displays and functions on mobile
+
+**Pass/Fail:**
+Pass
+<br >
+  <h2 align="center"><img src="readme/images/TC_5.jpg" alt="Test case 3" target="_blank" width="50%" height="50%"></h2>
+
+---
+**As a site visitor, I would like to see clinic's location and address on the map.**
+
+### Test Case 6
+**Description:**
+Verify the map and AIRMED Clinic address show on the About Uspage
+
+**Expected Result:**
+The map image and address are displayed under the About Us page
+
+**Actual Result:**
+The map image and address are displayed under the About page
+
+**Pass/Fail:**
+Pass
+<br >
+  <h2 align="center"><img src="readme/images/TC_6.jpg" alt="Test case 3" target="_blank" width="50%" height="50%"></h2>
+
+
+## Patient Stories
+
+**As a patient, I would like to have an option to register on the site and to create my personal account.**
+
+### Test Case 6
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+**As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.**
+
+### Test Case 7
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+**As a patient, I want to be able to update my personal data.**
+
+### Test Case 8
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+**As a patient, I want to have an option to search for doctors by the name or specialty.**
+
+### Test Case 9
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+
+**As a patient, I want to have an option to make an appointment with a medical professional.**
+
+### Test Case 10
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+## Doctor Stories
+
+**As a doctor, I want to be able to see my personal data.**
+
+### Test Case 11
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+**As a doctor, I want to be able to update my personal data.**
+
+### Test Case 12
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+**As a doctor, I want to have an option to uploade profile image.**
+
+### Test Case 13
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+## Administrator Stories
+
+**As an admin, I would like to have an option to add new doctor and his/her personal data on the system..**
+
+### Test Case 14
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+**As an admin, I want to be able to delete doctor profile to ensure it adheres to site conditions.**
+
+### Test Case 15
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
+
+---
+
+**As an admin, I would like to have an option to search for doctors by the name or specialty.**
+
+### Test Case 16
+
+**Description:**
+
+**Expected Result:**
+
+**Actual Result:**
+
+**Pass/Fail:**
+Pass
+<br >
 
 # Code Validation
 
