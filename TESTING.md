@@ -7,7 +7,8 @@
 2. [Code Validation](#code-validation)
 3. [Functionality Testing](#functionality-testing)
 4. [Encountered Issues](#encountered-issues)
-5. [Performance Testing](#performance-testing)
+5. [Web Accessibility](#web-accessibility)
+6. [Performance Testing](#performance-testing)
 </details>
 
 # User Stories Testing
@@ -25,9 +26,25 @@
 - There are no errors
 - There is one warning
 
-### About Us Page
+    <h2 align="center"><img src="readme/images/html_valid_home.jpg" alt="HTML Validation - home page" target="_blank" width="60%" height="60%"></h2>
 
-### 
+### About Us Page
+- There are no errors
+- There is one warning
+
+    <h2 align="center"><img src="readme/images/html_valid_about.jpg" alt="HTML Validation - About us page" target="_blank" width="60%" height="60%"></h2>
+
+### Register Page
+- There are no errors
+- There is one warning
+
+    <h2 align="center"><img src="readme/images/html_valid_register.jpg" alt="HTML Validation - Register page" target="_blank" width="60%" height="60%"></h2>
+
+### Log in Page
+- There are no errors
+- There is one warning
+
+    <h2 align="center"><img src="readme/images/html_valid_login.jpg" alt="HTML Validation - Login page" target="_blank" width="60%" height="60%"></h2>
 
 ## [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - CSS Validation
 
@@ -37,8 +54,25 @@
     <h2 align="center"><img src="readme/images/css_validation.jpg" alt="CSS Validation" target="_blank" width="60%" height="60%"></h2>
 
 ## [JSHint](https://jshint.com/) - JavaScript Validation
-# script.js
 
+### script.js
+- There are no errors
+- There is one warning showing for a missing semicolon which doesn't make sense since the semicolon is added (line 27)
+
+<h2 align="center"><img src="readme/images/script.jpg" alt="JS validation for script.js file" target="_blank" width="75%" height="75%"></h2>
+
+### jquery.js
+
+- There are no errors
+- There is one warning showing for a missing semicolon which doesn't make sense since the semicolon is added (line 5)
+
+<h2 align="center"><img src="readme/images/jquery.jpg" alt="JS validation for jquery.js file" target="_blank" width="75%" height="75%"></h2>
+
+## [PEP8 Online](http://pep8online.com/) - Python PEP8 Compliant
+
+- The website's Python code was checked for PEP8 compliance and returned no errors:
+
+<h2 align="center"><img src="readme/images/pep8.jpg" alt="JS validation for jquery.js file" target="_blank" width="75%" height="75%"></h2>
 
 # Functionality Testing 
 
@@ -61,6 +95,16 @@ Comprehensive testing was executed. Further elaborated in more details below:
 
 # Encountered Issues
 
+
+# Web Accessibility
+
+The website's homepage was tested to ensure it was accessible to people with disabilities using the [Web Accessibility](https://www.webaccessibility.com/) checker.
+
+Overall, the home and about us pages received a very good score of 98 and 93% respectively.
+
+<h2 align="center"><img src="readme/images/web_accessibility_score.jpg" alt="accessibility score" target="_blank" width="75%" height="75%"></h2>
+
+<h2 align="center"><img src="readme/images/accessibility_about.jpg" alt="accessibility score" target="_blank" width="75%" height="75%"></h2>
 
 # Performance Testing
 Performance was tested using [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool.
