@@ -31,19 +31,20 @@ Mockup responsive image was created with [Techsini](http://techsini.com/multi-mo
 3. [Features](#features)
     - [Existing Features](#existing-features)
     - [Future Implementation](#future-implementation)
-4. [Database](#database)
-5. [Technologies](#technologies)
-6. [Testing](#testing)
-7. [Deployment](#deployment)
+4. [User Types and permissions](#user-types-and-permissions)
+5. [Database](#database)
+6. [Technologies](#technologies)
+7. [Testing](#testing)
+8. [Deployment](#deployment)
     - [GitHub pages](#github-pages)
     - [Forking the Repository](#forking-the-repository)
     - [Local Deployment](#local-deployment)
-8. [Credits](#credits)
+9. [Credits](#credits)
     - [Code](#code)
     - [Media](#media)
     - [Content](#content)
-9. [Acknowledgements](#acknowledgements)
-10. [Disclaimer](#disclaimer)
+10. [Acknowledgements](#acknowledgements)
+11. [Disclaimer](#disclaimer)
 
 </details>
 
@@ -98,8 +99,13 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 
 ## Scope
 
-- Fully responsive mobile first website
-- Interactive features that allow the user to engage and find needed information fast and easy
+The site will be fully responsive mobile first website. Many features will be available that allow the user to engage and find needed information fast and easy.
+
+The site consists of a homepage which gives an overview of the site purpose with search feature, specialties information and why to choose AIRMED Healtg clinic. Second page is About Us page which tells more about the Clinic, its mission and values, and location.
+
+The website furthermore contains a Login In pages for Patients and Doctors respectively. Since the website will hold lots of data, the site owner wanted to deferentiet two separate points for login. The website will have a Register page for patients and a register page for Doctors which is named Add Doctor. Doctor registration will be performed only by Admin users.
+
+Both Patients and Doctors will have Profile pages where they will be able to update some of the personal information. These pages are only visible when the user will be logged in under their username / email address respectively. Admin users will be able to see all Doctor profiles under the Dashboard page where they will have ability to search for and delete a particular doctor profile.
 
 ## Structure
 
@@ -200,11 +206,28 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - Ratings & Reviews for doctors
 - Appointment approval and rejection available on the app 
 - Pagination
+- Forgot password feature
 - Real time chat
 - Video consultation
 - Payment integration
 - Smart scheduling
 - Subscription packages
+
+# User Types and permissions
+There are four types of users that this website is designed for:
+
+## Visitor
+
+A visitor is anyone who navigates to this website and can navigate through the homepage and about page. Visitors can search for and view through the list of available doctors and make an appointment request. Furthermore, visitors can register for an account. The website is a full functional for read only access for visitors.
+
+## Patient
+
+A visitor who registers for an account automatically becomes a "patient". Patients will have the same rights as visitors, in additon they have an access to patient profile where they can update some of their personal data. 
+
+## Doctor
+
+## Administrator
+
 
 ## Technologies
 ## Languages
@@ -475,9 +498,8 @@ Once above steps have been followed the website can be deployed. Please find the
 - Sending emails with Flask-Email was sourced from [Sending Emails Using API in Flask-Mail](https://www.geeksforgeeks.org/)sending-emails-using-api-in-flask-mail/
 
 ## Media
-
 ### Images
-- The custom favicon was designed using Canva
+- The custom favicon was designed using [Canva](https://www.canva.com/)
 - The slider background images were sourced from [Freepik](https://www.freepik.com/photos/medical)
 - Patient background login image was sourced from Unsplash, credit: photo by Tom Vining on [Unsplash](https://unsplash.com/photos/Ayx2M0iiVFQ)
 - Patient background register image was sourced from Unsplash, credit: photo by Alexander Dummer on [Unsplash](https://unsplash.com/photos/UH-xs-FizTk)
@@ -485,6 +507,7 @@ Once above steps have been followed the website can be deployed. Please find the
 - clinic_blur.jpg image was sourced from Unsplash, credit: photo by Solen Feyissa on [Unsplash](https://unsplash.com/photos/jGmBZypoFPc)
 - Hero background image on About us page was sourced from [Freepik](https://www.freepik.com/free-photo/hands-unrecognizable-female-doctor-writing-form-typing-laptop-keyboard_5839269.htm)
 - clinic-about.jpg was sourced from [Unsplash](https://unsplash.com/)
+- Doctor profile images were sourced from [UBERDOC](https://uber-docs.com/)
 - 400 error image was sourced with a modification from from [Shutterstock](https://www.shutterstock.com/)
 - 500 error image was sourced from [Freepik](https://www.freepik.com/free-photos-vectors/computer)
 
@@ -494,11 +517,11 @@ Once above steps have been followed the website can be deployed. Please find the
 
 ## Content
 
-Below websites were used for a general layout inspiration:
-[UBERDOC](https://uber-docs.com/)
+Below website was used for a general layout inspiration:
+- [UBERDOC](https://uber-docs.com/)
 
-The text was adapted from:
-https://www.massgeneral.org/
+The text was adapted from [Massachusetts General Hospital]
+(https://www.massgeneral.org/)
 
 # Acknowledgements
 
