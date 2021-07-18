@@ -2,74 +2,76 @@
 {% set active_page = 'add_doctor' %}
 
 {% block content %}
-    <h4 class="center-align patient-heading" id="register-heading">Add a new doctor</h4>
-    <!-- Register doctor profile -->
-    <div class="row" id="register-form">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_doctor') }}">
-            <div class="card-panel">
-                <div class="row">
-                    <!-- First name -->
-                    <div class="input-field col s12 m6">
-                        <input type="text" id="doctor_first_name" name="doctor_first_name" class="validate" required>
-                        <label for="doctor_first_name">First Name</label>
-                    </div>
-                    <!-- Last name -->
-                    <div class="input-field col s12 m6">
-                        <input  id="doctor_last_name" name="doctor_last_name" type="text" class="validate" required>
-                        <label for="doctor_last_name">Last Name</label>
-                    </div>
-                    <!-- Title -->
-                    <div class="input-field col s12 m6">
-                        <input  id="title" name="title" type="text" class="validate" required>
-                        <label for="username">Title</label>
-                    </div>
-                    <!-- Password -->
-                    <div class="input-field col s12 m6">
-                        <input id="password" name="password" type="password" minlength="5" 
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="password">Password</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">
-                            Please use 5-15 letters and numbers only
-                        </span>
-                    </div>
-                    <!-- Email -->
-                    <div class="input-field col s12 m6">
-                        <input id="email" name="email" type="email" class="validate" required>
-                        <label for="email">Email</label>
-                    </div>
-                    <!-- Contact number -->
-                    <div class="input-field col s12 m6">
-                        <input id="phone" name="phone" type="tel" placeholder="Phone format 1231231234" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" class="validate" required>
-                        <label for="Phone"></label>
-                    </div>
-                    <!-- Speciality name -->
-                    <div class="input-field col s12 m6">
-                        <select class="options" id="speciality_name" name="speciality_name" required class="validate">
-                            <option value="" required disabled selected>Select speciality</option>
-                            {% for speciality in specialities %}
-                                <option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <!-- Experience -->
-                    <div class="input-field col s12 m6">
-                        <input  id="experience" name="experience" type="text" class="validate" required>
-                        <label for="experience">Experience</label>
-                    </div>
-                    <!-- About -->
-                    <div class="input-field col s12">
-                        <textarea id="about" name="about" minlength="10" maxlength="400" 
-                            class="materialize-textarea validate"></textarea>
-                        <label for="about">About</label>
-                    </div>
+    <section id="add-doc-section">
+        <h4 class="center-align patient-heading" id="register-heading">Add a new doctor</h4>
+        <!-- Register doctor profile -->
+        <div class="row" id="register-form">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_doctor') }}">
+                <div class="card-panel">
                     <div class="row">
-                        <button type="submit" class="col s6 m8 offset-m2 offset-s3 btn-large sign-btn center-align">
-                            SUBMIT <i class="fas fa-sign-in-alt"></i>
-                        </button>
+                        <!-- First name -->
+                        <div class="input-field col s12 m6">
+                            <input type="text" id="doctor_first_name" name="doctor_first_name" class="validate" required>
+                            <label for="doctor_first_name">First Name</label>
+                        </div>
+                        <!-- Last name -->
+                        <div class="input-field col s12 m6">
+                            <input  id="doctor_last_name" name="doctor_last_name" type="text" class="validate" required>
+                            <label for="doctor_last_name">Last Name</label>
+                        </div>
+                        <!-- Title -->
+                        <div class="input-field col s12 m6">
+                            <input  id="title" name="title" type="text" class="validate" required>
+                            <label for="username">Title</label>
+                        </div>
+                        <!-- Password -->
+                        <div class="input-field col s12 m6">
+                            <input id="password" name="password" type="password" minlength="5" 
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <label for="password">Password</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">
+                                Please use 5-15 letters and numbers only
+                            </span>
+                        </div>
+                        <!-- Email -->
+                        <div class="input-field col s12 m6">
+                            <input id="email" name="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <!-- Contact number -->
+                        <div class="input-field col s12 m6">
+                            <input id="phone" name="phone" type="tel" placeholder="Phone format 1231231234" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" class="validate" required>
+                            <label for="Phone"></label>
+                        </div>
+                        <!-- Speciality name -->
+                        <div class="input-field col s12 m6">
+                            <select class="options" id="speciality_name" name="speciality_name" required class="validate">
+                                <option value="" required disabled selected>Select speciality</option>
+                                {% for speciality in specialities %}
+                                    <option value="{{ speciality.speciality_name }}">{{ speciality.speciality_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <!-- Experience -->
+                        <div class="input-field col s12 m6">
+                            <input  id="experience" name="experience" type="text" class="validate" required>
+                            <label for="experience">Experience</label>
+                        </div>
+                        <!-- About -->
+                        <div class="input-field col s12">
+                            <textarea id="about" name="about" minlength="10" maxlength="400" 
+                                class="materialize-textarea validate"></textarea>
+                            <label for="about">About</label>
+                        </div>
+                        <div class="row">
+                            <button type="submit" class="col s6 m8 offset-m2 offset-s3 btn-large sign-btn center-align">
+                                SUBMIT <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    </section> 
 
 {% endblock %}
