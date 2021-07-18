@@ -174,7 +174,13 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 
 - Navigation menu
     - responsive on all devices
-    - hamgurger menu on smaller devices
+    - hamburger menu on smaller devices
+- Footer
+    - the footer is standard across all pages on the website except on Login In and Register pages
+    - it contains of social media, working hours, and contact information
+    - there is also a copyright information at the very bottom
+- About us
+    - The About Us page provides information about the Clinic, its mission and values, and location information
 - Responsiveness
     - by using the mobile-first approach, the website will be built to be fully responsive
 - Slider (carousel)
@@ -187,12 +193,13 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - Social media
     - social media icons will be located at the footer
     - allow users to find more information on national parks on the social media
-- Registration and Log in option for patients
+- Registration option for patients
+- Login in option for patients and admin user
 - Log in option for doctors
-- Patients and doctors will have separate form to log in
-- Personal profile for patients and doctors
+    - patients and doctors will have separate form to log in
+- Personal profile pages for patients and doctors
 - Appointment request form
-    - visitors and patients 
+    - for visitors and patients 
 - Search feature
     - visitors and patients will have ability to search for doctors by the doctor's name or specialties
     - after the search users will have an option to make an appointment request
@@ -201,6 +208,7 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
     - patients will have an ability to create, update and delete their profiles
     - doctor users will have an ability to update their profiles
     - admin users will have an ability to update their profiel and to create and delete doctor's profiles
+- Admin Dashboard
 - 404 and 500 error pages
     - if a user navigates to a page which does not exist or if they do not have permission to access, they will be directed to a 404 error page
     - if there are an internal problems with the server, a 500 error page will appear
@@ -234,7 +242,10 @@ Doctors will have the same rights as visitors and in addition they have an acces
 
 ## Administrator
 
-Administrators can register Doctor accounts and add all relevant personal data. Furthermore, admin users have an option to delete doctor profiles. They have an option to update and delete their user themselves also. This will be removed in the next version due to the security reasons.
+Administrators can register Doctor accounts and add all relevant personal data. Furthermore, admin users have an option to delete doctor profiles. 
+Admin users are logged in to the site via 'Patient' Log In page.
+
+Admin users have an option to update and delete their user themselves also. This will be removed in the next version due to the security reasons.
 
 ### Access permission
 
@@ -299,7 +310,6 @@ All CRUD functionality is present in the application; however, CRUD operations a
 - [Coolors](https://coolors.co/) was used for colour palette used on the website.
 - [CSS Autoprefixer](https://autoprefixer.github.io/) was used for adding CSS vendor prefixes.
 - [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to test and debug the code.
-- [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) was used to display Google Map within the website.
 - [Animate On Scroll Library](https://michalsnik.github.io/aos/) was used to integrate animate on scroll effect on home page.
 - [Cloudinary](https://cloudinary.com/) was used to store images and handle image uploading.
 - [Randomkeygen](https://randomkeygen.com/) was used to generate random passwords and keys.
