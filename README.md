@@ -136,7 +136,7 @@ Desktop Wireframes | Tablet Wireframes | Mobile Wireframes
 [Register](readme/wireframes/Desktop_register.png) | [Register]() | [Register]()
 [Profile](readme/wireframes/doctor_profile.png)  | [Profile]()  | [Profile]()
 [Add Doctor](readme/wireframes/desktop_add_doctor.png) | [Add Doctor]() | [Add Doctor]()
-[Dashboard](readme/wireframes/dashboard.png) | [Dashboard]() | [Dashboard]()
+[Dashboard](readme/wireframes/dashboard.png) | [Dashboard](readme/wireframes/dashboard.png) | [Dashboard](readme/wireframes/dashboard.png)
 
 TO BE ADDED 
 

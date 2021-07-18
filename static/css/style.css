@@ -48,6 +48,11 @@ nav {
     font-weight: 700;
 }
 
+/* Font size only for first slider heading */
+#slide-one {
+    font-size: 3.4rem;
+}
+
 .slide-subh {
     font-family: 'Montserrat', sans-serif;
     color: #00234B;
