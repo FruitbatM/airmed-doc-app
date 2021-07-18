@@ -5,7 +5,7 @@
 * Browsers: last 4 version
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 /* Add a smooth scrolling effect to the document */
 html {
@@ -23,16 +23,6 @@ nav {
 .sidenav li > a {
     color: #fafafa;
 }
-
-/* CHECK
-.clinic-logo {
-    height: 100px;
-    width: 100px;
-    display: block;
-    margin: auto;
-    margin-top: 7rem;
-}
-*/
 
 .dropdown-content li > a {
     color: #fafafa;
@@ -223,6 +213,7 @@ https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
     background: url(../images/mother_with_babies.jpg) no-repeat center;
     background-size: cover;
     position: absolute;
+    min-height: 100vh;
 }
 
 .login-heading {
@@ -596,6 +587,19 @@ select[required]{
         max-height: 50%;
         width: 45%;
         will-change: top, opacity;
+    }
+}
+
+/* For iPad Pro 12.9" 
+Credit: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/#top-of-site
+Portrait and Landscape */
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2)  {
+
+    #add-doc-section {
+        min-height: 70vh;
     }
 }
 
