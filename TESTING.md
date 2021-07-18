@@ -492,7 +492,7 @@ Patient (and admin) users log in with 'username' and 'password' while doctor use
 
 <h2 align="center"><img src="readme/images/datepicker.jpg" alt="accessibility score" target="_blank" width="75%" height="75%"></h2>
 
-- **Fixed** by adding additional class for datepicker modal and adding below code :
+- **Fixed** by adding additional class for datepicker modal and adding below code:
 
     ```
     /* Overwrite modal size defined for profile updates */
@@ -501,6 +501,14 @@ Patient (and admin) users log in with 'username' and 'password' while doctor use
         width: 100%;
     }
     ```
+- Under Google Chrome's Console the following error for JavaScript file was showing:
+
+  <h2 align="center"><img src="readme/images/JS_error.jpg" alt="accessibility score" target="_blank" width="75%" height="75%"></h2>
+
+  - **Partially Fiexed**: 
+  The error was caused by the back to top arrow feature. When the pages were loaded, JS code tries to attach an event listener to all pages but was only present on Home and About Us html pages.
+
+  To fix this error, I add onclick function to almost all pages where it made sense for back to top arrow button to appear. This issue is planned to be fully fixed in the next version update.
 
 # Web Accessibility
 

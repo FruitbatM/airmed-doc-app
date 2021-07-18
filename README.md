@@ -126,7 +126,17 @@ The website will be designed to be pleasing to the eye, consistent and user frie
     - Personal user profiles for doctors and patients
 
 ## Skeleton
-The wireframes were created in [Balsamiq](https://balsamiq.com/).
+The wireframes were created in [Balsamiq](https://balsamiq.com/)
+
+Desktop Wireframes | Tablet Wireframes | Mobile Wireframes
+------------------ | ------------------ | ----------------
+[Homepage](readme/wireframes/Desktop_home.png) | [Homepage]() | [Homepage]() 
+[About Us](readme/wireframes/Desktop_about.png) | [About Us]() | [About Us]()
+[Log In](readme/wireframes/Desktop_login.png)   | [Log In]()   | [Log In]()
+[Register](readme/wireframes/Desktop_register.png) | [Register]() | [Register]()
+[Profile](readme/wireframes/doctor_profile.png)  | [Profile]()  | [Profile]()
+[Add Doctor](readme/wireframes/desktop_add_doctor.png) | [Add Doctor]() | [Add Doctor]()
+[Dashboard](readme/wireframes/dashboard.png) | [Dashboard]() | [Dashboard]()
 
 TO BE ADDED 
 
