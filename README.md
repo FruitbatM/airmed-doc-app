@@ -1,4 +1,4 @@
-# AIRMED - doctor appointment application
+# AIRMED - doctor management application
 
 *Developed and designed as part of Milestone Project 3: Python and Data Centric Development*
 
@@ -130,13 +130,15 @@ The wireframes were created in [Balsamiq](https://balsamiq.com/)
 
 Desktop Wireframes | Tablet Wireframes | Mobile Wireframes
 ------------------ | ------------------ | ----------------
-[Homepage](readme/wireframes/Desktop_home.png) | [Homepage]() | [Homepage]() 
-[About Us](readme/wireframes/Desktop_about.png) | [About Us]() | [About Us]()
-[Log In](readme/wireframes/Desktop_login.png)   | [Log In]()   | [Log In]()
-[Register](readme/wireframes/Desktop_register.png) | [Register]() | [Register]()
-[Profile](readme/wireframes/doctor_profile.png)  | [Profile]()  | [Profile]()
-[Add Doctor](readme/wireframes/desktop_add_doctor.png) | [Add Doctor]() | [Add Doctor]()
+[Homepage](readme/wireframes/Desktop_home.png) | [Homepage](readme/wireframes/Desktop_home.png) | [Homepage](readme/wireframes/smartphone_home.png) 
+[About Us](readme/wireframes/Desktop_about.png) | [About Us](readme/wireframes/Desktop_about.png) | [About Us](readme/wireframes/smartphone_about.png)
+[Log In](readme/wireframes/Desktop_login.png)   | [Log In](readme/wireframes/Desktop_login.png)   | [Log In](readme/wireframes/Desktop_login.png)
+[Register](readme/wireframes/Desktop_register.png) | [Register](readme/wireframes/Desktop_register.png) | [Register](readme/wireframes/Desktop_register.png)
+[Profile](readme/wireframes/doctor_profile.png)  | [Profile](readme/wireframes/doctor_profile.png)  | [Profile](readme/wireframes/doctor_profile.png)
+[Add Doctor](readme/wireframes/desktop_add_doctor.png) | [Add Doctor]() | [Add Doctor](readme/wireframes/desktop_add_doctor.png)
 [Dashboard](readme/wireframes/dashboard.png) | [Dashboard](readme/wireframes/dashboard.png) | [Dashboard](readme/wireframes/dashboard.png)
+
+There are few smaller modifications made in the design then planned under the initial wireframes.
 
 ## Design
 ### Color Scheme
