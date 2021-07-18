@@ -32,19 +32,20 @@ Mockup responsive image was created with [Techsini](http://techsini.com/multi-mo
     - [Existing Features](#existing-features)
     - [Future Implementation](#future-implementation)
 4. [User Types and permissions](#user-types-and-permissions)
-5. [Database](#database)
-6. [Technologies](#technologies)
-7. [Testing](#testing)
-8. [Deployment](#deployment)
+5. [CRUD - Create, Read, Update and Delete](#crud-create-read-update-and-delete)
+6. [Database](#database)
+7. [Technologies](#technologies)
+8. [Testing](#testing)
+9. [Deployment](#deployment)
     - [GitHub pages](#github-pages)
     - [Forking the Repository](#forking-the-repository)
     - [Local Deployment](#local-deployment)
-9. [Credits](#credits)
+10. [Credits](#credits)
     - [Code](#code)
     - [Media](#media)
     - [Content](#content)
-10. [Acknowledgements](#acknowledgements)
-11. [Disclaimer](#disclaimer)
+11. [Acknowledgements](#acknowledgements)
+12. [Disclaimer](#disclaimer)
 
 </details>
 
@@ -200,6 +201,9 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
     - patients will have an ability to create, update and delete their profiles
     - doctor users will have an ability to update their profiles
     - admin users will have an ability to update their profiel and to create and delete doctor's profiles
+- 404 and 500 error pages
+    - if a user navigates to a page which does not exist or if they do not have permission to access, they will be directed to a 404 error page
+    - if there are an internal problems with the server, a 500 error page will appear
 
 ## Future Implementation
 
@@ -222,12 +226,44 @@ A visitor is anyone who navigates to this website and can navigate through the h
 
 ## Patient
 
-A visitor who registers for an account automatically becomes a "patient". Patients will have the same rights as visitors, in additon they have an access to patient profile where they can update some of their personal data. 
+A visitor who registers for an account automatically becomes a "patient". Patients will have the same rights as visitors, in additon they have an access to patient profile where they can update and add additional personal data. 
 
 ## Doctor
 
+Doctors will have the same rights as visitors and in addition they have an access to Doctor profile where they can update and add additional personal data like profile image. Doctors don't have an option to register profile by themselves. This can be done only by Admin user.
+
 ## Administrator
 
+Administrators can register Doctor accounts and add all relevant personal data. Furthermore, admin users have an option to delete doctor profiles. They have an option to update and delete their user themselves also. This will be removed in the next version due to the security reasons.
+
+### Access permission
+
+There are different permission levels what each user has access to on the webpage. 
+
+| Navbar | Visitor | Patient | Doctor | Admin |
+ --- | --- | --- | --- | ---
+Home| &#9989; | &#9989; | &#9989; | &#10060;
+About Us |&#9989; | &#9989; | &#9989; | &#10060;
+Log In|&#9989; | &#9989; | &#9989; | &#9989;
+Register| &#9989; | &#10060; | &#10060; | &#10060;
+Profile | &#10060; | &#9989; | &#10060; | &#10060;
+Doc Profile | &#10060; | &#10060; | &#9989; | &#10060;
+Add Doctor| &#10060; | &#10060; | &#10060; | &#9989;
+Dashboard| &#10060; | &#10060; | &#10060; | &#9989;
+Log out| &#10060; | &#9989; | &#9989; | &#9989;
+
+# CRUD - Create, Read, Update and Delete
+
+As part of the milestone project, we have to demonstrate that our application can perform CRUD operations.
+
+|   	    |  Create 	|  Read 	| Update  	| Delete  	|
+|---	    |---	    |---	    |---	    |---	    |
+| Visitor  	| No  	    | Yes  	    | No  	    | No  	    |
+| Patient	| Yes  	    | Yes 	    | Yes  	    | Yes 	    |
+| Doctor	| No 	    | Yes  	    | Yes  	    | No  	    |
+| Admin  	| Yes 	    | Yes  	    | Yes  	    | Yes 	    |
+
+All CRUD functionality is present in the application; however, CRUD operations are restricted to some user types as explained in the table above.
 
 ## Technologies
 ## Languages
