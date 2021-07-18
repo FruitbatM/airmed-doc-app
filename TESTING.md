@@ -453,6 +453,54 @@ The results were consistent, the website is platform-cross compatible and respon
 
 # Encountered Issues
 
+Several bugs were encountered during the coding process:
+
+- Initially I was planning to implement appointment request feature by using 'smtplib' library but I was getting below error and couldn't resolve it even when configuring 'less secure app access' on Gmail settings.
+
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8 https://support.google.com/mail/?p=BadCredentials d8sm5232301wra.41 - gsmtp')
+
+  - **Fixed** by adding Flask-Mail extenstion
+
+- Full screen height issue on register pages on iPad Pro 12.9". The gap was showing between the bottom of the page and footer section.
+
+  - **Fixed** by adding `min-height` property:
+
+  ```
+  /* For iPad Pro 12.9" 
+  Credit: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/#top-of-site
+  Portrait and Landscape */
+  @media only screen 
+    and (min-width: 1024px) 
+    and (max-width: 1366px)
+    and (-webkit-min-device-pixel-ratio: 2)  {
+
+      #add-doc-section {
+          min-height: 70vh;
+      }
+  }
+  ```
+
+- Issue with getting the error KeyError: 'user'  when logging out with a doctor user.
+
+Patient (and admin) users log in with 'username' and 'password' while doctor users log in with 'email' and 'password'. The error was received because I added session.pop() method for 'user' and not for 'email'.
+
+- **Fixed** by rewriting session.pop method:
+
+`session.pop("user", None) or session.pop("email", None)`
+
+- Issue with a datepicker inside appointment request form
+
+<h2 align="center"><img src="readme/images/datepicker.jpg" alt="accessibility score" target="_blank" width="75%" height="75%"></h2>
+
+- **Fixed** by adding additional class for datepicker modal and adding below code :
+
+    ```
+    /* Overwrite modal size defined for profile updates */
+    .datepicker-modal {
+        max-height: 100%;
+        width: 100%;
+    }
+    ```
 
 # Web Accessibility
 
