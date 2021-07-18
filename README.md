@@ -18,6 +18,9 @@ Mockup responsive image was created with [Techsini](http://techsini.com/multi-mo
 2. [User Experience UX](#user-experience-ux)
     - [User Stories](#user-stories)
         - [Visitor Stories](#visitor-stories)
+        - [Patient Stories](#patient-stories)
+        - [Doctor Stories](#doctor-stories)
+        - [Administrator Stories](#administrator-stories)
     - [Strategy](#strategy)
     - [Scope](#scope)
     - [Structure](#structure)
@@ -32,7 +35,7 @@ Mockup responsive image was created with [Techsini](http://techsini.com/multi-mo
     - [Existing Features](#existing-features)
     - [Future Implementation](#future-implementation)
 4. [User Types and permissions](#user-types-and-permissions)
-5. [CRUD - Create, Read, Update and Delete](#crud-create-read-update-and-delete)
+5. [CRUD - Create, Read, Update and Delete](#crud-create,read,update-and-delete)
 6. [Database](#database)
 7. [Technologies](#technologies)
 8. [Testing](#testing)
@@ -70,14 +73,14 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 1. As a site visitor, I would like to gain an understanding of the website's purpose from the home page.
 2. As a site visitor, I would like to easily navigate through the site on all devices and find what I am looking for with an ease.
 3. As a site visitor, I would like to see clinic's location and address on the map.
+4. As a patient, I would like to have an option to register on the site and to create my personal account.
 
 ### Patient Stories
-
-1. As a patient, I would like to have an option to register on the site and to create my personal account.
-2. As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.
-3. As a patient, I want to be able to update my personal data.
-4. As a patient, I want to have an option to search for doctors by the name or specialty.
-5. As a patient, I want to have an option to make an appointment with a medical professional.
+ 
+1. As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.
+2. As a patient, I want to be able to update my personal data.
+3. As a patient, I want to have an option to search for doctors by the name or specialty.
+4. As a patient, I want to have an option to make an appointment with a medical professional.
 
 ### Doctor Stories
 

@@ -25,27 +25,18 @@ Manual tests were carried out across all user stories and features:
 Verify that on the homepage slider feature is displayed and working corectly on all devices
 
 **Expected Result:** 
-- Slider showcases three background images with relevant content for healthcare applicaton and gives immediately a firts glimpse on the website's content and purpose and it works correctly on different devices
+- Slider showcases three background images with relevant content for healthcare applicaton and gives immediately a first glimpse on the website's content and purpose and it works correctly on different devices
 - Strategically placed headline also indicates to the user what is the website's purpose
 
-**Actual Result:** Slider showcases three background images with relevant content for healthcare applicaton and it works correctly on different devices
+**Actual Result:** 
+- Slider showcases three background images with relevant content for healthcare applicaton and it works correctly on different devices
+- Strategically placed headline also indicates to the user what is the website's purpose
 
 **Pass/Fail:** Pass
 
-<br >
   <h2 align="center"><img src="readme/images/TC_1.jpg" alt="Test case 1" target="_blank" width="60%" height="60%"></h2>
-*Three screen devices combined together*
 
-### Test Case 2
-
-**Description:**
-Verify that on the homepage, slider feature is displayed and working corectly on all devices
-
-**Expected Result:** 
-- Slider showcases three background images with relevant content for healthcare applicaton and gives immediately a firts glimpse on the website's content and purpose and it works correctly on different devices
-- Strategically placed headline also indicates to the user what is the website's purpose
-
-**Actual Result:** Slider showcases three background images with relevant content for healthcare applicaton and it works correctly on different devices
+*Image of three screen devices combined together*
 
 ### Test Case 2
 
@@ -53,10 +44,10 @@ Verify that on the homepage, slider feature is displayed and working corectly on
 Verify the homepage displays a relevant hero images and text
 
 **Expected Result:**
-Correct text displays over hero images 
+Correct background images and text are displayed on the homepage 
 
 **Actual Result:**
-Correct text displays over hero images
+Correct background images and text are displayed on the homepage 
 
 **Pass/Fail:**
 Pass
@@ -71,7 +62,7 @@ Verify the homepage shows correct navigation tabs for a visitor
 **Expected Result:**
 On the homepage correct navigation tabs (links) are showing both on the main navigation and under mobile (side) navigation:
 - Home
-- About
+- About Us
 - Login In
 - Register
 
@@ -81,7 +72,6 @@ Actual result equals Expected result
 **Pass/Fail:**
 Pass
 
-<br >
   <h2 align="center"><img src="readme/images/TC_2.jpg" alt="Test case 3" target="_blank" width="60%" height="60%"></h2>
 
 ---
@@ -105,69 +95,78 @@ Pass
 
 ### Test Case 5
 **Description:**
-Verify the hamburger menu appears on small devices
+Verify the hamburger menu appears on the small devices
 
 **Expected Result:**
-Navbar hamburger menu displays and functions on mobile
+Navbar hamburger menu displays and functions on tablet and mobile devices
 
 **Actual Result:**
-Navbar hamburger menu displays and functions on mobile
+Navbar hamburger menu displays and functions on tablet and mobile devices
 
 **Pass/Fail:**
 Pass
-<br >
-  <h2 align="center"><img src="readme/images/TC_5.jpg" alt="Test case 3" target="_blank" width="50%" height="50%"></h2>
+
+  <h2 align="center"><img src="readme/images/TC_5.jpg" alt="Test case 3" target="_blank" width="30%" height="130%"></h2>
 
 ---
 **As a site visitor, I would like to see clinic's location and address on the map.**
 
 ### Test Case 6
 **Description:**
-Verify the map and AIRMED Clinic address show on the About Uspage
+Verify the map and AIRMED Clinic address show on the About Us page
 
 **Expected Result:**
 The map image and address are displayed under the About Us page
 
 **Actual Result:**
-The map image and address are displayed under the About page
+The map image and address are displayed under the About Us page
 
 **Pass/Fail:**
 Pass
 <br >
-  <h2 align="center"><img src="readme/images/TC_6.jpg" alt="Test case 3" target="_blank" width="50%" height="50%"></h2>
-
-
-## Patient Stories
-
-**As a patient, I would like to have an option to register on the site and to create my personal account.**
-
-### Test Case 6
-
-**Description:**
-
-**Expected Result:**
-
-**Actual Result:**
-
-**Pass/Fail:**
-Pass
-<br >
+  <h2 align="center"><img src="readme/images/TC_6.jpg" alt="Test case 3" target="_blank" width="40%" height="40%"></h2>
 
 ---
 
-**As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.**
+**As a patient, I would like to have an option to register on the site and to create my personal account.**
 
 ### Test Case 7
 
 **Description:**
+Verify the registration form performs as expected
 
 **Expected Result:**
+The form submits without errors
 
 **Actual Result:**
+The form submits without errors
 
 **Pass/Fail:**
 Pass
-<br >
+
+Register form            |  Register confirmation
+:-------------------------:|:-------------------------:
+![](readme/images/TC_7_register.jpg)  |  ![](readme/images/TC_7_reg_confirm.jpg)
+
+---
+
+## Patient Stories
+
+**As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.**
+
+### Test Case 8
+
+**Description:**
+Verify consistent colours, styling and imagery across website
+
+**Expected Result:**
+Consistent styling and colour theme is present across website
+
+**Actual Result:**
+Consistent styling and colour theme is present across website
+
+**Pass/Fail:**
+Pass
 
 ---
 
@@ -176,14 +175,24 @@ Pass
 ### Test Case 8
 
 **Description:**
+Verify patient can read, update, and delete their health profile when logged in
 
 **Expected Result:**
+A patient can read, update and delete their profile
 
 **Actual Result:**
+A patient can read, update and delete their profile
 
 **Pass/Fail:**
 Pass
-<br >
+
+Edit Profile            |  Update Profile info |  Profile updated
+:-------------------------:|:-------------------------:|:-------------------------:
+![](readme/images/TC_8_update.jpg)  |  ![](readme/images/TC_8_update_add.jpg) | ![](readme/images/TC_8_update_3.jpg)
+
+Stored in DB          |  Delete |  Delete confirmation
+:-------------------------:|:-------------------------:|:-------------------------:
+![](readme/images/TC_8_db.jpg)  |  ![](readme/images/TC_8_delete.jpg) | ![](readme/images/TC_8_delete_profile.jpg)
 
 ---
 
