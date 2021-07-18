@@ -2,7 +2,7 @@
 
 *Developed and designed as part of Milestone Project 3: Python and Data Centric Development*
 
-[Please view the live project here](#)
+[Please view the live project here](http://airmed-doc-app.herokuapp.com/)
 
 <h2 align="center"><img src="readme/images/mockup_img.jpg" target="_blank" width="90%" height="90%"></h2>
 
@@ -77,7 +77,7 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 
 ### Patient Stories
  
-1. As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.
+1. As a patient, I want a website that looks professional, so I feel confident in storing my personal data.
 2. As a patient, I want to be able to update my personal data.
 3. As a patient, I want to have an option to search for doctors by the name or specialty.
 4. As a patient, I want to have an option to make an appointment with a medical professional.
@@ -86,7 +86,7 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 
 1. As a doctor, I want to be able to see my personal data.
 2. As a doctor, I want to be able to update my personal data.
-3. As a doctor, I want to have an option to uploade profile image.
+3. As a doctor, I want to have an option to upload profile image.
 
 ### Administrator Stories
 
@@ -99,7 +99,7 @@ Well-done UI is one of the key factors defining the success of AIRMED healthcare
 - The main function of the application is to make the app accessible for each and every potential user who is a potential patient
 - AIRMED will be created with a primary purpose to solve patient problems, beginning with an online appointment booking
 - Attractive and good quality UI design
-- To enable an easy access to the heatlh clinic, services, and doctor's information
+- To enable an easy access to the health clinic, services, and doctor's information
 
 ## Scope
 
@@ -107,9 +107,9 @@ The site will be fully responsive mobile first website. Many features will be av
 
 The site consists of a homepage which gives an overview of the site purpose with search feature, specialties information and why to choose AIRMED Healtg clinic. Second page is About Us page which tells more about the Clinic, its mission and values, and location.
 
-The website furthermore contains a Login In pages for Patients and Doctors respectively. Since the website will hold lots of data, the site owner wanted to deferentiet two separate points for login. The website will have a Register page for patients and a register page for Doctors which is named Add Doctor. Doctor registration will be performed only by Admin users.
+The website furthermore contains a Login In pages for Patients and Doctors, respectively. Since the website will hold lots of data, the site owner wanted to differentiate two separate points for login. The website will have a Register page for patients and a register page for doctors which is named Add Doctor. Doctor registration will be performed only by Admin users.
 
-Both Patients and Doctors will have Profile pages where they will be able to update some of the personal information. These pages are only visible when the user will be logged in under their username / email address respectively. Admin users will be able to see all Doctor profiles under the Dashboard page where they will have ability to search for and delete a particular doctor profile.
+Both Patients and Doctors will have Profile pages where they will be able to update some of the personal information. These pages are only visible when the user will be logged in under their username / email address, respectively. Admin users will be able to see all Doctor profiles under the Dashboard page where they will have ability to search for and delete a particular doctor profile.
 
 ## Structure
 
@@ -138,8 +138,6 @@ Desktop Wireframes | Tablet Wireframes | Mobile Wireframes
 [Add Doctor](readme/wireframes/desktop_add_doctor.png) | [Add Doctor]() | [Add Doctor]()
 [Dashboard](readme/wireframes/dashboard.png) | [Dashboard](readme/wireframes/dashboard.png) | [Dashboard](readme/wireframes/dashboard.png)
 
-TO BE ADDED 
-
 ## Design
 ### Color Scheme
 
@@ -158,7 +156,7 @@ Delicate and soothing color palette will be chosen for medical app. Users should
 
 Mainly cold colors will be selected throughout the app in order to establish an overall sense of tranquility that is necessary to help users concentrate on the more important app features.
 
-White will be primarily used as the background because it represents reverence, purity, and innocence. This association calms people and influences their brain activity in a very positive way. Blue color symbolizes a sense of calm, peace harmony, trust and knowledge. Celadon Blue will be used to promote a tranquil environment for the users. Green is  associated with health, good luck, youth, vigor, generosity, and fertility. A variaty of orange color (Mango Tango) will be used sparingly as button highlighters.
+White will be primarily used as the background because it represents reverence, purity, and innocence. This association calms people and influences their brain activity in a very positive way. Blue color symbolizes a sense of calm, peace harmony, trust and knowledge. Celadon Blue will be used to promote a tranquil environment for the users. Green is  associated with health, good luck, youth, vigor, generosity, and fertility. A variety of orange color (Mango Tango) will be used sparingly as button highlighters.
 
 ### Fonts
 
@@ -220,7 +218,7 @@ AIRMED doctor application will be built to be fully responsive mobile-first. Thi
 - Create / Manage / Add / Edit / Delete profiles
     - patients will have an ability to create, update and delete their profiles
     - doctor users will have an ability to update their profiles
-    - admin users will have an ability to update their profiel and to create and delete doctor's profiles
+    - admin users will have an ability to update their profile and to create and delete doctor's profiles
 - Admin Dashboard
 - 404 and 500 error pages
     - if a user navigates to a page which does not exist or if they do not have permission to access, they will be directed to a 404 error page
@@ -247,7 +245,7 @@ A visitor is anyone who navigates to this website and can navigate through the h
 
 ## Patient
 
-A visitor who registers for an account automatically becomes a "patient". Patients will have the same rights as visitors, in additon they have an access to patient profile where they can update and add additional personal data. 
+A visitor who registers for an account automatically becomes a "patient". Patients will have the same rights as visitors, in addition they have an access to patient profile where they can update and add additional personal data. 
 
 ## Doctor
 
@@ -437,7 +435,7 @@ For sensitive information like passwords and api keys, create an `env.py` file t
 Register for a free account with [MongoDB](https://account.mongodb.com/account/register)
 
 - Create a new Project and call it 'airmed'
-- Creater a Cluster, choose the free tier option and select your region
+- Create a Cluster, choose the free tier option and select your region
 - Create a new database and call it 'airmed_db'
 - Create four Collections named 'users', 'gender', 'doctors', and 'specialities'. Detailed db scheme is available below:
 
@@ -491,7 +489,7 @@ Register for a free account with [MongoDB](https://account.mongodb.com/account/r
 [dbdiagram.io - DBMS Tools](https://dbdiagram.io/) was used to create database scheme.
 
 Appointments collection was created but not yet fully utilized. When the user sends an appointment request form, data is collected in the database. In the next version this information will be visible on the app both to the patient and doctor.
-Also, it is planned for the next version to confim / cancel / reject the appointment.
+Also, it is planned for the next version to confirm / cancel / reject the appointment.
 
 - appointments 
 
