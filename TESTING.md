@@ -22,14 +22,14 @@ Manual tests were carried out across all user stories and features:
 ### Test Case 1
 
 **Description:**
-Verify that on the homepage slider feature is displayed and working corectly on all devices
+Verify that on the homepage slider feature is displayed and working correctly on all devices
 
 **Expected Result:** 
-- Slider showcases three background images with relevant content for healthcare applicaton and gives immediately a first glimpse on the website's content and purpose and it works correctly on different devices
+- Slider showcases three background images with relevant content for healthcare application and gives immediately a first glimpse on the website's content and purpose and it works correctly on different devices
 - Strategically placed headline also indicates to the user what is the website's purpose
 
 **Actual Result:** 
-- Slider showcases three background images with relevant content for healthcare applicaton and it works correctly on different devices
+- Slider showcases three background images with relevant content for healthcare application and it works correctly on different devices
 - Strategically placed headline also indicates to the user what is the website's purpose
 
 **Pass/Fail:** Pass
@@ -152,7 +152,7 @@ Register form            |  Register confirmation
 
 ## Patient Stories
 
-**As a patient, I want a webiste that looks professional so I feel confident in storing my personal data.**
+**As a patient, I want a website that looks professional so I feel confident in storing my personal data.**
 
 ### Test Case 8
 
@@ -204,10 +204,10 @@ Stored in DB          |  Delete |  Delete confirmation
 Verify search feature works as expected
 
 **Expected Result:**
-Users can can search for doctors by the doctor first name, last name or specialties
+User search for doctors by the doctor first name, last name or specialties
 
 **Actual Result:**
-Users can can search for doctors by the doctor first name, last name or specialties
+Users can search for doctors by the doctor first name, last name or specialties
 
 **Pass/Fail:**
 Pass
@@ -296,7 +296,7 @@ Pass
 ### Test Case 14
 
 **Description:**
-Verifly doctor can add image URL and the image is displayed correctly
+Verify doctor can add image URL and the image is displayed correctly
 
 **Expected Result:**
 When logged in a doctor has an option to input image with type URL
@@ -307,7 +307,7 @@ When logged in a doctor has an option to input image with type URL
 **Pass/Fail:**
 Pass
 
-*Please see images udner test case 13*
+*Please see image under test case 13*
 
 ---
 
@@ -339,10 +339,10 @@ Pass
 Verify administrator can delete doctor profile and once deleted, doctor is removed from the database.
 
 **Expected Result:**
-An admistrator can delete doctor's profile from dashboard page
+An administrator can delete doctor's profile from dashboard page
 
 **Actual Result:**
-An admistrator can delete doctor's profile from dashboard page
+An administrator can delete doctor's profile from dashboard page
 
 **Pass/Fail:**
 Pass
