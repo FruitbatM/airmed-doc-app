@@ -123,7 +123,7 @@ The map image and address are displayed under the About Us page
 
 **Pass/Fail:**
 Pass
-<br >
+
   <h2 align="center"><img src="readme/images/TC_6.jpg" alt="Test case 3" target="_blank" width="40%" height="40%"></h2>
 
 ---
@@ -172,7 +172,7 @@ Pass
 
 **As a patient, I want to be able to update my personal data.**
 
-### Test Case 8
+### Test Case 9
 
 **Description:**
 Verify patient can read, update, and delete their health profile when logged in
@@ -198,32 +198,55 @@ Stored in DB          |  Delete |  Delete confirmation
 
 **As a patient, I want to have an option to search for doctors by the name or specialty.**
 
-### Test Case 9
+### Test Case 10
 
 **Description:**
+Verify search feature works as expected
 
 **Expected Result:**
+Users can can search for doctors by the doctor first name, last name or specialties
 
 **Actual Result:**
+Users can can search for doctors by the doctor first name, last name or specialties
 
 **Pass/Fail:**
 Pass
-<br >
+
+Search by doctor's last name          |  Results
+:-------------------------:|:-------------------------:
+![](readme/images/TC_9_search.jpg)  |  ![](readme/images/TC_9_search_result_1.jpg)
+
+Search by doctor's first name          |  Results
+:-------------------------:|:-------------------------:
+![](readme/images/TC_9_search_name.jpg)  |  ![](readme/images/TC_9_search_name_result.jpg)
+
+Search by doctor's specialty          |  Results
+:-------------------------:|:-------------------------:
+![](readme/images/TC_9_search_spec.jpg)  |  ![](readme/images/TC_9_search_spec_result.jpg)
 
 
 **As a patient, I want to have an option to make an appointment with a medical professional.**
 
-### Test Case 10
+### Test Case 11
 
 **Description:**
+Verify appointment request form performs as expected
 
 **Expected Result:**
+The form submits without errors
 
 **Actual Result:**
-
+The form submits without errors
 **Pass/Fail:**
 Pass
-<br >
+
+Appointment Request form        |  Confirmation - flash message
+:-------------------------:|:-------------------------:
+![](readme/images/TC_11_appointment.jpg)  |  ![](readme/images/TC_11_appointment_flash.jpg)
+
+Data stored in DB       |  Email confirmation
+:-------------------------:|:-------------------------:
+![](readme/images/TC_11_appointment_db.jpg)  |  ![](readme/images/TC_11_appointment_gmail.jpg)
 
 ---
 
@@ -231,98 +254,118 @@ Pass
 
 **As a doctor, I want to be able to see my personal data.**
 
-### Test Case 11
+### Test Case 12
 
 **Description:**
+Verify a doctor user when logged in can read their profile
 
 **Expected Result:**
+When logged in a doctor can read their profile
 
 **Actual Result:**
+When logged in a doctor can read their profile
 
 **Pass/Fail:**
 Pass
-<br >
+
+  <h2 align="center"><img src="readme/images/TC_12_doc_profile.jpg" alt="Test case 11" target="_blank" width="50%" height="50%"></h2>
 
 ---
 
 **As a doctor, I want to be able to update my personal data.**
 
-### Test Case 12
+### Test Case 13
 
 **Description:**
+Verify a doctor user when logged in can update their profile
 
 **Expected Result:**
+When logged in a doctor can update their profile
 
 **Actual Result:**
+When logged in a doctor can update their profile
 
 **Pass/Fail:**
 Pass
-<br >
+
+  <h2 align="center"><img src="readme/images/TC_12_doc_profile_update.jpg" alt="Test case 11" target="_blank" width="50%" height="50%"></h2>
 
 ---
 **As a doctor, I want to have an option to uploade profile image.**
 
-### Test Case 13
+### Test Case 14
 
 **Description:**
+Verifly doctor can add image URL and the image is displayed correctly
 
 **Expected Result:**
+When logged in a doctor has an option to input image with type URL
 
 **Actual Result:**
+When logged in a doctor has an option to input image with type URL
 
 **Pass/Fail:**
 Pass
-<br >
+
+*Please see images udner test case 13*
 
 ---
 
 ## Administrator Stories
 
-**As an admin, I would like to have an option to add new doctor and his/her personal data on the system..**
-
-### Test Case 14
-
-**Description:**
-
-**Expected Result:**
-
-**Actual Result:**
-
-**Pass/Fail:**
-Pass
-<br >
-
----
-
-**As an admin, I want to be able to delete doctor profile to ensure it adheres to site conditions.**
+**As an admin, I would like to have an option to add new doctor and his/her personal data on the system.**
 
 ### Test Case 15
 
 **Description:**
+Verify Administrator can register a new doctor
 
 **Expected Result:**
+The Add Doctor form submits without errors
 
 **Actual Result:**
+The Add Doctor form submits without errors
 
 **Pass/Fail:**
 Pass
-<br >
+
+---
+
+**As an admin, I want to be able to delete doctor profile to ensure it adheres to the site conditions.**
+
+### Test Case 16
+
+**Description:**
+Verify administrator can delete doctor profile and once deleted, doctor is removed from the database.
+
+**Expected Result:**
+An admistrator can delete doctor's profile from dashboard page
+
+**Actual Result:**
+An admistrator can delete doctor's profile from dashboard page
+
+**Pass/Fail:**
+Pass
 
 ---
 
 **As an admin, I would like to have an option to search for doctors by the name or specialty.**
 
-### Test Case 16
+### Test Case 17
 
 **Description:**
+Verify search feature works as expected for Administrator
 
 **Expected Result:**
+Admin can search for doctors by the doctor first name, last name or specialties
 
 **Actual Result:**
+Admin can search for doctors by the doctor first name, last name or specialties
 
 **Pass/Fail:**
 Pass
-<br >
+
+*Please see images under Test Case 10*
 
 # Code Validation
 
@@ -334,27 +377,30 @@ Pass
 
 ### Home Page
 - There are no errors
-- There is one warning
+- There is one warning which can be ignored
 
     <h2 align="center"><img src="readme/images/html_valid_home.jpg" alt="HTML Validation - home page" target="_blank" width="60%" height="60%"></h2>
 
 ### About Us Page
 - There are no errors
-- There is one warning
+- There is one warning which can be ignored
 
     <h2 align="center"><img src="readme/images/html_valid_about.jpg" alt="HTML Validation - About us page" target="_blank" width="60%" height="60%"></h2>
 
 ### Register Page
 - There are no errors
-- There is one warning
+- There is one warning which can be ignored
 
     <h2 align="center"><img src="readme/images/html_valid_register.jpg" alt="HTML Validation - Register page" target="_blank" width="60%" height="60%"></h2>
 
 ### Log in Page
 - There are no errors
-- There is one warning
+- There is one warning which can be ignored
 
     <h2 align="center"><img src="readme/images/html_valid_login.jpg" alt="HTML Validation - Login page" target="_blank" width="60%" height="60%"></h2>
+
+### Other pages
+- Other pages were validated as well but due to jinja template there were couple of errors which could be ignored due to the reason mentioned above
 
 ## [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - CSS Validation
 
