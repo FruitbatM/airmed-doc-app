@@ -477,6 +477,16 @@ Once above steps have been followed the website can be deployed. Please find the
 ## Media
 
 ### Images
+- The custom favicon was designed using Canva
+- The slider background images were sourced from [Freepik](https://www.freepik.com/photos/medical)
+- Patient background login image was sourced from Unsplash, credit: photo by Tom Vining on [Unsplash](https://unsplash.com/photos/Ayx2M0iiVFQ)
+- Patient background register image was sourced from Unsplash, credit: photo by Alexander Dummer on [Unsplash](https://unsplash.com/photos/UH-xs-FizTk)
+- Doctor background log in image was sourced from Unsplash, credit: photo by [National Cancer Institute](https://unsplash.com/photos/L8tWZT4CcVQ)
+- clinic_blur.jpg image was sourced from Unsplash, credit: photo by Solen Feyissa on [Unsplash](https://unsplash.com/photos/jGmBZypoFPc)
+- Hero background image on About us page was sourced from [Freepik](https://www.freepik.com/free-photo/hands-unrecognizable-female-doctor-writing-form-typing-laptop-keyboard_5839269.htm)
+- clinic-about.jpg was sourced from [Unsplash](https://unsplash.com/)
+- 400 error image was sourced with a modification from from [Shutterstock](https://www.shutterstock.com/)
+- 500 error image was sourced from [Freepik](https://www.freepik.com/free-photos-vectors/computer)
 
 ### Icons
 

@@ -394,6 +394,8 @@ Comprehensive testing was executed. Further elaborated in more details below:
   - Samsung Galaxy Tab A (Chrome for Android & Samsung Internet)
   - Lenovo ThinkBook 13S (Chrome, Microsoft Edge & Firefox)
 
+The results were consistent, the website is platform-cross compatible and responsive. Furthermore, using DevTools I checked responsiveness for different screen sizes for mobile and tablet devices. Several issues were found and fixed all described under Encountered Issues section.
+
 # Encountered Issues
 
 
